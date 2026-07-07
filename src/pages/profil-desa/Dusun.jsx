@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import Header from '../../components/layout/Header'
+import SEO from '../../lib/seo'
 import { getDusunBySlug, ALL_DUSUN_SLUGS } from '../../lib/loadDusunData'
 import './Dusun.css'
 
@@ -14,14 +15,61 @@ export default function Dusun() {
   const dusunName = dusunData?.frontmatter?.nama || standardInfo?.label || slug
 
   useEffect(() => {
-    document.title = `Dusun ${dusunName} — Desa Karangtalun`
     window.scrollTo(0, 0)
-  }, [slug, dusunName])
+  }, [slug])
+
+  // ─── Prepare SEO Data ────────────────────────────────────────────────────
+  // Logika fallback gambar: foto UMKM pertama → foto galeri pertama → hero desa
+  const getSeoImage = () => {
+    if (!dusunData?.frontmatter) return '/assets/hero-desa.jpg'
+    
+    const { umkm, galeri } = dusunData.frontmatter
+    
+    if (umkm && umkm.length > 0 && umkm[0].foto) {
+      return umkm[0].foto
+    }
+    
+    if (galeri && galeri.length > 0) {
+      return galeri[0]
+    }
+    
+    return '/assets/hero-desa.jpg'
+  }
+
+  const getSeoDescription = () => {
+    if (!dusunData) {
+      return `Profil wilayah Dusun ${dusunName}, Desa Karangtalun. Halaman sedang dalam tahap pengumpulan data oleh tim kontributor KKN.`
+    }
+
+    // Ambil narasi awal dari content markdown (maksimal 160 karakter)
+    const { content } = dusunData
+    const plainText = content
+      .replace(/#+\s/g, '') // Hapus heading markdown
+      .replace(/\*\*/g, '') // Hapus bold
+      .replace(/\n/g, ' ')  // Ganti newline jadi spasi
+      .trim()
+    
+    const excerpt = plainText.length > 160 
+      ? plainText.slice(0, 157) + '...' 
+      : plainText
+
+    return excerpt || `Profil wilayah, potensi UMKM, dan kegiatan warga di Dusun ${dusunName}, Desa Karangtalun.`
+  }
+
+  const seoTitle = `Dusun ${dusunName}`
+  const seoDescription = getSeoDescription()
+  const seoImage = getSeoImage()
 
   // ─── KONDISI 1: DATA BELUM ADA (SKELETON / UNDER CONSTRUCTION) ─────────────
   if (!dusunData) {
     return (
       <div className="dusun-page">
+        {/* SEO Meta Tags */}
+        <SEO 
+          title={seoTitle}
+          description={seoDescription}
+        />
+
         <Header
           title={`Dusun ${dusunName}`}
           subtitle="Profil Wilayah Dusun — Desa Karangtalun"
@@ -78,6 +126,13 @@ export default function Dusun() {
 
   return (
     <div className="dusun-page">
+      {/* SEO Meta Tags */}
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        image={seoImage}
+      />
+
       {/* Header */}
       <Header
         title={`Dusun ${frontmatter.nama}`}
