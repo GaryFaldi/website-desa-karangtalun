@@ -1,6 +1,12 @@
+# Struktur Website Desa
+
+```text
 Beranda (Landing Page)
 ├── 1. Profil Desa
-│   ├── Overview Desa (Sejarah, Visi-Misi, Letak Geografis)
+│   ├── Overview Desa
+│   │   ├── Sejarah Desa
+│   │   ├── Visi & Misi
+│   │   └── Letak Geografis
 │   └── Profil Wilayah Dusun
 │       ├── Dusun Baran
 │       ├── Dusun Dangkel Kulon
@@ -14,14 +20,28 @@ Beranda (Landing Page)
 │       ├── Dusun Kajoran
 │       ├── Dusun Karangtalun
 │       └── Dusun Selingan
+│
 ├── 2. Pemerintahan & Kependudukan
 │   ├── Struktur Organisasi Pemerintah Desa
-│   ├── Statistik Kependudukan Desa (Total Makro)
-│   └── Data Kependudukan per Dusun (Tabel/Grafik Breakdowns)
+│   ├── Statistik Kependudukan Desa
+│   │   └── Data Makro Penduduk
+│   └── Data Kependudukan per Dusun
+│       ├── Tabel
+│       └── Grafik
+│
 ├── 3. Potensi & Wisata
 │   ├── Peta Wisata & Kuliner Desa
 │   └── UMKM / Potensi per Dusun
+│
 ├── 4. Galeri Kegiatan
 │   ├── Kegiatan Desa
 │   └── Dokumentasi Event per Dusun
-└── 5. Peta Lokasi (filter per dusun) & Fasilitas (Fasilitas Umum, Sekolah, Tempat Ibadah)
+│
+└── 5. Peta Lokasi & Fasilitas
+    ├── Peta Interaktif
+    │   └── Filter Berdasarkan Dusun
+    └── Fasilitas Umum
+        ├── Fasilitas Umum
+        ├── Sekolah
+        └── Tempat Ibadah
+```
