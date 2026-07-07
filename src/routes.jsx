@@ -11,6 +11,8 @@
 
 import Layout from './components/layout/Layout'
 import Beranda from './pages/Beranda'
+import Overview from './pages/profil-desa/Overview'
+import Dusun from './pages/profil-desa/Dusun'
 
 // Placeholder sementara — ganti dengan import halaman nyata satu per satu
 function Placeholder({ title }) {
@@ -40,8 +42,8 @@ export const routes = [
       { index: true, element: <Beranda /> },
 
       // Profil Desa
-      { path: '/profil-desa/overview',    element: <Placeholder title="Overview Desa" /> },
-      { path: '/profil-desa/dusun/:slug', element: <Placeholder title="Profil Dusun" /> },
+      { path: '/profil-desa/overview',    element: <Overview /> },
+      { path: '/profil-desa/dusun/:slug', element: <Dusun /> },
 
       // Pemerintahan
       { path: '/pemerintahan/struktur-organisasi', element: <Placeholder title="Struktur Organisasi" /> },

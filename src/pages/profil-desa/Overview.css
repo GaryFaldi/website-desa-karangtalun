@@ -1,0 +1,318 @@
+/* Overview.css */
+
+.overview__content {
+  padding-top: var(--spacing-xxl);
+  padding-bottom: var(--spacing-xxl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxl);
+}
+
+.overview__divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: var(--spacing-md) 0;
+}
+
+/* ── Section Utilities ────────────────────────────────────────────────────── */
+.overview-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.overview-section__badge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+  margin-bottom: var(--spacing-xs);
+}
+
+.overview-section__title {
+  font-size: var(--text-xxl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  line-height: 1.25;
+}
+
+.overview-section__p {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.overview-section__header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ── Sejarah Grid Layout ───────────────────────────────────────────────────── */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.overview-section__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.overview-section__visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.overview-section__card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.overview-section__card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.overview-section__card-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.overview-section__card h3 {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.overview-section__card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ── Visi Box Layout ──────────────────────────────────────────────────────── */
+.visi-box {
+  position: relative;
+  background-color: var(--color-primary-light);
+  border-left: 6px solid var(--color-primary-dark);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl) var(--spacing-xxl);
+  overflow: hidden;
+}
+
+.visi-box__quote-icon {
+  position: absolute;
+  top: -24px;
+  right: 16px;
+  font-size: 8rem;
+  color: rgba(110, 174, 45, 0.12);
+  font-family: serif;
+  line-height: 1;
+  user-select: none;
+}
+
+.visi-box__title {
+  font-size: var(--text-lg);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.visi-box__text {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Misi List Layout ─────────────────────────────────────────────────────── */
+.misi-list {
+  margin-top: var(--spacing-md);
+}
+
+.misi-list__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.misi-list__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.misi-item {
+  display: flex;
+  gap: var(--spacing-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  align-items: flex-start;
+}
+
+.misi-item__number {
+  font-size: var(--text-xxl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary-dark);
+  line-height: 1;
+  background-color: var(--color-primary-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+.misi-item__text {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Bottom Info Grid ────────────────────────────────────────────────────── */
+.overview-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+}
+
+.card-style {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Letak Geografis Batas */
+.borders-box {
+  background-color: var(--color-background);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+}
+
+.borders-box h3 {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.borders-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.borders-list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: var(--spacing-xs);
+}
+
+.borders-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Kontak Informasi */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contact-item {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.contact-item__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  background-color: var(--color-primary-light);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  color: var(--color-primary-dark);
+}
+
+.contact-item__text h3 {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.contact-item__text p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.contact-item__text a {
+  color: var(--color-primary-dark);
+  font-weight: var(--font-medium);
+}
+
+.contact-item__text a:hover {
+  color: var(--color-primary);
+}
+
+/* ── Responsive Styling ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .overview-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .misi-list__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .visi-box {
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+
+  .visi-box__text {
+    font-size: var(--text-lg);
+  }
+
+  .card-style {
+    padding: var(--spacing-lg);
+  }
+}
