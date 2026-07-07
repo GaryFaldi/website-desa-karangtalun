@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   EmptyState Component Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xxl, 4rem) var(--spacing-lg, 2rem);
+  text-align: center;
+  min-height: 300px;
+}
+
+.empty-state__icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-lg, 1.5rem);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.empty-state__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #1e293b);
+  margin: 0 0 var(--spacing-sm, 0.75rem) 0;
+}
+
+.empty-state__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #64748b);
+  margin: 0 0 var(--spacing-lg, 1.5rem) 0;
+  max-width: 400px;
+}
+
+.empty-state__action {
+  margin-top: var(--spacing-md, 1rem);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .empty-state {
+    padding: var(--spacing-xl, 3rem) var(--spacing-md, 1rem);
+    min-height: 250px;
+  }
+
+  .empty-state__icon {
+    font-size: 3rem;
+  }
+
+  .empty-state__title {
+    font-size: 1.125rem;
+  }
+
+  .empty-state__description {
+    font-size: 0.9375rem;
+  }
+}
