@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables — JANGAN commit nilai asli (PRD §5)
+.env
+.env.local
+.env.*.local
+
+# Data generated oleh fetch-data script — JANGAN commit (PRD §4)
+src/data/generated/*
+!src/data/generated/.gitkeep
+
+# Folder referensi desain sementara
+temp/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
