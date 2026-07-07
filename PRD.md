@@ -61,11 +61,10 @@ Semua route di-generate statis oleh `vite-react-ssg` (`ssgOptions.includedRoutes
 | `/profil-desa/dusun/:slug` | `pages/profil-desa/Dusun.jsx` | `src/data/dusun/<slug>.md` (dynamic, lihat §6.3) |
 | `/pemerintahan/struktur-organisasi` | `pages/pemerintahan/StrukturOrganisasi.jsx` | Statis (`src/data/static/struktur-organisasi.js`) |
 | `/pemerintahan/statistik-desa` | `pages/pemerintahan/StatistikDesa.jsx` | `src/data/generated/bps.json` |
-| `/pemerintahan/statistik-dusun` | `pages/pemerintahan/StatistikDusun.jsx` | `src/data/generated/dusun-sheets.json` |
 | `/potensi-wisata/peta-wisata-kuliner` | `pages/potensi-wisata/PetaWisataKuliner.jsx` | `src/data/generated/wisata-kuliner.json` |
-| `/potensi-wisata/umkm/:slug` | `pages/potensi-wisata/UmkmDusun.jsx` | `src/data/dusun/<slug>.md` (field `umkm`) |
+| `/potensi-wisata/umkm-desa` | `pages/potensi-wisata/UmkmDesa.jsx` | `src/data/generated/umkm-desa.json` |
 | `/galeri/kegiatan-desa` | `pages/galeri/KegiatanDesa.jsx` | `src/data/generated/galeri-desa.json` |
-| `/galeri/dusun/:slug` | `pages/galeri/DokumentasiDusun.jsx` | `src/data/dusun/<slug>.md` (field `galeri`) |
+| `/galeri/dokumentasi-desa` | `pages/galeri/DokumentasiDesa.jsx` | `src/data/generated/dokumentasi-desa.json` |
 | `/peta-lokasi/peta-interaktif` | `pages/peta-lokasi/PetaInteraktif.jsx` | `src/data/generated/fasilitas.json` |
 | `/peta-lokasi/fasilitas-umum` | `pages/peta-lokasi/FasilitasUmum.jsx` | `src/data/generated/fasilitas.json` |
 
@@ -101,9 +100,10 @@ desa-web/
 │   │   │   └── struktur-organisasi.js
 │   │   ├── generated/             ← HASIL fetch-data, JANGAN edit manual, JANGAN di-commit ke git (gitignore)
 │   │   │   ├── bps.json
-│   │   │   ├── dusun-sheets.json
 │   │   │   ├── wisata-kuliner.json
+│   │   │   ├── umkm-desa.json
 │   │   │   ├── galeri-desa.json
+│   │   │   ├── dokumentasi-desa.json
 │   │   │   └── fasilitas.json
 │   │   └── dusun/                 ← 1 file per dusun, lihat §6.3
 │   │       ├── _template.md       ← template kosong untuk kontributor baru
@@ -121,10 +121,10 @@ desa-web/
 │   │   │   └── StatistikDusun.jsx
 │   │   ├── potensi-wisata/
 │   │   │   ├── PetaWisataKuliner.jsx
-│   │   │   └── UmkmDusun.jsx
+│   │   │   └── UmkmDesa.jsx
 │   │   ├── galeri/
 │   │   │   ├── KegiatanDesa.jsx
-│   │   │   └── DokumentasiDusun.jsx
+│   │   │   └── DokumentasiDesa.jsx
 │   │   └── peta-lokasi/
 │   │       ├── PetaInteraktif.jsx
 │   │       └── FasilitasUmum.jsx
@@ -134,7 +134,7 @@ desa-web/
 │   │   └── (CSS per komponen, co-located atau di sini — putuskan konsisten, jangan campur pola)
 │   ├── lib/
 │   │   ├── loadDusunData.js       ← helper baca semua file src/data/dusun/*.md pakai import.meta.glob + gray-matter
-│   │   └── seo.js                 ← helper generate meta tag per halaman
+│   │   └── seo.js                 ← helper generate meta tag per halaman (boleh .jsx jika primary export adalah React component)
 │   ├── main.jsx
 │   └── App.jsx
 ├── .env.example                   ← daftar env var TANPA value asli, lihat §9
@@ -150,8 +150,10 @@ desa-web/
 File `.env.example` (commit ke repo, sebagai dokumentasi):
 ```
 BPS_API_KEY=
-GOOGLE_SHEET_CSV_URL_UMKM=
-GOOGLE_SHEET_CSV_URL_GALERI=
+GOOGLE_SHEET_CSV_URL_UMKM_DESA=
+GOOGLE_SHEET_CSV_URL_WISATA_KULINER=
+GOOGLE_SHEET_CSV_URL_GALERI_DESA=
+GOOGLE_SHEET_CSV_URL_DOKUMENTASI_DESA=
 GOOGLE_SHEET_CSV_URL_FASILITAS=
 ```
 
@@ -179,7 +181,7 @@ GOOGLE_SHEET_CSV_URL_FASILITAS=
 }
 ```
 
-### 6.2 `src/data/generated/dusun-sheets.json`, `wisata-kuliner.json`, `galeri-desa.json`, `fasilitas.json`
+### 6.2 `src/data/generated/wisata-kuliner.json`, `umkm-desa.json`, `galeri-desa.json`, `dokumentasi-desa.json`, `fasilitas.json`
 Hasil convert CSV → JSON array, struktur mengikuti kolom spreadsheet apa adanya (tidak ada transformasi field selain rename ke `camelCase`). Contoh `fasilitas.json`:
 ```json
 [
@@ -273,11 +275,25 @@ Nilai warna & tipografi masih `[OPEN]` — agent HARUS bertanya ke user sebelum 
 
 ## 9. SEO — Implementasi Teknis
 
+### 9.1 Meta Tags & Social Sharing (Priority: High)
 - Setiap komponen halaman di `src/pages/` WAJIB set `<title>` dan `<meta name="description">` unik via helper `src/lib/seo.js` — TIDAK boleh ada title/description default yang sama di semua halaman.
 - Open Graph tags (`og:title`, `og:description`, `og:image`) di halaman yang punya foto representatif (terutama halaman dusun).
-- `sitemap.xml` dan `robots.txt` di-generate saat build, ditaruh di `dist/` root.
-- Structured data `schema.org` tipe `GovernmentOrganization` di halaman Beranda dan Overview.
-- Setelah deploy pertama: submit manual ke Google Search Console (di luar cakupan kode, task manual user).
+- **Deliverable:** Komponen `<SEO />` reusable yang terintegrasi dengan `vite-react-ssg`
+
+### 9.2 Sitemap & Robots (Priority: Medium)
+- `sitemap.xml` di-generate saat build, ditaruh di `dist/` root
+- `robots.txt` di-generate saat build, ditaruh di `dist/` root
+- **Deliverable:** Plugin Vite atau script custom untuk auto-generate
+
+### 9.3 Structured Data (Priority: Medium)
+- Structured data `schema.org` tipe `GovernmentOrganization` di halaman Beranda dan Overview
+- **Deliverable:** Helper function atau integration ke komponen `<SEO />`
+
+### 9.4 Post-Launch (Manual)
+- Submit ke Google Search Console (di luar cakupan kode, task manual user)
+
+**Catatan Implementasi:**
+Requirement di atas boleh diimplementasikan secara bertahap. Phase 1 (§9.1) adalah blocking untuk launch, Phase 2-3 (§9.2-9.3) dapat dikerjakan post-launch sebagai enhancement.
 
 ---
 

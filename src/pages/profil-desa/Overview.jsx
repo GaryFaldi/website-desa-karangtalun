@@ -1,17 +1,19 @@
-import { useEffect } from 'react'
 import Header from '../../components/layout/Header'
+import SEO from '../../lib/seo'
 import { profilDesaData } from '../../data/static/desa'
 import './Overview.css'
 
 export default function Overview() {
-  useEffect(() => {
-    document.title = 'Overview Desa — Desa Karangtalun'
-  }, [])
-
   const { sejarah, visiMisi, geografis, kontak } = profilDesaData
 
   return (
     <div className="overview">
+      {/* SEO Meta Tags */}
+      <SEO 
+        title="Overview Desa"
+        description="Mengenal sejarah, visi misi, letak geografis, dan informasi pelayanan kantor Desa Karangtalun, Kabupaten Magelang, Jawa Tengah."
+      />
+
       {/* Header Halaman (Green Variant) */}
       <Header
         title="Profil Umum Desa"

@@ -20,8 +20,6 @@ export default defineConfig({
       return [
         ...paths,
         ...DUSUN_SLUGS.map(slug => `/profil-desa/dusun/${slug}`),
-        ...DUSUN_SLUGS.map(slug => `/potensi-wisata/umkm/${slug}`),
-        ...DUSUN_SLUGS.map(slug => `/galeri/dusun/${slug}`),
       ]
     },
   },
