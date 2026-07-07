@@ -1,9 +1,8 @@
 Site map kasar :
 Beranda
-Profil desa
-Struktur Pemerintahan
-Galeri
-UMKM / Potensi Desa
+Profil desa (kontak = minta)
+Struktur Pemerintahan (minta)
+Galeri Kegiatan (minta)
+UMKM / Potensi Desa (minta)
 Wisata
-Kontak
 Peta lokasi
