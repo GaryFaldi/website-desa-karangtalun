@@ -2,20 +2,95 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import './Beranda.css'
 
+
+const iconImages = import.meta.glob('../assets/icons/*.{png,jpg,jpeg,svg}', { eager: true })
+
+const IMAGE_ICONS = Object.fromEntries(
+  Object.entries(iconImages).map(([path, mod]) => {
+    const fileName = path.match(/([^/]+)\.\w+$/)[1]
+    return [fileName, mod.default]
+  })
+)
+
+
+const ICON_PATHS = {
+  buildings: (
+    <>
+      <path d="M4 21V8l6-4v17" />
+      <path d="M10 21V4l10 5v12" />
+      <path d="M7 12h0M7 16h0M14 10h0M14 14h0M14 18h0" />
+    </>
+  ),
+  mapPin: (
+    <>
+      <path d="M12 21s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12Z" />
+      <circle cx="12" cy="9" r="2.5" />
+    </>
+  ),
+  landmark: (
+    <>
+      <path d="M3 21h18" />
+      <path d="M5 21V10M10 21V10M14 21V10M19 21V10" />
+      <path d="M2 10 12 4l10 6" />
+    </>
+  ),
+  clipboard: (
+    <>
+      <rect x="6" y="4" width="12" height="17" rx="1.5" />
+      <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
+      <path d="M9 11h6M9 15h6" />
+    </>
+  ),
+  leaf: (
+    <>
+      <path d="M20 4c-9 0-16 6-16 15 9 0 15-7 16-15Z" />
+      <path d="M5 19c3-4 6-7 12-11" />
+    </>
+  ),
+  camera: (
+    <>
+      <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z" />
+      <circle cx="12" cy="13" r="3.5" />
+    </>
+  ),
+}
+
+function Icon({ name, className }) {
+  const image = IMAGE_ICONS[name]
+  if (image) {
+    return <img src={image} className={className} alt="" aria-hidden="true" />
+  }
+
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {ICON_PATHS[name]}
+    </svg>
+  )
+}
+
 // ─── Data Placeholder ────────────────────────────────────────────────────────
 // Ganti dengan data real dari src/data/static/desa.js saat konten tersedia
 
 const STATS = [
-  { icon: '👥', value: '±1.200',  label: 'Jiwa',           note: '*data sementara' },
-  { icon: '🏠', value: '±350',    label: 'Kepala Keluarga', note: '*data sementara' },
-  { icon: '🏘️', value: '12',      label: 'Dusun',           note: '' },
-  { icon: '🗺️', value: '—',       label: 'Luas Wilayah',    note: 'segera diperbarui' },
+  { icon: 'users-alt', value: '±1.200', label: 'Jiwa',            note: '*data sementara' },
+  { icon: 'family',      value: '±350',   label: 'Kepala Keluarga', note: '*data sementara' },
+  { icon: 'house', value: '12',     label: 'Dusun',           note: '' },
+  { icon: 'land-plot',    value: '—',      label: 'Luas Wilayah',    note: 'segera diperbarui' },
 ]
 
 const LAYANAN = [
   {
     id: 'profil-desa',
-    icon: '🏛️',
+    icon: 'landmark',
     title: 'Profil Desa',
     desc: 'Sejarah, visi-misi, letak geografis, dan kontak resmi Desa Karangtalun.',
     href: '/profil-desa/overview',
@@ -23,7 +98,7 @@ const LAYANAN = [
   },
   {
     id: 'pemerintahan',
-    icon: '📋',
+    icon: 'clipboard',
     title: 'Pemerintahan',
     desc: 'Struktur organisasi perangkat desa dan data statistik kependudukan.',
     href: '/pemerintahan/struktur-organisasi',
@@ -31,7 +106,7 @@ const LAYANAN = [
   },
   {
     id: 'wisata',
-    icon: '🌿',
+    icon: 'leaf',
     title: 'Potensi & Wisata',
     desc: 'Peta wisata, kuliner lokal, dan UMKM unggulan setiap dusun.',
     href: '/potensi-wisata/peta-wisata-kuliner',
@@ -39,7 +114,7 @@ const LAYANAN = [
   },
   {
     id: 'galeri',
-    icon: '📷',
+    icon: 'camera',
     title: 'Galeri',
     desc: 'Dokumentasi kegiatan desa dan momen penting dari seluruh dusun.',
     href: '/galeri/kegiatan-desa',
@@ -47,7 +122,7 @@ const LAYANAN = [
   },
   {
     id: 'peta',
-    icon: '📍',
+    icon: 'mapPin',
     title: 'Peta Lokasi',
     desc: 'Peta interaktif fasilitas umum, sekolah, dan tempat ibadah.',
     href: '/peta-lokasi/peta-interaktif',
@@ -81,19 +156,31 @@ export default function Beranda() {
 
       {/* ── Hero ── */}
       <section className="hero" aria-label="Sambutan">
-        <div className="hero__bg" aria-hidden="true" />
+
+        <img
+          src="/assets/hero-desa.jpg"
+          alt="Pemandangan Desa Karangtalun"
+          className="hero__image"
+          loading="eager"
+        />
+
+        <div className="hero__overlay" aria-hidden="true"></div>
+
         <div className="container hero__content">
-          <div className="hero__badge">
-            <span>🌿</span> Desa Karangtalun
-          </div>
+          <span className="hero__badge">Desa Karangtalun</span>
+
           <h1 className="hero__title">
-            Selamat Datang di<br />
+            Selamat Datang di
+            <br />
             <span className="hero__title-accent">Desa Karangtalun</span>
           </h1>
+
           <p className="hero__subtitle">
-            Website resmi Desa Karangtalun — menyajikan profil desa,
-            potensi 12 dusun, dan informasi layanan publik secara transparan.
+            Website resmi Desa Karangtalun yang menyajikan profil desa,
+            potensi 12 dusun, serta layanan publik secara transparan dan
+            mudah diakses masyarakat.
           </p>
+
           <div className="hero__actions">
             <Link to="/profil-desa/overview" className="btn btn--primary" id="hero-cta-profil">
               Profil Desa
@@ -103,15 +190,7 @@ export default function Beranda() {
             </Link>
           </div>
         </div>
-        <div className="hero__image-wrap" aria-hidden="true">
-          <img
-            src="/assets/hero-desa.jpg"
-            alt="Pemandangan Desa Karangtalun"
-            className="hero__image"
-            loading="eager"
-          />
-          <div className="hero__image-overlay" />
-        </div>
+
       </section>
 
       {/* ── Statistik Kilat ── */}
@@ -119,10 +198,12 @@ export default function Beranda() {
         <div className="container stats__grid">
           {STATS.map((s) => (
             <div key={s.label} className="stats__card">
-              <span className="stats__icon" aria-hidden="true">{s.icon}</span>
-              <strong className="stats__value">{s.value}</strong>
-              <span className="stats__label">{s.label}</span>
-              {s.note && <span className="stats__note">{s.note}</span>}
+              <Icon name={s.icon} className="stats__icon" />
+              <div className="stats__body">
+                <strong className="stats__value">{s.value}</strong>
+                <span className="stats__label">{s.label}</span>
+                {s.note && <span className="stats__note">{s.note}</span>}
+              </div>
             </div>
           ))}
         </div>
@@ -145,7 +226,7 @@ export default function Beranda() {
               dan sejahtera bagi seluruh warganya.
             </p>
             <Link to="/profil-desa/overview" className="btn btn--primary about__cta" id="about-cta-selengkapnya">
-              Selengkapnya →
+              Selengkapnya
             </Link>
           </div>
           <div className="about__visual">
@@ -177,10 +258,10 @@ export default function Beranda() {
                 className={`layanan__card layanan__card--${item.color}`}
                 id={`layanan-${item.id}`}
               >
-                <span className="layanan__icon" aria-hidden="true">{item.icon}</span>
+                <Icon name={item.icon} className="layanan__icon" />
                 <h3 className="layanan__title">{item.title}</h3>
                 <p className="layanan__desc">{item.desc}</p>
-                <span className="layanan__arrow" aria-hidden="true">→</span>
+                <span className="layanan__arrow" aria-hidden="true">Lihat detail →</span>
               </Link>
             ))}
           </div>
@@ -205,8 +286,10 @@ export default function Beranda() {
                   className="dusun__card"
                   id={`dusun-${d.slug}`}
                 >
-                  <span className="dusun__leaf" aria-hidden="true">🌿</span>
                   <span className="dusun__name">Dusun {d.label}</span>
+                  <svg className="dusun__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6" />
+                  </svg>
                 </Link>
               </li>
             ))}
