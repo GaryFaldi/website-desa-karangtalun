@@ -1,8 +1,8 @@
 Site map kasar :
 Beranda
 Profil desa (kontak = minta)
-Struktur Pemerintahan (minta)
+Struktur Pemerintahan dan data kependudukan (minta)
 Galeri Kegiatan (minta)
 UMKM / Potensi Desa (minta)
 Wisata
-Peta lokasi
+Peta lokasi dan tempat tempat penting di desa (ex. sekolah, masjid dan lain lain)
