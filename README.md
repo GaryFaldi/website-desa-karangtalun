@@ -7,8 +7,19 @@ Beranda (Landing Page)
 │   │   ├── Sejarah Desa
 │   │   ├── Visi & Misi
 │   │   └── Letak Geografis
+│   ├── Kontak Desa
+│   │   ├── Alamat Kantor Desa
+│   │   ├── Nomor Telepon / WhatsApp
+│   │   ├── Email
+│   │   └── Jam Pelayanan
 │   └── Profil Wilayah Dusun
 │       ├── Dusun Baran
+│       │   ├── Profil Singkat
+│       │   ├── Kontak Kepala Dusun
+│       │   ├── Peta Lokasi Dusun
+│       │   ├── Potensi Dusun
+│       │   ├── Fasilitas Dusun
+│       │   └── Galeri Dusun
 │       ├── Dusun Dangkel Kulon
 │       ├── Dusun Dangkel Wetan
 │       ├── Dusun Jambon
@@ -31,11 +42,11 @@ Beranda (Landing Page)
 │
 ├── 3. Potensi & Wisata
 │   ├── Peta Wisata & Kuliner Desa
-│   └── UMKM / Potensi per Dusun
+│   └── UMKM / Potensi skala desa (rangkuman seluruh potensi dusun)
 │
 ├── 4. Galeri Kegiatan
 │   ├── Kegiatan Desa
-│   └── Dokumentasi Event per Dusun
+│   └── Dokumentasi Event Desa
 │
 └── 5. Peta Lokasi & Fasilitas
     ├── Peta Interaktif
