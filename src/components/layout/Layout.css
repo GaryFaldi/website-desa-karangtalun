@@ -1,0 +1,13 @@
+/* Layout.css */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Dorong footer ke bawah halaman */
+.layout__main {
+  flex: 1;
+  padding-top: var(--navbar-height); /* ruang untuk navbar fixed */
+}

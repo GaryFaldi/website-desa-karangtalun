@@ -1,0 +1,90 @@
+/*
+ * tokens.css — Design System Tokens
+ * Semua nilai warna, tipografi, spacing, dll WAJIB didefinisikan di sini.
+ * File CSS lain TIDAK BOLEH hardcode nilai warna/font — selalu gunakan var(--...) dari file ini.
+ * Sumber asli: temp/theme/theme.js (PRD §8)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ── Brand Colors ───────────────────────────────────────── */
+  --color-primary:       #96D539;
+  --color-primary-light: #E8F7DD;
+  --color-primary-dark:  #6FAE2D;
+  --color-primary-darker:#3d7a15;   /* untuk hero gradient */
+  --color-hero-bg:       #1B4332;   /* dark forest green — hanya dipakai di hero section */
+
+  /* ── Neutral Colors ─────────────────────────────────────── */
+  --color-white:      #FFFFFF;
+  --color-background: #F8FAF8;
+  --color-surface:    #FFFFFF;
+
+  /* ── Text Colors ────────────────────────────────────────── */
+  --color-text-primary:   #151B1F;
+  --color-text-secondary: #313A48;
+  --color-text-muted:     #6B7280;
+
+  /* ── Border ─────────────────────────────────────────────── */
+  --color-border: #E5E7EB;
+
+  /* ── Status Colors ──────────────────────────────────────── */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error:   #EF4444;
+  --color-info:    #3B82F6;
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-display: 'Poppins', sans-serif;
+  --font-body:    'Poppins', sans-serif;
+
+  /* ── Font Sizes ─────────────────────────────────────────── */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-md:   16px;
+  --text-lg:   18px;
+  --text-xl:   20px;
+  --text-xxl:  24px;
+  --text-hero: 48px;
+
+  /* ── Font Weights ───────────────────────────────────────── */
+  --font-regular:  400;
+  --font-medium:   500;
+  --font-semibold: 600;
+  --font-bold:     700;
+
+  /* ── Spacing ────────────────────────────────────────────── */
+  --spacing-unit:    8px;
+  --spacing-xs:      4px;
+  --spacing-sm:      8px;
+  --spacing-md:      16px;
+  --spacing-lg:      24px;
+  --spacing-xl:      32px;
+  --spacing-xxl:     48px;
+  --spacing-section: 96px;
+
+  /* ── Border Radius ──────────────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.15);
+
+  /* ── Transitions ────────────────────────────────────────── */
+  --transition-fast:   0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow:   0.5s ease;
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --layout-max-width: 1200px;
+  --navbar-height:    72px;
+  --footer-height:    320px;
+
+  /* ── Breakpoints (dipakai di JS kalau perlu, CSS pakai media query langsung) ── */
+  /* mobile: 576px | tablet: 768px | laptop: 1024px | desktop: 1280px | wide: 1440px */
+}
