@@ -130,7 +130,7 @@ const LAYANAN = [
   },
 ]
 
-const DUSUN_SLUGS = [
+export const DUSUN_SLUGS = [
   { slug: 'baran',          label: 'Baran' },
   { slug: 'dangkel-kulon',  label: 'Dangkel Kulon' },
   { slug: 'dangkel-wetan',  label: 'Dangkel Wetan' },
@@ -167,8 +167,6 @@ export default function Beranda() {
         <div className="hero__overlay" aria-hidden="true"></div>
 
         <div className="container hero__content">
-          <span className="hero__badge">Desa Karangtalun</span>
-
           <h1 className="hero__title">
             Selamat Datang di
             <br />
