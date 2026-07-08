@@ -175,3 +175,59 @@ Kita akan menyelesaikan fondasi inti website terlebih dahulu secara bertahap:
 * **Jangan mengubah file CSS di luar `src/styles/`** kecuali untuk styling lokal komponen. Gunakan variabel dari `tokens.css`.
 * **Jangan membuat file halaman tersendiri untuk tiap dusun** (seperti `Jampiroso.jsx`, `Baran.jsx`). Semua dusun menggunakan satu file template yang sama, yaitu `Dusun.jsx`, dengan sumber data dari file markdown `.md`.
 * **Selalu buat branch baru atau Pull Request** sebelum menggabungkan ke `main` jika bekerja secara tim.
+
+---
+
+## 📁 Struktur Folder Saat Ini
+
+```text
+website-desa-karangtalun/
+├── .gitignore
+├── .oxlintrc.json
+├── CONTRIBUTING.md
+├── index.html
+├── list data yang perlu diminta.txt
+├── package-lock.json
+├── package.json
+├── PRD.md
+├── README.md
+├── public/
+│   └── assets/
+│       └── dusun/
+├── scripts/
+│   └── .gitkeep
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Footer.css
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.css
+│   │   │   ├── Header.jsx
+│   │   │   ├── Layout.css
+│   │   │   ├── Layout.jsx
+│   │   │   ├── Navigation.css
+│   │   │   └── Navigation.jsx
+│   │   └── ui/
+│   ├── data/
+│   │   ├── dusun/
+│   │   │   └── _template.md
+│   │   ├── generated/
+│   │   └── static/
+│   ├── lib/
+│   ├── pages/
+│   │   ├── Beranda.css
+│   │   ├── Beranda.jsx
+│   │   ├── galeri/
+│   │   ├── pemerintahan/
+│   │   ├── peta-lokasi/
+│   │   ├── potensi-wisata/
+│   │   └── profil-desa/
+│   ├── styles/
+│   │   ├── global.css
+│   │   └── tokens.css
+│   ├── main.jsx
+│   └── routes.jsx
+├── vite.config.js
+└── package-lock.json
+```
