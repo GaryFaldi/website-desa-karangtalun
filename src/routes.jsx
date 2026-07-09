@@ -50,14 +50,15 @@ export const routes = [
       // Pemerintahan
       { path: '/pemerintahan/struktur-organisasi', element: <StrukturOrganisasi /> },
       { path: '/pemerintahan/statistik-desa',      element: <Placeholder title="Statistik Kependudukan Desa" /> },
+      { path: '/pemerintahan/statistik-dusun',     element: <Placeholder title="Statistik Kependudukan Dusun" /> },
 
       // Potensi & Wisata
       { path: '/potensi-wisata/peta-wisata-kuliner', element: <Placeholder title="Peta Wisata & Kuliner" /> },
-      { path: '/potensi-wisata/umkm-desa',           element: <Placeholder title="UMKM Desa" /> },
+      { path: '/potensi-wisata/umkm/:slug',           element: <Placeholder title="UMKM Dusun" /> },
 
       // Galeri
-      { path: '/galeri/kegiatan-desa',      element: <Placeholder title="Galeri Kegiatan Desa" /> },
-      { path: '/galeri/dokumentasi-desa',   element: <Placeholder title="Dokumentasi Desa" /> },
+      { path: '/galeri/kegiatan-desa',  element: <Placeholder title="Galeri Kegiatan Desa" /> },
+      { path: '/galeri/dusun/:slug',    element: <Placeholder title="Dokumentasi Dusun" /> },
 
       // Peta Lokasi
       { path: '/peta-lokasi/peta-interaktif', element: <Placeholder title="Peta Interaktif" /> },

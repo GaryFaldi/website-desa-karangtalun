@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "build": "vite-react-ssg build",
+    "preview": "vite preview",
+    "fetch-data": "node scripts/fetch-bps.js && node scripts/fetch-sheets.js",
+    "lint": "oxlint"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
