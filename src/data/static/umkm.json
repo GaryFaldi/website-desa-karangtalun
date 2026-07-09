@@ -1,0 +1,35 @@
+[
+  {
+    "id": "umkm-1",
+    "nama": "Warung Makan Bu Sri",
+    "kategori": "Kuliner",
+    "deskripsi": "Warung makan rumahan dengan menu masakan tradisional khas Karangtalun, buka setiap hari.",
+    "gambar": "/images/umkm/warung-bu-sri.jpg",
+    "alamat": "RT 02 / RW 01, Dusun Karangtalun I",
+    "kontak": "0812-3456-7891",
+    "lat": -7.4123,
+    "lng": 110.1987
+  },
+  {
+    "id": "umkm-2",
+    "nama": "Keripik Singkong Makmur Jaya",
+    "kategori": "Kuliner",
+    "deskripsi": "Produsen keripik singkong dengan berbagai varian rasa, hasil produksi kelompok UMKM setempat.",
+    "gambar": "/images/umkm/keripik-makmur-jaya.jpg",
+    "alamat": "RT 04 / RW 02, Dusun Karangtalun II",
+    "kontak": "0813-2233-4455",
+    "lat": -7.4145,
+    "lng": 110.2015
+  },
+  {
+    "id": "umkm-3",
+    "nama": "Kerajinan Bambu Karya Lestari",
+    "kategori": "Kerajinan",
+    "deskripsi": "Sentra kerajinan anyaman bambu berupa peralatan rumah tangga dan cendera mata.",
+    "gambar": "/images/umkm/bambu-karya-lestari.jpg",
+    "alamat": "RT 01 / RW 03, Dusun Karangtalun III",
+    "kontak": "0857-1122-3344",
+    "lat": -7.4098,
+    "lng": 110.2041
+  }
+]

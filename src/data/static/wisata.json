@@ -1,0 +1,24 @@
+[
+  {
+    "id": "wisata-1",
+    "nama": "Bukit Pandang Karangtalun",
+    "kategori": "Wisata Alam",
+    "deskripsi": "Spot ketinggian dengan pemandangan hamparan sawah dan perbukitan, populer untuk menikmati matahari terbit.",
+    "gambar": "/images/wisata/bukit-pandang.jpg",
+    "alamat": "Dusun Karangtalun III",
+    "kontak": "0821-9988-7766",
+    "lat": -7.4076,
+    "lng": 110.2069
+  },
+  {
+    "id": "wisata-2",
+    "nama": "Curug Sewatu",
+    "kategori": "Wisata Alam",
+    "deskripsi": "Air terjun alami dengan akses jalan setapak, menjadi destinasi favorit wisatawan lokal di akhir pekan.",
+    "gambar": "/images/wisata/curug-sewatu.jpg",
+    "alamat": "Dusun Karangtalun III",
+    "kontak": "0821-1122-3399",
+    "lat": -7.4061,
+    "lng": 110.2093
+  }
+]

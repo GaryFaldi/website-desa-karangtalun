@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fasilitas-1",
+    "nama": "Kantor Desa Karangtalun",
+    "kategori": "Pemerintahan",
+    "deskripsi": "Pusat pelayanan administrasi masyarakat Desa Karangtalun, buka Senin–Jumat pukul 08.00–15.00.",
+    "gambar": "/images/fasilitas/kantor-desa.jpg",
+    "alamat": "RT 01 / RW 01, Dusun Karangtalun I",
+    "kontak": "(0293) 123456",
+    "lat": -7.4131,
+    "lng": 110.1975
+  },
+  {
+    "id": "fasilitas-2",
+    "nama": "Puskesmas Pembantu Karangtalun",
+    "kategori": "Kesehatan",
+    "deskripsi": "Fasilitas layanan kesehatan dasar bagi warga desa dan sekitarnya.",
+    "gambar": "/images/fasilitas/pustu.jpg",
+    "alamat": "RT 03 / RW 02, Dusun Karangtalun II",
+    "kontak": "(0293) 654321",
+    "lat": -7.4139,
+    "lng": 110.2002
+  },
+  {
+    "id": "fasilitas-3",
+    "nama": "SD Negeri Karangtalun",
+    "kategori": "Pendidikan",
+    "deskripsi": "Sekolah dasar negeri yang melayani pendidikan anak-anak di wilayah desa.",
+    "gambar": "/images/fasilitas/sdn-karangtalun.jpg",
+    "alamat": "RT 02 / RW 01, Dusun Karangtalun I",
+    "kontak": "(0293) 112233",
+    "lat": -7.4117,
+    "lng": 110.1998
+  },
+  {
+    "id": "fasilitas-4",
+    "nama": "Masjid Al-Ikhlas",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid utama yang menjadi pusat kegiatan keagamaan warga Dusun Karangtalun II.",
+    "gambar": "/images/fasilitas/masjid-al-ikhlas.jpg",
+    "alamat": "RT 05 / RW 02, Dusun Karangtalun II",
+    "kontak": "-",
+    "lat": -7.4152,
+    "lng": 110.2020
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "id": "dusun-1", "nama": "Dusun Karangtalun I" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [110.1955, -7.4055],
+            [110.2020, -7.4057],
+            [110.2018, -7.4110],
+            [110.1950, -7.4110],
+            [110.1955, -7.4055]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "dusun-2", "nama": "Dusun Karangtalun II" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [110.2020, -7.4057],
+            [110.2105, -7.4058],
+            [110.2100, -7.4110],
+            [110.2018, -7.4110],
+            [110.2020, -7.4057]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "dusun-3", "nama": "Dusun Karangtalun III" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [110.1950, -7.4110],
+            [110.2100, -7.4110],
+            [110.2110, -7.4165],
+            [110.1985, -7.4172],
+            [110.1950, -7.4110]
+          ]
+        ]
+      }
+    }
+  ]
+}

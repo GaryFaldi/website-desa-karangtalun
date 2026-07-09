@@ -1,0 +1,29 @@
+[
+  {
+    "id": "dusun-1",
+    "nama": "Dusun Karangtalun I",
+    "kepalaDusun": "Bapak Suryanto",
+    "jumlahKK": 118,
+    "jumlahPenduduk": 452,
+    "luasWilayah": "42 Ha",
+    "deskripsi": "Dusun yang menjadi pusat pemerintahan desa dan sebagian besar wilayahnya digunakan untuk permukiman serta lahan pertanian."
+  },
+  {
+    "id": "dusun-2",
+    "nama": "Dusun Karangtalun II",
+    "kepalaDusun": "Bapak Wahyu Prasetyo",
+    "jumlahKK": 96,
+    "jumlahPenduduk": 371,
+    "luasWilayah": "38 Ha",
+    "deskripsi": "Dusun dengan potensi pertanian palawija dan menjadi lokasi sebagian besar UMKM olahan pangan desa."
+  },
+  {
+    "id": "dusun-3",
+    "nama": "Dusun Karangtalun III",
+    "kepalaDusun": "Bapak Slamet Riyadi",
+    "jumlahKK": 84,
+    "jumlahPenduduk": 305,
+    "luasWilayah": "35 Ha",
+    "deskripsi": "Dusun dengan akses menuju kawasan wisata alam desa, sebagian warga bermata pencaharian sebagai pengelola wisata."
+  }
+]
