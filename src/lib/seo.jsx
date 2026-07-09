@@ -52,7 +52,7 @@ export default function SEO({
   const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : '')
 
   return (
-    <Helmet>
+    <Head>
       {/* ── Basic Meta Tags ── */}
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
@@ -73,6 +73,6 @@ export default function SEO({
 
       {/* ── Canonical URL (opsional) ── */}
       {pageUrl && <link rel="canonical" href={pageUrl} />}
-    </Helmet>
+    </Head>
   )
 }
