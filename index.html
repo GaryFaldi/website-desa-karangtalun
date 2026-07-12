@@ -4,31 +4,16 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- 
-      Meta Tags Fallback untuk Social Media Preview
-      Ini adalah safety net untuk bot yang tidak execute JavaScript.
-      Komponen <SEO /> akan override tags ini di client-side.
+    <!--
+      Meta tags SEO diatur oleh komponen <SEO /> (src/lib/seo.jsx) menggunakan
+      react-helmet-async. Tags di bawah ini adalah fallback terakhir yang akan
+      DITIMPA secara statis oleh vite-react-ssg saat build (injected sebelum tag ini).
+      Jika JavaScript tidak berjalan, tag ini yang akan terbaca.
     -->
     <title>Website Resmi Desa Karangtalun</title>
     <meta name="description" content="Portal resmi Pemerintahan Desa Karangtalun, Kabupaten Magelang, Jawa Tengah. Informasi pelayanan publik, profil wilayah, potensi 12 dusun, dan transparansi pemerintahan desa." />
-    
-    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Desa Karangtalun" />
-    <meta property="og:title" content="Website Resmi Desa Karangtalun" />
-    <meta property="og:description" content="Portal resmi Pemerintahan Desa Karangtalun, Kabupaten Magelang, Jawa Tengah. Informasi pelayanan publik, profil wilayah, potensi 12 dusun, dan transparansi pemerintahan desa." />
     <meta property="og:image" content="/assets/hero-desa.jpg" />
-    <meta property="og:url" content="/" />
-    
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Website Resmi Desa Karangtalun" />
-    <meta name="twitter:description" content="Portal resmi Pemerintahan Desa Karangtalun, Kabupaten Magelang, Jawa Tengah. Informasi pelayanan publik, profil wilayah, potensi 12 dusun, dan transparansi pemerintahan desa." />
-    <meta name="twitter:image" content="/assets/hero-desa.jpg" />
-    
-    <!-- Canonical URL (will be updated by <SEO /> component for sub-pages) -->
-    <link rel="canonical" href="/" />
   </head>
   <body>
     <div id="root"></div>

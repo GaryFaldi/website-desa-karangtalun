@@ -11,6 +11,13 @@ const DUSUN_SLUGS = [
 export default defineConfig({
   plugins: [react()],
 
+  // Paksa satu instance react-helmet-async agar HelmetProvider (SSG) dan
+  // Helmet (seo.jsx) berbagi context yang sama saat SSG build.
+  // Tanpa ini, judul dan meta tag per-halaman tidak tertanam di HTML statis.
+  resolve: {
+    dedupe: ['react-helmet-async', 'react', 'react-dom'],
+  },
+
   // Konfigurasi vite-react-ssg (PRD §7)
   ssgOptions: {
     script: 'async',
