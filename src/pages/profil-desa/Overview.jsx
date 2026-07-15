@@ -2,6 +2,8 @@ import Header from '../../components/layout/Header'
 import SEO from '../../lib/seo'
 import { profilDesaData } from '../../data/static/desa'
 import './Overview.css'
+import { Link } from 'react-router-dom'
+import { DUSUN_SLUGS } from '../Beranda'
 
 export default function Overview() {
   const { sejarah, visiMisi, geografis, kontak } = profilDesaData
@@ -138,6 +140,34 @@ export default function Overview() {
             </div>
           </section>
         </div>
+        {/* ── Profil Dusun ── */}
+      <section className="dusun section" aria-label="Daftar dusun">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-label">12 Dusun</span>
+            <h2 className="section-title">Profil Wilayah Dusun</h2>
+            <p className="section-desc">
+              Setiap dusun memiliki cerita, potensi, dan keunikan masing-masing.
+            </p>
+          </div>
+          <ul className="dusun__grid" role="list">
+            {DUSUN_SLUGS.map((d) => (
+              <li key={d.slug}>
+                <Link
+                  to={`/profil-desa/dusun/${d.slug}`}
+                  className="dusun__card"
+                  id={`dusun-${d.slug}`}
+                >
+                  <span className="dusun__name">Dusun {d.label}</span>
+                  <svg className="dusun__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="m9 6 6 6-6 6" />
+                  </svg>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
       </div>
     </div>
   )

@@ -9,11 +9,7 @@ const NAV_ITEMS = [
     href: '/',
   },
   {
-    label: 'Profil Desa',
-    children: [
-      { label: 'Overview Desa', href: '/profil-desa/overview' },
-      { label: 'Profil Dusun', href: '/profil-desa/dusun/jampiroso' },
-    ],
+    label: 'Profil Desa', href: '/profil-desa/overview'
   },
   {
     label: 'Pemerintahan',
@@ -27,14 +23,14 @@ const NAV_ITEMS = [
     label: 'Potensi & Wisata',
     children: [
       { label: 'Peta Wisata & Kuliner', href: '/potensi-wisata/peta-wisata-kuliner' },
-      { label: 'UMKM Dusun',           href: '/potensi-wisata/umkm/jampiroso' },
+      { label: 'UMKM',           href: '/potensi-wisata/umkm/jampiroso' },
     ],
   },
   {
     label: 'Galeri',
     children: [
       { label: 'Kegiatan Desa',    href: '/galeri/kegiatan-desa' },
-      { label: 'Dokumentasi Dusun', href: '/galeri/dusun/jampiroso' },
+      { label: 'Dokumentasi', href: '/galeri/dusun/jampiroso' },
     ],
   },
   {
