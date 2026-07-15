@@ -13,6 +13,8 @@ import Layout from './components/layout/Layout'
 import Beranda from './pages/Beranda'
 import Overview from './pages/profil-desa/Overview'
 import Dusun from './pages/profil-desa/Dusun'
+import StrukturOrganisasi from './pages/pemerintahan/StrukturOrganisasi'
+import FasilitasUmum from './pages/peta-lokasi/FasilitasUmum'
 
 // Placeholder sementara — ganti dengan import halaman nyata satu per satu
 function Placeholder({ title }) {
@@ -46,21 +48,21 @@ export const routes = [
       { path: '/profil-desa/dusun/:slug', element: <Dusun /> },
 
       // Pemerintahan
-      { path: '/pemerintahan/struktur-organisasi', element: <Placeholder title="Struktur Organisasi" /> },
+      { path: '/pemerintahan/struktur-organisasi', element: <StrukturOrganisasi /> },
       { path: '/pemerintahan/statistik-desa',      element: <Placeholder title="Statistik Kependudukan Desa" /> },
       { path: '/pemerintahan/statistik-dusun',     element: <Placeholder title="Statistik Kependudukan Dusun" /> },
 
       // Potensi & Wisata
       { path: '/potensi-wisata/peta-wisata-kuliner', element: <Placeholder title="Peta Wisata & Kuliner" /> },
-      { path: '/potensi-wisata/umkm/:slug',          element: <Placeholder title="UMKM Dusun" /> },
+      { path: '/potensi-wisata/umkm/:slug',           element: <Placeholder title="UMKM Dusun" /> },
 
       // Galeri
-      { path: '/galeri/kegiatan-desa', element: <Placeholder title="Galeri Kegiatan Desa" /> },
-      { path: '/galeri/dusun/:slug',   element: <Placeholder title="Dokumentasi Dusun" /> },
+      { path: '/galeri/kegiatan-desa',  element: <Placeholder title="Galeri Kegiatan Desa" /> },
+      { path: '/galeri/dusun/:slug',    element: <Placeholder title="Dokumentasi Dusun" /> },
 
       // Peta Lokasi
       { path: '/peta-lokasi/peta-interaktif', element: <Placeholder title="Peta Interaktif" /> },
-      { path: '/peta-lokasi/fasilitas-umum',  element: <Placeholder title="Fasilitas Umum" /> },
+      { path: '/peta-lokasi/fasilitas-umum',  element: <FasilitasUmum /> },
 
     ],
   },

@@ -1,0 +1,87 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Skeleton Component Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-200, #e2e8f0) 0%,
+    var(--color-gray-100, #f1f5f9) 50%,
+    var(--color-gray-200, #e2e8f0) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm, 6px);
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ─── Variants ───────────────────────────────────────────────────────────── */
+
+.skeleton--text {
+  height: 1em;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius-xs, 4px);
+}
+
+.skeleton--circular {
+  border-radius: 50%;
+}
+
+.skeleton--rectangular {
+  border-radius: var(--radius-md, 8px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Pre-built Patterns
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Skeleton Card ──────────────────────────────────────────────────────── */
+
+.skeleton-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.skeleton-card__body {
+  padding: var(--spacing-md, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 0.75rem);
+}
+
+/* ─── Skeleton List ──────────────────────────────────────────────────────── */
+
+.skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 1rem);
+}
+
+.skeleton-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-md, 1rem);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  background: #ffffff;
+}
+
+.skeleton-list__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 0.5rem);
+}

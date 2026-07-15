@@ -1,0 +1,176 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Button Component Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs, 0.5rem);
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary-500, #10b981);
+  outline-offset: 2px;
+}
+
+/* ─── Sizes ──────────────────────────────────────────────────────────────── */
+
+.btn--sm {
+  padding: var(--spacing-xs, 0.5rem) var(--spacing-sm, 0.875rem);
+  font-size: 0.875rem;
+}
+
+.btn--md {
+  padding: var(--spacing-sm, 0.625rem) var(--spacing-md, 1.25rem);
+  font-size: 0.9375rem;
+}
+
+.btn--lg {
+  padding: var(--spacing-md, 0.875rem) var(--spacing-lg, 1.75rem);
+  font-size: 1.0625rem;
+}
+
+/* ─── Full Width ─────────────────────────────────────────────────────────── */
+
+.btn--full-width {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Variants
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Primary ────────────────────────────────────────────────────────────── */
+
+.btn--primary {
+  background: var(--color-primary-500, #10b981);
+  color: #ffffff;
+  border-color: var(--color-primary-500, #10b981);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-primary-600, #059669);
+  border-color: var(--color-primary-600, #059669);
+}
+
+.btn--primary:active:not(:disabled) {
+  background: var(--color-primary-700, #047857);
+  border-color: var(--color-primary-700, #047857);
+}
+
+/* ─── Secondary ──────────────────────────────────────────────────────────── */
+
+.btn--secondary {
+  background: var(--color-gray-600, #475569);
+  color: #ffffff;
+  border-color: var(--color-gray-600, #475569);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--color-gray-700, #334155);
+  border-color: var(--color-gray-700, #334155);
+}
+
+/* ─── Outline ────────────────────────────────────────────────────────────── */
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-primary-600, #059669);
+  border-color: var(--color-primary-500, #10b981);
+}
+
+.btn--outline:hover:not(:disabled) {
+  background: var(--color-primary-50, #f0fdf4);
+  color: var(--color-primary-700, #047857);
+  border-color: var(--color-primary-600, #059669);
+}
+
+/* ─── Ghost ──────────────────────────────────────────────────────────────── */
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text-primary, #1e293b);
+  border-color: transparent;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: var(--color-background-secondary, #f1f5f9);
+}
+
+/* ─── Danger ─────────────────────────────────────────────────────────────── */
+
+.btn--danger {
+  background: var(--color-red-500, #ef4444);
+  color: #ffffff;
+  border-color: var(--color-red-500, #ef4444);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: var(--color-red-600, #dc2626);
+  border-color: var(--color-red-600, #dc2626);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   States
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Disabled ───────────────────────────────────────────────────────────── */
+
+.btn--disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── Loading ────────────────────────────────────────────────────────────── */
+
+.btn--loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.btn--loading .btn__content {
+  opacity: 0.6;
+}
+
+.btn__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .btn {
+    font-size: 0.875rem;
+  }
+
+  .btn--lg {
+    font-size: 1rem;
+  }
+}
