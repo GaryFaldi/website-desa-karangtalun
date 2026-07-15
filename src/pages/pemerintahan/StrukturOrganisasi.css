@@ -1,0 +1,294 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Struktur Organisasi Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.struktur-organisasi {
+  min-height: 100vh;
+  background: var(--color-background-primary, #ffffff);
+}
+
+.struktur-org__content {
+  padding-block: var(--spacing-section, 3rem);
+}
+
+/* ─── Intro Section ─────────────────────────────────────────────────────── */
+.struktur-org__intro {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: var(--spacing-section, 3rem);
+  text-align: center;
+}
+
+.struktur-org__intro-text {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary, #475569);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Organization Chart (Bagan Organisasi)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg, 2rem);
+  padding: var(--spacing-xl, 3rem) var(--spacing-md, 1rem);
+  background: var(--color-background-secondary, #f8fafc);
+  border-radius: var(--radius-lg, 12px);
+  margin-bottom: var(--spacing-xl, 3rem);
+}
+
+/* ─── Organization Level (Row) ──────────────────────────────────────────── */
+.org-level {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-xl, 3rem);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.org-level--1,
+.org-level--2 {
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.org-level--3 {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.org-level--4 {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Organization Card ─────────────────────────────────────────────────── */
+.org-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-md, 1rem) var(--spacing-lg, 1.5rem);
+  background: #ffffff;
+  border: 2px solid var(--color-border-light, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  min-width: 240px;
+}
+
+.org-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Variant: Kepala Desa */
+.org-card--kades {
+  border-color: var(--color-primary-500, #10b981);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+/* Variant: Sekretaris Desa */
+.org-card--sekdes {
+  border-color: var(--color-primary-400, #34d399);
+}
+
+/* Variant: Kepala Urusan */
+.org-card--kaur {
+  border-color: var(--color-blue-400, #60a5fa);
+}
+
+/* Variant: Kepala Seksi */
+.org-card--kasi {
+  border-color: var(--color-teal-400, #2dd4bf);
+}
+
+/* Variant: Kepala Dusun */
+.org-card--kadus {
+  min-width: 200px;
+  padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
+}
+
+/* ─── Card Elements ──────────────────────────────────────────────────────── */
+.org-card__icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.org-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.org-card__nama {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #1e293b);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.org-card__jabatan {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #64748b);
+  margin: 0.25rem 0 0 0;
+  line-height: 1.4;
+}
+
+/* ─── Subsection (Kaur / Kasi / Kadus Grouping) ───────────────────────── */
+.org-subsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md, 1rem);
+}
+
+.org-subsection__title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ─── Card Grid (untuk Kaur, Kasi, Kadus) ──────────────────────────────── */
+.org-card-grid {
+  display: grid;
+  gap: var(--spacing-md, 1rem);
+  width: 100%;
+}
+
+.org-card-grid--kaur,
+.org-card-grid--kasi {
+  grid-template-columns: 1fr;
+  max-width: 320px;
+}
+
+.org-card-grid--kadus {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  max-width: 1200px;
+  gap: var(--spacing-sm, 0.75rem);
+}
+
+/* ─── Connector Lines (Visual Hierarchy) ────────────────────────────────── */
+.org-connector {
+  background: var(--color-border-medium, #cbd5e1);
+}
+
+.org-connector--vertical {
+  width: 2px;
+  height: 24px;
+  margin-block: -0.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Info Note
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.struktur-org__note {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.note-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-lg, 1.5rem);
+  background: var(--color-background-info, #eff6ff);
+  border: 1px solid var(--color-border-info, #bfdbfe);
+  border-radius: var(--radius-md, 8px);
+}
+
+.note-card__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.note-card__content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #1e293b);
+  margin: 0 0 0.5rem 0;
+}
+
+.note-card__content p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #475569);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Responsive Design
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .struktur-org__content {
+    padding-block: var(--spacing-lg, 2rem);
+  }
+
+  .org-chart {
+    padding: var(--spacing-lg, 1.5rem) var(--spacing-sm, 0.75rem);
+  }
+
+  .org-level {
+    gap: var(--spacing-lg, 1.5rem);
+  }
+
+  .org-level--3 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .org-subsection {
+    width: 100%;
+  }
+
+  .org-card {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .org-card-grid--kaur,
+  .org-card-grid--kasi {
+    max-width: none;
+  }
+
+  .org-card-grid--kadus {
+    grid-template-columns: 1fr;
+  }
+
+  .org-card__nama {
+    font-size: 0.9375rem;
+  }
+
+  .org-card__jabatan {
+    font-size: 0.8125rem;
+  }
+
+  .note-card {
+    flex-direction: column;
+    padding: var(--spacing-md, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .org-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-md, 1rem);
+  }
+
+  .org-card__icon {
+    font-size: 1.5rem;
+  }
+
+  .struktur-org__intro-text {
+    font-size: 1rem;
+  }
+}

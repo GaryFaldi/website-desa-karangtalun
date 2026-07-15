@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import SEO from '../lib/seo'
 import './Beranda.css'
 
 
@@ -108,7 +108,7 @@ const LAYANAN = [
     id: 'wisata',
     icon: 'leaf',
     title: 'Potensi & Wisata',
-    desc: 'Peta wisata, kuliner lokal, dan UMKM unggulan setiap dusun.',
+    desc: 'Peta wisata, kuliner lokal, dan UMKM desa.',
     href: '/potensi-wisata/peta-wisata-kuliner',
     color: 'teal',
   },
@@ -116,7 +116,7 @@ const LAYANAN = [
     id: 'galeri',
     icon: 'camera',
     title: 'Galeri',
-    desc: 'Dokumentasi kegiatan desa dan momen penting dari seluruh dusun.',
+    desc: 'Dokumentasi kegiatan dan momen penting tingkat desa.',
     href: '/galeri/kegiatan-desa',
     color: 'amber',
   },
@@ -147,12 +147,14 @@ export const DUSUN_SLUGS = [
 
 // ─── Component ───────────────────────────────────────────────────────────────
 export default function Beranda() {
-  useEffect(() => {
-    document.title = 'Beranda — Desa Karangtalun'
-  }, [])
-
   return (
     <div className="beranda">
+      {/* SEO Meta Tags */}
+      <SEO 
+        title="Beranda"
+        description="Portal resmi Pemerintahan Desa Karangtalun, Kabupaten Magelang. Informasi pelayanan publik, profil wilayah, dan potensi dusun."
+        image="/assets/hero-desa.jpg"
+      />
 
       {/* ── Hero ── */}
       <section className="hero" aria-label="Sambutan">
