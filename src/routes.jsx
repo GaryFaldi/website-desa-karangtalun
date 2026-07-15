@@ -14,6 +14,8 @@ import Beranda from './pages/Beranda'
 import Overview from './pages/profil-desa/Overview'
 import Dusun from './pages/profil-desa/Dusun'
 import StrukturOrganisasi from './pages/pemerintahan/StrukturOrganisasi'
+import StatistikDesa from './pages/pemerintahan/StatistikDesa'
+import StatistikDusun from './pages/pemerintahan/StatistikDusun'
 import FasilitasUmum from './pages/peta-lokasi/FasilitasUmum'
 
 // Placeholder sementara — ganti dengan import halaman nyata satu per satu
@@ -49,8 +51,8 @@ export const routes = [
 
       // Pemerintahan
       { path: '/pemerintahan/struktur-organisasi', element: <StrukturOrganisasi /> },
-      { path: '/pemerintahan/statistik-desa',      element: <Placeholder title="Statistik Kependudukan Desa" /> },
-      { path: '/pemerintahan/statistik-dusun',     element: <Placeholder title="Statistik Kependudukan Dusun" /> },
+      { path: '/pemerintahan/statistik-desa',      element: <StatistikDesa /> },
+      { path: '/pemerintahan/statistik-dusun',     element: <StatistikDusun /> },
 
       // Potensi & Wisata
       { path: '/potensi-wisata/peta-wisata-kuliner', element: <Placeholder title="Peta Wisata & Kuliner" /> },
