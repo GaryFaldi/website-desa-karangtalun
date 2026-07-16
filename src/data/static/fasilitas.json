@@ -1,0 +1,212 @@
+[
+  {
+    "id": "fasilitas-1",
+    "nama": "Masjid Al-Ikhsan",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid yang menjadi pusat kegiatan ibadah dan aktivitas keagamaan masyarakat Dusun Dangkel.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.647254057496377,
+    "lng": 110.26621323799743
+  },
+  {
+    "id": "fasilitas-2",
+    "nama": "Masjid Al Muttaqin Dangkel",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid yang melayani kebutuhan ibadah harian serta kegiatan keagamaan masyarakat sekitar.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.64742267424303,
+    "lng": 110.26875237106083
+  },
+  {
+    "id": "fasilitas-3",
+    "nama": "Masjid Baitus Salam",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid yang menjadi tempat pelaksanaan salat berjamaah dan kegiatan sosial keagamaan warga Jampiroso.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Jampiroso, Gesikan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.651134700192332,
+    "lng": 110.27116009892082
+  },
+  {
+    "id": "fasilitas-4",
+    "nama": "Musholla Jampiroso",
+    "kategori": "Ibadah",
+    "deskripsi": "Musholla yang digunakan masyarakat sekitar untuk ibadah harian dan kegiatan keagamaan.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Gesikan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.651296404217296,
+    "lng": 110.27273330255619
+  },
+  {
+    "id": "fasilitas-5",
+    "nama": "Mushola An Nur",
+    "kategori": "Ibadah",
+    "deskripsi": "Musholla yang menjadi sarana ibadah dan pembinaan keagamaan masyarakat setempat.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Gesikan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.648980122190786,
+    "lng": 110.27474802970188
+  },
+  {
+    "id": "fasilitas-6",
+    "nama": "Masjid Al Mukarrom",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid yang menjadi pusat kegiatan keagamaan masyarakat Dusun Jangkang.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Jangkang, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.6551302228102465,
+    "lng": 110.26676971020142
+  },
+  {
+    "id": "fasilitas-7",
+    "nama": "Masjid Al Muttaqin",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid yang digunakan masyarakat sekitar sebagai tempat ibadah dan kegiatan kemasyarakatan.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Karang Luar, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.657286730548056,
+    "lng": 110.26717265563056
+  },
+  {
+    "id": "fasilitas-8",
+    "nama": "Masjid Jami' Al-Hidayah",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid jami' yang menjadi tempat penyelenggaraan ibadah berjamaah dan kegiatan keagamaan warga.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.656807507522753,
+    "lng": 110.27829394945053
+  },
+  {
+    "id": "fasilitas-9",
+    "nama": "Mushola Al Hidayah",
+    "kategori": "Ibadah",
+    "deskripsi": "Musholla yang melayani kebutuhan ibadah masyarakat Dusun Selingan.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.660561406613508,
+    "lng": 110.26797854652902
+  },
+  {
+    "id": "fasilitas-10",
+    "nama": "Masjid Al Falah",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid yang menjadi pusat kegiatan ibadah masyarakat Dusun Jambon.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Jambon, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.660002317359438,
+    "lng": 110.26926797190228
+  },
+  {
+    "id": "fasilitas-11",
+    "nama": "Musholla Al-Barokah",
+    "kategori": "Ibadah",
+    "deskripsi": "Musholla yang digunakan untuk pelaksanaan ibadah harian dan kegiatan keagamaan masyarakat.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Karang Talun 2, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.662797756319082,
+    "lng": 110.27063798630611
+  },
+  {
+    "id": "fasilitas-12",
+    "nama": "Masjid Darul Falah",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid yang menjadi pusat aktivitas ibadah dan pembinaan keagamaan masyarakat Karangtalun.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Karang Talun, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.663995795958582,
+    "lng": 110.27233035710847
+  },
+  {
+    "id": "fasilitas-13",
+    "nama": "Musholla Tarbiyatul Fataa",
+    "kategori": "Ibadah",
+    "deskripsi": "Musholla yang digunakan sebagai tempat ibadah sekaligus pembelajaran keagamaan masyarakat.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Karang Talun, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.664395141756005,
+    "lng": 110.27112152082108
+  },
+  {
+    "id": "fasilitas-14",
+    "nama": "Masjid Jami'ul Muhtadin",
+    "kategori": "Ibadah",
+    "deskripsi": "Masjid jami' yang menjadi pusat pelaksanaan salat Jumat dan kegiatan keagamaan masyarakat Selingan.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.667430157574141,
+    "lng": 110.27015445179114
+  },
+  {
+    "id": "fasilitas-15",
+    "nama": "SD Negeri Karangtalun 1",
+    "kategori": "Pendidikan",
+    "deskripsi": "Sekolah dasar negeri yang melayani pendidikan dasar bagi anak-anak di wilayah Karangtalun.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Jampiroso, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.6504619637784215,
+    "lng": 110.27430117075772
+  },
+  {
+    "id": "fasilitas-16",
+    "nama": "RA Muslimat NU Karangtalun 2",
+    "kategori": "Pendidikan",
+    "deskripsi": "Lembaga pendidikan anak usia dini berbasis pendidikan Islam di Karangtalun.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Baran, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.659138676908314,
+    "lng": 110.27867853587004
+  },
+  {
+    "id": "fasilitas-17",
+    "nama": "PAUDQu Al Barokah",
+    "kategori": "Pendidikan",
+    "deskripsi": "Lembaga pendidikan usia dini yang berfokus pada pembelajaran dasar dan pendidikan Al-Qur'an.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Jl. Joho, Karang Talun 2, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
+    "lat": -7.6646001079355095,
+    "lng": 110.2709029964955
+  },
+  {
+    "id": "fasilitas-18",
+    "nama": "TK ABA Karangtalun 2",
+    "kategori": "Pendidikan",
+    "deskripsi": "Taman Kanak-Kanak yang menyediakan pendidikan anak usia dini di wilayah Karangtalun.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.6651598778718935,
+    "lng": 110.2723305272167
+  },
+  {
+    "id": "fasilitas-19",
+    "nama": "SD Negeri Karangtalun 2",
+    "kategori": "Pendidikan",
+    "deskripsi": "Sekolah dasar negeri yang memberikan layanan pendidikan dasar bagi masyarakat Desa Karangtalun.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Karang Talun, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.665275965571898,
+    "lng": 110.27213530332524
+  },
+  {
+    "id": "fasilitas-20",
+    "nama": "Kantor Kepala Desa Karangtalun",
+    "kategori": "Pemerintahan",
+    "deskripsi": "Kantor pemerintahan desa yang menjadi pusat pelayanan administrasi dan kegiatan pemerintahan Desa Karangtalun.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Jangkang, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.656747494369523,
+    "lng": 110.26689375099511
+  },
+  {
+    "id": "fasilitas-21",
+    "nama": "Balai Desa Karangtalun",
+    "kategori": "Pemerintahan",
+    "deskripsi": "Balai desa yang digunakan sebagai pusat kegiatan pemerintahan, musyawarah, dan pelayanan masyarakat.",
+    "gambar": "/images/fasilitas/default.jpg",
+    "alamat": "Jangkang, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "lat": -7.656763013281493,
+    "lng": 110.26676065355207
+  }
+]

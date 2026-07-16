@@ -1,0 +1,599 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+.peta-page {
+  --color-primary: #1e7145;
+  --color-primary-dark: #14532d;
+  --color-primary-light: #4caf6d;
+  --color-primary-soft: #eaf6ee;
+  --color-white: #ffffff;
+  --color-gray-bg: #f4f6f5;
+  --color-gray-border: #e2e8e4;
+  --color-text: #1f2a24;
+  --color-text-muted: #5b6b62;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 2px 10px rgba(20, 40, 30, 0.08);
+  --shadow-md: 0 10px 28px rgba(20, 40, 30, 0.14);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+
+  color: var(--color-text);
+  font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================================================
+   Page layout
+   ========================================================================== */
+.peta-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.peta-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.peta-page__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  color: var(--color-primary-dark);
+}
+
+.peta-page__heading h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.peta-page__heading p {
+  margin: var(--space-1) 0 0;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Map shell
+   ========================================================================== */
+.map-shell {
+  position: relative;
+  width: 100%;
+  height: 78vh;
+  min-height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-border);
+  background: var(--color-gray-bg);
+}
+
+.map-shell:fullscreen {
+  height: 100vh;
+  border-radius: 0;
+}
+
+.interactive-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-shell__overlay {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.map-shell__overlay > * {
+  pointer-events: auto;
+}
+
+.map-shell__overlay--top-left {
+  top: var(--space-4);
+  left: var(--space-4);
+  max-width: min(320px, 70vw);
+}
+
+.map-shell__overlay--top-right {
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.map-shell__overlay--bottom-left {
+  bottom: var(--space-4);
+  left: var(--space-4);
+}
+
+.map-shell__overlay--bottom-right {
+  bottom: var(--space-4);
+  right: var(--space-4);
+}
+
+/* ==========================================================================
+   Shared "card" look for floating panels
+   ========================================================================== */
+.search-box,
+.layer-control,
+.map-legend {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-border);
+}
+
+/* ==========================================================================
+   Search box
+   ========================================================================== */
+.search-box {
+  width: 300px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.search-box__input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.search-box__input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: transparent;
+}
+
+.search-box__clear {
+  border: none;
+  background: var(--color-gray-bg);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: background 0.15s ease;
+}
+
+.search-box__clear:hover {
+  background: var(--color-gray-border);
+}
+
+.search-box__results {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-1) 0;
+  border-top: 1px solid var(--color-gray-border);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.search-box__results button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.search-box__results button:hover {
+  background: var(--color-primary-soft);
+}
+
+.search-box__result-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.search-box__result-category {
+  font-size: 0.74rem;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Layer control
+   ========================================================================== */
+.layer-control {
+  width: 200px;
+  padding: var(--space-3) var(--space-4);
+}
+
+.layer-control__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-2);
+}
+
+.layer-control__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.layer-control__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.layer-control__label input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.layer-control__checkbox {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 1.5px solid var(--color-gray-border);
+  display: inline-block;
+  position: relative;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.layer-control__label input:checked + .layer-control__checkbox {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.layer-control__label input:checked + .layer-control__checkbox::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   Legend
+   ========================================================================== */
+.map-legend {
+  width: 190px;
+  padding: var(--space-3) var(--space-4);
+}
+
+.map-legend__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.map-legend__list {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.map-legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.82rem;
+  color: var(--color-text);
+}
+
+.map-legend__swatch {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background: var(--swatch-color);
+}
+
+.map-legend__swatch--polygon {
+  border-radius: 3px;
+  opacity: 0.85;
+}
+
+.map-legend__swatch--point {
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   Floating buttons
+   ========================================================================== */
+.floating-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.floating-buttons__btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gray-border);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-primary-dark);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.floating-buttons__btn:hover {
+  background: var(--color-primary-soft);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Custom marker pin (dipakai oleh utils/mapIcons.jsx)
+   ========================================================================== */
+.map-pin-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.map-pin {
+  --pin-color: #1e7145;
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 38px;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.25));
+}
+
+.map-pin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--pin-color);
+  border: 2px solid var(--color-white);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+
+.map-pin__icon {
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  display: flex;
+}
+
+/* ==========================================================================
+   Popups (Leaflet default popup + konten kustom)
+   ========================================================================== */
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  width: 240px !important;
+}
+
+.geo-popup {
+  padding: var(--space-3) var(--space-4);
+}
+
+.geo-popup__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.geo-popup__title {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.geo-popup__desc {
+  margin: 0 0 var(--space-2);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.geo-popup__meta {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.geo-popup__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--color-text);
+}
+
+.marker-popup__image {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.marker-popup__body {
+  padding: var(--space-3) var(--space-4);
+}
+
+.marker-popup__category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.marker-popup__title {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.marker-popup__desc {
+  margin: 0 0 var(--space-2);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.marker-popup__meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.marker-popup__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* Tablet: legenda & panel mengecil */
+@media (max-width: 1024px) {
+  .map-shell {
+    height: 70vh;
+  }
+
+  .layer-control,
+  .map-legend {
+    width: 170px;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .search-box {
+    width: 240px;
+  }
+}
+
+/* Mobile: legenda collapse, peta tetap penuh layar */
+@media (max-width: 640px) {
+  .peta-page {
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+
+  .peta-page__heading h1 {
+    font-size: 1.25rem;
+  }
+
+  .peta-page__heading p {
+    font-size: 0.82rem;
+  }
+
+  .map-shell {
+    height: 72vh;
+    min-height: 420px;
+    border-radius: var(--radius-md);
+  }
+
+  .map-shell__overlay--top-left {
+    top: var(--space-2);
+    left: var(--space-2);
+    max-width: calc(100vw - 100px);
+  }
+
+  .map-shell__overlay--top-right {
+    top: var(--space-2);
+    right: var(--space-2);
+  }
+
+  .map-shell__overlay--bottom-left {
+    bottom: var(--space-2);
+    left: var(--space-2);
+  }
+
+  .map-shell__overlay--bottom-right {
+    bottom: var(--space-2);
+    right: var(--space-2);
+  }
+
+  .search-box {
+    width: 190px;
+  }
+
+  .layer-control {
+    width: 44px;
+    padding: var(--space-2);
+    overflow: hidden;
+  }
+
+  .layer-control__header span,
+  .layer-control__label span:last-child {
+    display: none;
+  }
+
+  .map-legend {
+    width: 44px;
+    padding: var(--space-2);
+  }
+
+  .map-legend__header span:first-child {
+    display: none;
+  }
+
+  .map-legend__list {
+    display: none;
+  }
+}

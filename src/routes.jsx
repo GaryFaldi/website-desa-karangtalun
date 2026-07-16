@@ -13,8 +13,7 @@ import Layout from './components/layout/Layout'
 import Beranda from './pages/Beranda'
 import Overview from './pages/profil-desa/Overview'
 import Dusun from './pages/profil-desa/Dusun'
-import StrukturOrganisasi from './pages/pemerintahan/StrukturOrganisasi'
-import FasilitasUmum from './pages/peta-lokasi/FasilitasUmum'
+import PetaInteraktif from './pages/peta-lokasi/PetaInteraktif'
 
 // Placeholder sementara — ganti dengan import halaman nyata satu per satu
 function Placeholder({ title }) {
@@ -61,8 +60,8 @@ export const routes = [
       { path: '/galeri/dusun/:slug',    element: <Placeholder title="Dokumentasi Dusun" /> },
 
       // Peta Lokasi
-      { path: '/peta-lokasi/peta-interaktif', element: <Placeholder title="Peta Interaktif" /> },
-      { path: '/peta-lokasi/fasilitas-umum',  element: <FasilitasUmum /> },
+      { path: '/peta-lokasi/peta-interaktif', element: <PetaInteraktif /> },
+      { path: '/peta-lokasi/fasilitas-umum',  element: <Placeholder title="Fasilitas Umum" /> },
 
     ],
   },
