@@ -63,8 +63,8 @@ export const routes = [
       { path: '/galeri/dusun/:slug',    element: <Placeholder title="Dokumentasi Dusun" /> },
 
       // Peta Lokasi
-      { path: '/peta-lokasi/peta-interaktif', element: <Placeholder title="Peta Interaktif" /> },
-      { path: '/peta-lokasi/fasilitas-umum',  element: <FasilitasUmum /> },
+      { path: '/peta-lokasi/peta-interaktif', element: <PetaInteraktif /> },
+      { path: '/peta-lokasi/fasilitas-umum',  element: <Placeholder title="Fasilitas Umum" /> },
 
     ],
   },
