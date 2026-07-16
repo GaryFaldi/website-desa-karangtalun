@@ -3,22 +3,22 @@
     "id": "wisata-1",
     "nama": "Bukit Pandang Karangtalun",
     "kategori": "Wisata Alam",
-    "deskripsi": "Spot ketinggian dengan pemandangan hamparan sawah dan perbukitan, populer untuk menikmati matahari terbit.",
+    "deskripsi": "Spot perbukitan yang menawarkan panorama persawahan, perkampungan, dan kawasan sekitar Desa Karangtalun. Cocok untuk menikmati suasana pagi maupun sore hari.",
     "gambar": "/images/wisata/bukit-pandang.jpg",
-    "alamat": "Dusun Karangtalun III",
+    "alamat": "Dusun Jangkang, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
     "kontak": "0821-9988-7766",
-    "lat": -7.4076,
-    "lng": 110.2069
+    "lat": -7.654850,
+    "lng": 110.268350
   },
   {
     "id": "wisata-2",
     "nama": "Curug Sewatu",
     "kategori": "Wisata Alam",
-    "deskripsi": "Air terjun alami dengan akses jalan setapak, menjadi destinasi favorit wisatawan lokal di akhir pekan.",
+    "deskripsi": "Air terjun alami dengan suasana yang masih asri dan dikelilingi vegetasi hijau, menjadi salah satu destinasi wisata alam yang menarik untuk dikunjungi.",
     "gambar": "/images/wisata/curug-sewatu.jpg",
-    "alamat": "Dusun Karangtalun III",
+    "alamat": "Dusun Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
     "kontak": "0821-1122-3399",
-    "lat": -7.4061,
-    "lng": 110.2093
+    "lat": -7.666250,
+    "lng": 110.273850
   }
 ]

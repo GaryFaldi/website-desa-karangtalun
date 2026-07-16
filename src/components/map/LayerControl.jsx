@@ -2,7 +2,6 @@ import { Layers, Store, Camera, Building2, Shapes, Waypoints } from "lucide-reac
 
 const LAYER_OPTIONS = [
   { key: "batasDesa", label: "Batas Desa", Icon: Shapes },
-  { key: "batasDusun", label: "Batas Dusun", Icon: Waypoints },
   { key: "umkm", label: "UMKM", Icon: Store },
   { key: "wisata", label: "Wisata", Icon: Camera },
   { key: "fasilitas", label: "Fasilitas Umum", Icon: Building2 },

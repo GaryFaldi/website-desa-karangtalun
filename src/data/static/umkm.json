@@ -5,10 +5,10 @@
     "kategori": "Kuliner",
     "deskripsi": "Warung makan rumahan dengan menu masakan tradisional khas Karangtalun, buka setiap hari.",
     "gambar": "/images/umkm/warung-bu-sri.jpg",
-    "alamat": "RT 02 / RW 01, Dusun Karangtalun I",
+    "alamat": "Dusun Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
     "kontak": "0812-3456-7891",
-    "lat": -7.4123,
-    "lng": 110.1987
+    "lat": -7.648150,
+    "lng": 110.267450
   },
   {
     "id": "umkm-2",
@@ -16,10 +16,10 @@
     "kategori": "Kuliner",
     "deskripsi": "Produsen keripik singkong dengan berbagai varian rasa, hasil produksi kelompok UMKM setempat.",
     "gambar": "/images/umkm/keripik-makmur-jaya.jpg",
-    "alamat": "RT 04 / RW 02, Dusun Karangtalun II",
+    "alamat": "Dusun Gesikan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
     "kontak": "0813-2233-4455",
-    "lat": -7.4145,
-    "lng": 110.2015
+    "lat": -7.651850,
+    "lng": 110.272050
   },
   {
     "id": "umkm-3",
@@ -27,9 +27,9 @@
     "kategori": "Kerajinan",
     "deskripsi": "Sentra kerajinan anyaman bambu berupa peralatan rumah tangga dan cendera mata.",
     "gambar": "/images/umkm/bambu-karya-lestari.jpg",
-    "alamat": "RT 01 / RW 03, Dusun Karangtalun III",
+    "alamat": "Dusun Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
     "kontak": "0857-1122-3344",
-    "lat": -7.4098,
-    "lng": 110.2041
+    "lat": -7.664250,
+    "lng": 110.271450
   }
 ]

@@ -4,7 +4,6 @@ import { CATEGORY_COLORS, CATEGORY_LABELS } from "../../utils/mapIcons.jsx";
 
 const LEGEND_ITEMS = [
   { type: "polygon", label: "Batas Desa", color: "#1e7145" },
-  { type: "polygon", label: "Batas Dusun", color: "#4caf6d" },
   { type: "point", label: CATEGORY_LABELS.umkm, color: CATEGORY_COLORS.umkm },
   { type: "point", label: CATEGORY_LABELS.wisata, color: CATEGORY_COLORS.wisata },
   { type: "point", label: CATEGORY_LABELS.fasilitas, color: CATEGORY_COLORS.fasilitas },

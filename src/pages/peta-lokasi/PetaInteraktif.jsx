@@ -14,7 +14,6 @@ import { buildSearchIndex } from "../../utils/searchIndex.js";
 import umkmData from "../../data/static/umkm.json";
 import wisataData from "../../data/static/wisata.json";
 import fasilitasData from "../../data/static/fasilitas.json";
-import dusunData from "../../data/static/dusun.json";
 
 import "../../styles/PetaInteraktif.css";
 

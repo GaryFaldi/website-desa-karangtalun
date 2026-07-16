@@ -5,40 +5,28 @@ import "leaflet/dist/leaflet.css";
 
 import MarkerPopup from "./MarkerPopup.jsx";
 import { createCategoryIcon, CATEGORY_LABELS } from "../../utils/mapIcons.jsx";
-import { buildDesaPopupHtml, buildDusunPopupHtml } from "../../utils/geoPopup.js";
+import { buildDesaPopupHtml } from "../../utils/geoPopup.js";
 
-import dusunData from "../../data/static/dusun.json";
 import umkmData from "../../data/static/umkm.json";
 import wisataData from "../../data/static/wisata.json";
 import fasilitasData from "../../data/static/fasilitas.json";
 
-const DESA_GEOJSON_URL = "public/maps/desa.geojson";
-const DUSUN_GEOJSON_URL = "public/maps/dusun.geojson";
+const DESA_GEOJSON_URL = "/maps/karangtalun.geojson";
 
-const DEFAULT_CENTER = [-7.4123, 110.2015];
-const DEFAULT_ZOOM = 14;
+const DEFAULT_CENTER = [-7.6570, 110.2710];
+const DEFAULT_ZOOM = 15;
 
 const desaBaseStyle = {
   color: "#1e7145",
-  weight: 3,
-  fillColor: "#1e7145",
-  fillOpacity: 0.08,
+  weight: 2.5,
+  opacity: 1,
+  fillColor: "#2e7d32",
+  fillOpacity: 0.15,
 };
 
-const dusunBaseStyle = {
-  color: "#4caf6d",
-  weight: 2,
-  fillColor: "#4caf6d",
-  fillOpacity: 0.18,
-};
 
-const dusunHoverStyle = {
-  weight: 3,
-  fillOpacity: 0.38,
-};
 
 /** Lookup cepat data dusun berdasarkan id, dipakai saat membangun popup. */
-const dusunLookup = Object.fromEntries(dusunData.map((item) => [item.id, item]));
 
 /**
  * Komponen inti peta. Mengelola basemap, layer batas wilayah, dan marker.
@@ -49,36 +37,28 @@ const dusunLookup = Object.fromEntries(dusunData.map((item) => [item.id, item]))
  */
 export default function InteractiveMap({ mapRef, layers, onBoundsReady }) {
   const [desaGeoJson, setDesaGeoJson] = useState(null);
-  const [dusunGeoJson, setDusunGeoJson] = useState(null);
 
   // Ambil data batas wilayah dari folder public/maps (bukan di-import langsung
   // karena file .geojson besar sebaiknya diperlakukan sebagai aset statis).
   useEffect(() => {
+    console.log("USE EFFECT JALAN");
     let isMounted = true;
 
     fetch(DESA_GEOJSON_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!isMounted) return;
-        setDesaGeoJson(data);
-
-        const bounds = L.geoJSON(data).getBounds();
-        onBoundsReady(bounds);
-
-        // Fit bounds otomatis saat halaman pertama dibuka.
-        if (mapRef.current) {
-          mapRef.current.fitBounds(bounds, { padding: [32, 32] });
-        }
+      .then((res) => {
+        console.log("STATUS:", res.status);
+        console.log("URL:", res.url);
+        return res.json();
       })
-      .catch(() => {
-        // Gagal memuat batas desa: peta tetap tampil dengan center default.
-      });
+      .then((data) => {
+        console.log("DATA:", data);
 
-    fetch(DUSUN_GEOJSON_URL)
-      .then((res) => res.json())
-      .then((data) => isMounted && setDusunGeoJson(data))
-      .catch(() => {
-        // Gagal memuat batas dusun: layer dusun akan disembunyikan.
+        if (!isMounted) return;
+
+        setDesaGeoJson(data);
+      })
+      .catch((err) => {
+        console.error("ERROR:", err);
       });
 
     return () => {
@@ -88,19 +68,38 @@ export default function InteractiveMap({ mapRef, layers, onBoundsReady }) {
   }, []);
 
   const handleEachDesaFeature = (feature, layer) => {
-    layer.bindPopup(buildDesaPopupHtml(feature.properties));
-    layer.on({
-      mouseover: (e) => e.target.setStyle({ fillOpacity: 0.18 }),
-      mouseout: (e) => e.target.setStyle(desaBaseStyle),
-    });
-  };
+    const p = feature.properties;
 
-  const handleEachDusunFeature = (feature, layer) => {
-    const detail = dusunLookup[feature.properties?.id];
-    layer.bindPopup(buildDusunPopupHtml(detail));
+    layer.bindPopup(`
+      <div style="min-width:220px">
+        <h3 style="margin:0 0 8px;font-size:16px;">
+          ${p.NAMOBJ}
+        </h3>
+
+        <table style="font-size:13px">
+          <tr>
+            <td><b>Kecamatan</b></td>
+            <td>${p.WADMKC}</td>
+          </tr>
+          <tr>
+            <td><b>Kabupaten</b></td>
+            <td>${p.WADMKK}</td>
+          </tr>
+          <tr>
+            <td><b>Provinsi</b></td>
+            <td>${p.WADMPR}</td>
+          </tr>
+          <tr>
+            <td><b>Kode Desa</b></td>
+            <td>${p.KDEPUM}</td>
+          </tr>
+        </table>
+      </div>
+    `);
+
     layer.on({
-      mouseover: (e) => e.target.setStyle(dusunHoverStyle),
-      mouseout: (e) => e.target.setStyle(dusunBaseStyle),
+      mouseover: e => e.target.setStyle({ fillOpacity: 0.25 }),
+      mouseout: e => e.target.setStyle(desaBaseStyle),
     });
   };
 
@@ -124,14 +123,6 @@ export default function InteractiveMap({ mapRef, layers, onBoundsReady }) {
           data={desaGeoJson}
           style={desaBaseStyle}
           onEachFeature={handleEachDesaFeature}
-        />
-      )}
-
-      {layers.batasDusun && dusunGeoJson && (
-        <GeoJSON
-          data={dusunGeoJson}
-          style={dusunBaseStyle}
-          onEachFeature={handleEachDusunFeature}
         />
       )}
 
