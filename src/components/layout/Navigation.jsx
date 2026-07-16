@@ -16,22 +16,13 @@ const NAV_ITEMS = [
     children: [
       { label: 'Struktur Organisasi', href: '/pemerintahan/struktur-organisasi' },
       { label: 'Statistik Desa',      href: '/pemerintahan/statistik-desa' },
-      { label: 'Statistik Dusun',     href: '/pemerintahan/statistik-dusun' },
     ],
   },
   {
-    label: 'Potensi & Wisata',
-    children: [
-      { label: 'Peta Wisata & Kuliner', href: '/potensi-wisata/peta-wisata-kuliner' },
-      { label: 'UMKM',           href: '/potensi-wisata/umkm/jampiroso' },
-    ],
+    label: 'Potensi Desa', href: '/potensi-desa/overview'
   },
   {
-    label: 'Galeri',
-    children: [
-      { label: 'Kegiatan Desa',    href: '/galeri/kegiatan-desa' },
-      { label: 'Dokumentasi', href: '/galeri/dusun/jampiroso' },
-    ],
+    label: 'Galeri', href: '/galeri/overview'
   },
   {
     label: 'Peta Lokasi',
