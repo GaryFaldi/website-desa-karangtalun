@@ -66,7 +66,7 @@ export const routes = [
 
       // Peta Lokasi
       { path: '/peta-lokasi/peta-interaktif', element: <PetaInteraktif /> },
-      { path: '/peta-lokasi/fasilitas-umum',  element: <Placeholder title="Fasilitas Umum" /> },
+      { path: '/peta-lokasi/fasilitas-umum',  element: <FasilitasUmum /> },
 
     ],
   },
