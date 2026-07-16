@@ -59,16 +59,16 @@ export function getDusunBySlug(slug) {
  * Dipakai untuk validasi atau pembuatan skeleton di UI
  */
 export const ALL_DUSUN_SLUGS = [
-  { slug: 'baran', label: 'Baran' },
-  { slug: 'dangkel-kulon', label: 'Dangkel Kulon' },
-  { slug: 'dangkel-wetan', label: 'Dangkel Wetan' },
-  { slug: 'jambon', label: 'Jambon' },
-  { slug: 'jampiroso', label: 'Jampiroso' },
-  { slug: 'jangkang', label: 'Jangkang' },
-  { slug: 'jangkang-a', label: 'Jangkang A' },
-  { slug: 'jangkang-b', label: 'Jangkang B' },
-  { slug: 'joho', label: 'Joho' },
-  { slug: 'kajoran', label: 'Kajoran' },
-  { slug: 'karangtalun', label: 'Karangtalun' },
-  { slug: 'selingan', label: 'Selingan' },
+  { slug: 'baran',          label: 'Baran' },
+  { slug: 'dangkel-kulon',  label: 'Dangkel Kulon' },
+  { slug: 'dangkel-wetan',  label: 'Dangkel Wetan' },
+  { slug: 'jambon',         label: 'Jambon' },
+  { slug: 'jampiroso',      label: 'Jampiroso' },
+  { slug: 'jangkang',       label: 'Jangkang' },
+  { slug: 'jangkang-a',     label: 'Jangkang A' },
+  { slug: 'jangkang-b',     label: 'Jangkang B' },
+  { slug: 'joho',           label: 'Joho' },
+  { slug: 'kajoran',        label: 'Kajoran' },
+  { slug: 'karangtalun',    label: 'Karangtalun' },
+  { slug: 'selingan',       label: 'Selingan' },
 ]

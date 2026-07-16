@@ -7,10 +7,14 @@ const iconImages = import.meta.glob('../assets/icons/*.{png,jpg,jpeg,svg}', { ea
 
 const IMAGE_ICONS = Object.fromEntries(
   Object.entries(iconImages).map(([path, mod]) => {
-    const fileName = path.match(/([^/]+)\.\w+$/)[1]
+    // Ekstrak nama file tanpa ekstensi — tanpa regex agar tidak ada masalah escaping
+    const lastSlash = Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\'))
+    const lastDot   = path.lastIndexOf('.')
+    const fileName  = path.substring(lastSlash + 1, lastDot > lastSlash ? lastDot : undefined)
     return [fileName, mod.default]
   })
 )
+
 
 
 const ICON_PATHS = {
@@ -81,8 +85,8 @@ function Icon({ name, className }) {
 // Ganti dengan data real dari src/data/static/desa.js saat konten tersedia
 
 const STATS = [
-  { icon: 'users-alt', value: '±1.200', label: 'Jiwa',            note: '*data sementara' },
-  { icon: 'family',      value: '±350',   label: 'Kepala Keluarga', note: '*data sementara' },
+  { icon: 'users-alt', value: '3.350', label: 'Jiwa',            note: 'per SID Desa 2024' },
+  { icon: 'family',      value: '1.110',  label: 'Kepala Keluarga', note: 'per SID Desa 2024' },
   { icon: 'house', value: '12',     label: 'Dusun',           note: '' },
   { icon: 'land-plot',    value: '—',      label: 'Luas Wilayah',    note: 'segera diperbarui' },
 ]

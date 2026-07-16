@@ -17,6 +17,7 @@ import StrukturOrganisasi from './pages/pemerintahan/StrukturOrganisasi'
 import StatistikDesa from './pages/pemerintahan/StatistikDesa'
 import StatistikDusun from './pages/pemerintahan/StatistikDusun'
 import FasilitasUmum from './pages/peta-lokasi/FasilitasUmum'
+import PetaInteraktif from './pages/peta-lokasi/PetaInteraktif'
 
 // Placeholder sementara — ganti dengan import halaman nyata satu per satu
 function Placeholder({ title }) {
