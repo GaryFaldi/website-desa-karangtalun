@@ -1,24 +1,35 @@
 [
   {
-    "id": "wisata-1",
-    "nama": "Bukit Pandang Karangtalun",
+    "id": "ChIJrRM7ALT1ei4RetI6tW4ZSsM",
+    "nama": "Ancol Wisata Alam",
     "kategori": "Wisata Alam",
-    "deskripsi": "Spot perbukitan yang menawarkan panorama persawahan, perkampungan, dan kawasan sekitar Desa Karangtalun. Cocok untuk menikmati suasana pagi maupun sore hari.",
-    "gambar": "/images/wisata/bukit-pandang.jpg",
-    "alamat": "Dusun Jangkang, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-    "kontak": "0821-9988-7766",
-    "lat": -7.654850,
-    "lng": 110.268350
+    "deskripsi": "Kawasan rekreasi alam yang menyajikan panorama aliran sungai dan pepohonan rindang. Tempat ini cocok digunakan untuk bersantai bersama keluarga sambil menikmati suasana sejuk alam pedesaan.",
+    "gambar": "/images/wisata/ancol-wisata-alam.jpg",
+    "alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "-",
+    "lat": -7.669850,
+    "lng": 110.272150
   },
   {
-    "id": "wisata-2",
-    "nama": "Curug Sewatu",
+    "id": "ChIJU1jTcP31ei4R-rZulrVYDak",
+    "nama": "Bendung Karangtalun",
     "kategori": "Wisata Alam",
-    "deskripsi": "Air terjun alami dengan suasana yang masih asri dan dikelilingi vegetasi hijau, menjadi salah satu destinasi wisata alam yang menarik untuk dikunjungi.",
-    "gambar": "/images/wisata/curug-sewatu.jpg",
-    "alamat": "Dusun Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-    "kontak": "0821-1122-3399",
-    "lat": -7.666250,
-    "lng": 110.273850
+    "deskripsi": "Area bendungan sungai bersejarah yang sering dikunjungi masyarakat sebagai spot wisata lokal. Pengunjung dapat bersantai menikmati pemandangan aliran air yang luas dengan latar asri.",
+    "gambar": "/images/wisata/bendung-karangtalun.jpg",
+    "alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "-",
+    "lat": -7.669550,
+    "lng": 110.272550
+  },
+  {
+    "id": "ChIJJUOmR-70ei4Riy94kACMLes",
+    "nama": "Bendung Ancol",
+    "kategori": "Wisata Alam",
+    "deskripsi": "Infrastruktur saluran pengairan (terhubung dengan Saluran Mataram) yang sekaligus menjadi tempat rekreasi terbuka. Pengunjung dapat menikmati udara segar di sekitar area bendungan secara gratis.",
+    "gambar": "/images/wisata/bendung-ancol.jpg",
+    "alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "-",
+    "lat": -7.669250,
+    "lng": 110.272450
   }
 ]
