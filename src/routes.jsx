@@ -55,11 +55,12 @@ export const routes = [
       { path: '/pemerintahan/statistik-desa',      element: <StatistikDesa /> },
       { path: '/pemerintahan/statistik-dusun',     element: <StatistikDusun /> },
 
-      // Potensi & Wisata
-      { path: '/potensi-wisata/peta-wisata-kuliner', element: <Placeholder title="Peta Wisata & Kuliner" /> },
-      { path: '/potensi-wisata/umkm/:slug',           element: <Placeholder title="UMKM Dusun" /> },
+      // Potensi Desa
+      { path: '/potensi-desa/overview', element: <Placeholder title="Potensi Desa" /> },
+      { path: '/potensi-desa/umkm/:slug', element: <Placeholder title="UMKM Dusun" /> },
 
       // Galeri
+      { path: '/galeri/overview',       element: <Placeholder title="Galeri Desa" /> },
       { path: '/galeri/kegiatan-desa',  element: <Placeholder title="Galeri Kegiatan Desa" /> },
       { path: '/galeri/dusun/:slug',    element: <Placeholder title="Dokumentasi Dusun" /> },
 

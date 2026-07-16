@@ -111,9 +111,9 @@ const LAYANAN = [
   {
     id: 'wisata',
     icon: 'leaf',
-    title: 'Potensi & Wisata',
-    desc: 'Peta wisata, kuliner lokal, dan UMKM desa.',
-    href: '/potensi-wisata/peta-wisata-kuliner',
+    title: 'Potensi Desa',
+    desc: 'Potensi unggulan, UMKM, dan kuliner lokal desa.',
+    href: '/potensi-desa/overview',
     color: 'teal',
   },
   {
@@ -121,7 +121,7 @@ const LAYANAN = [
     icon: 'camera',
     title: 'Galeri',
     desc: 'Dokumentasi kegiatan dan momen penting tingkat desa.',
-    href: '/galeri/kegiatan-desa',
+    href: '/galeri/overview',
     color: 'amber',
   },
   {

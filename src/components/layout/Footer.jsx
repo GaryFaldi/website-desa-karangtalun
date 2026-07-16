@@ -11,10 +11,10 @@ const FOOTER_LINKS = [
     ],
   },
   {
-    heading: 'Potensi & Wisata',
+    heading: 'Potensi Desa',
     links: [
-      { label: 'Peta Wisata & Kuliner', href: '/potensi-wisata/peta-wisata-kuliner' },
-      { label: 'Galeri Kegiatan',       href: '/galeri/kegiatan-desa' },
+      { label: 'Overview Potensi',      href: '/potensi-desa/overview' },
+      { label: 'Galeri Desa',           href: '/galeri/overview' },
       { label: 'Peta Interaktif',       href: '/peta-lokasi/peta-interaktif' },
       { label: 'Fasilitas Umum',        href: '/peta-lokasi/fasilitas-umum' },
     ],

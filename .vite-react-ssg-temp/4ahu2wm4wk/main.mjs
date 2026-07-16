@@ -43,10 +43,6 @@ var NAV_ITEMS = [
 				label: "Statistik Desa",
 				href: "/pemerintahan/statistik-desa"
 			},
-			{
-				label: "Statistik Dusun",
-				href: "/pemerintahan/statistik-dusun"
-			}
 		]
 	},
 	{
