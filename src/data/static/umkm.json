@@ -1,35 +1,68 @@
 [
   {
-    "id": "umkm-1",
-    "nama": "Warung Makan Bu Sri",
-    "kategori": "Kuliner",
-    "deskripsi": "Warung makan rumahan dengan menu masakan tradisional khas Karangtalun, buka setiap hari.",
-    "gambar": "/images/umkm/warung-bu-sri.jpg",
-    "alamat": "Dusun Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-    "kontak": "0812-3456-7891",
-    "lat": -7.648150,
-    "lng": 110.267450
+    "id": "ChIJf1pczDT1ei4ROcEVvgbJH2I",
+    "nama": "Warung Mbah Mun",
+    "kategori": "UMKM Warung",
+    "deskripsi": "Usaha warung lokal yang berlokasi di Dusun Dangkel, melayani kebutuhan harian dan makanan bagi warga sekitar dengan rating yang sangat baik.",
+    "gambar": "/images/umkm/warung-mbah-mun.jpg",
+    "alamat": "Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "-",
+    "lat": -7.669000,
+    "lng": 110.270000
   },
   {
-    "id": "umkm-2",
-    "nama": "Keripik Singkong Makmur Jaya",
-    "kategori": "Kuliner",
-    "deskripsi": "Produsen keripik singkong dengan berbagai varian rasa, hasil produksi kelompok UMKM setempat.",
-    "gambar": "/images/umkm/keripik-makmur-jaya.jpg",
-    "alamat": "Dusun Gesikan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-    "kontak": "0813-2233-4455",
-    "lat": -7.651850,
-    "lng": 110.272050
+    "id": "ChIJz3VX26H1ei4RGfujujrcAMc",
+    "nama": "Warung Mbak Sri",
+    "kategori": "UMKM Warung",
+    "deskripsi": "Warung yang buka sejak pagi hingga malam hari, menyediakan aneka kebutuhan pokok dan jajanan di area Dangkel.",
+    "gambar": "/images/umkm/warung-mbak-sri.jpg",
+    "alamat": "Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "-",
+    "lat": -7.668500,
+    "lng": 110.271000
   },
   {
-    "id": "umkm-3",
-    "nama": "Kerajinan Bambu Karya Lestari",
-    "kategori": "Kerajinan",
-    "deskripsi": "Sentra kerajinan anyaman bambu berupa peralatan rumah tangga dan cendera mata.",
-    "gambar": "/images/umkm/bambu-karya-lestari.jpg",
-    "alamat": "Dusun Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-    "kontak": "0857-1122-3344",
-    "lat": -7.664250,
-    "lng": 110.271450
+    "id": "ChIJ21Sc8eP0ei4RKvRtzeOg_tA",
+    "nama": "Kupat Tahu Kajoran",
+    "kategori": "UMKM Kuliner",
+    "deskripsi": "Warung makan khas Kupat Tahu yang berlokasi di wilayah Kajoran Karangtalun. Cocok untuk bersantap pada siang hingga malam hari.",
+    "gambar": "/images/umkm/kupat-tahu-kajoran.jpg",
+    "alamat": "Kajoran, Karangtalun 2, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "-",
+    "lat": -7.671000,
+    "lng": 110.274000
+  },
+  {
+    "id": "ChIJjVgzijD1ei4RbA4R-Wop5AQ",
+    "nama": "Toko kelontong Mas Petruk",
+    "kategori": "UMKM Toko Kelontong",
+    "deskripsi": "Toko yang menyediakan barang-barang kelontong dan kebutuhan sehari-hari bagi warga di dusun Jambon, Karangtalun. Buka setiap hari.",
+    "gambar": "/images/umkm/toko-mas-petruk.jpg",
+    "alamat": "Jambon, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "0857-2696-8013",
+    "lat": -7.667000,
+    "lng": 110.275000
+  },
+  {
+    "id": "ChIJdXVSUOX0ei4RAa0x73ZsbME",
+    "nama": "SRC FAMILY KARANGTALUN",
+    "kategori": "UMKM Toko Kelontong",
+    "deskripsi": "Toko kelontong modern yang tergabung dalam jaringan SRC, berlokasi di RT 1 RW 6 Karangtalun, menyediakan berbagai kebutuhan rumah tangga.",
+    "gambar": "/images/umkm/src-family.jpg",
+    "alamat": "RT.01/RW.06, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "0821-3811-1579",
+    "lat": -7.665000,
+    "lng": 110.272000
+  },
+  {
+    "id": "ChIJreeIlOb1ei4R6w-XNUN6aKs",
+    "nama": "Toko Mbak Ratna",
+    "kategori": "UMKM Toko Kelontong",
+    "deskripsi": "Toko kelontong rumahan yang melayani masyarakat di sekitar Karangtalun. Beroperasi dari pagi hingga malam hari.",
+    "gambar": "/images/umkm/toko-mbak-ratna.jpg",
+    "alamat": "Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+    "kontak": "-",
+    "lat": -7.666000,
+    "lng": 110.271500
   }
 ]
