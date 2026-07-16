@@ -34,36 +34,21 @@ var NAV_ITEMS = [
 	},
 	{
 		label: "Pemerintahan",
-		children: [
-			{
-				label: "Struktur Organisasi",
-				href: "/pemerintahan/struktur-organisasi"
-			},
-			{
-				label: "Statistik Desa",
-				href: "/pemerintahan/statistik-desa"
-			},
-		]
+		children: [{
+			label: "Struktur Organisasi",
+			href: "/pemerintahan/struktur-organisasi"
+		}, {
+			label: "Statistik Desa",
+			href: "/pemerintahan/statistik-desa"
+		}]
 	},
 	{
-		label: "Potensi & Wisata",
-		children: [{
-			label: "Peta Wisata & Kuliner",
-			href: "/potensi-wisata/peta-wisata-kuliner"
-		}, {
-			label: "UMKM",
-			href: "/potensi-wisata/umkm/jampiroso"
-		}]
+		label: "Potensi Desa",
+		href: "/potensi-desa/overview"
 	},
 	{
 		label: "Galeri",
-		children: [{
-			label: "Kegiatan Desa",
-			href: "/galeri/kegiatan-desa"
-		}, {
-			label: "Dokumentasi",
-			href: "/galeri/dusun/jampiroso"
-		}]
+		href: "/galeri/overview"
 	},
 	{
 		label: "Peta Lokasi",
@@ -225,15 +210,15 @@ var FOOTER_LINKS = [{
 		}
 	]
 }, {
-	heading: "Potensi & Wisata",
+	heading: "Potensi Desa",
 	links: [
 		{
-			label: "Peta Wisata & Kuliner",
-			href: "/potensi-wisata/peta-wisata-kuliner"
+			label: "Overview Potensi",
+			href: "/potensi-desa/overview"
 		},
 		{
-			label: "Galeri Kegiatan",
-			href: "/galeri/kegiatan-desa"
+			label: "Galeri Desa",
+			href: "/galeri/overview"
 		},
 		{
 			label: "Peta Interaktif",
@@ -557,9 +542,9 @@ var LAYANAN = [
 	{
 		id: "wisata",
 		icon: "leaf",
-		title: "Potensi & Wisata",
-		desc: "Peta wisata, kuliner lokal, dan UMKM desa.",
-		href: "/potensi-wisata/peta-wisata-kuliner",
+		title: "Potensi Desa",
+		desc: "Potensi unggulan, UMKM, dan kuliner lokal desa.",
+		href: "/potensi-desa/overview",
 		color: "teal"
 	},
 	{
@@ -567,7 +552,7 @@ var LAYANAN = [
 		icon: "camera",
 		title: "Galeri",
 		desc: "Dokumentasi kegiatan dan momen penting tingkat desa.",
-		href: "/galeri/kegiatan-desa",
+		href: "/galeri/overview",
 		color: "amber"
 	},
 	{
@@ -3035,62 +3020,109 @@ var CATEGORY_COLORS = {
 //#region src/data/static/umkm.json
 var umkm_default = [
 	{
-		"id": "umkm-1",
-		"nama": "Warung Makan Bu Sri",
-		"kategori": "Kuliner",
-		"deskripsi": "Warung makan rumahan dengan menu masakan tradisional khas Karangtalun, buka setiap hari.",
-		"gambar": "/images/umkm/warung-bu-sri.jpg",
-		"alamat": "Dusun Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-		"kontak": "0812-3456-7891",
-		"lat": -7.64815,
-		"lng": 110.26745
+		"id": "ChIJf1pczDT1ei4ROcEVvgbJH2I",
+		"nama": "Warung Mbah Mun",
+		"kategori": "UMKM Warung",
+		"deskripsi": "Usaha warung lokal yang berlokasi di Dusun Dangkel, melayani kebutuhan harian dan makanan bagi warga sekitar dengan rating yang sangat baik.",
+		"gambar": "/images/umkm/warung-mbah-mun.jpg",
+		"alamat": "Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "-",
+		"lat": -7.669,
+		"lng": 110.27
 	},
 	{
-		"id": "umkm-2",
-		"nama": "Keripik Singkong Makmur Jaya",
-		"kategori": "Kuliner",
-		"deskripsi": "Produsen keripik singkong dengan berbagai varian rasa, hasil produksi kelompok UMKM setempat.",
-		"gambar": "/images/umkm/keripik-makmur-jaya.jpg",
-		"alamat": "Dusun Gesikan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-		"kontak": "0813-2233-4455",
-		"lat": -7.65185,
-		"lng": 110.27205
+		"id": "ChIJz3VX26H1ei4RGfujujrcAMc",
+		"nama": "Warung Mbak Sri",
+		"kategori": "UMKM Warung",
+		"deskripsi": "Warung yang buka sejak pagi hingga malam hari, menyediakan aneka kebutuhan pokok dan jajanan di area Dangkel.",
+		"gambar": "/images/umkm/warung-mbak-sri.jpg",
+		"alamat": "Dangkel, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "-",
+		"lat": -7.6685,
+		"lng": 110.271
 	},
 	{
-		"id": "umkm-3",
-		"nama": "Kerajinan Bambu Karya Lestari",
-		"kategori": "Kerajinan",
-		"deskripsi": "Sentra kerajinan anyaman bambu berupa peralatan rumah tangga dan cendera mata.",
-		"gambar": "/images/umkm/bambu-karya-lestari.jpg",
-		"alamat": "Dusun Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-		"kontak": "0857-1122-3344",
-		"lat": -7.66425,
-		"lng": 110.27145
+		"id": "ChIJ21Sc8eP0ei4RKvRtzeOg_tA",
+		"nama": "Kupat Tahu Kajoran",
+		"kategori": "UMKM Kuliner",
+		"deskripsi": "Warung makan khas Kupat Tahu yang berlokasi di wilayah Kajoran Karangtalun. Cocok untuk bersantap pada siang hingga malam hari.",
+		"gambar": "/images/umkm/kupat-tahu-kajoran.jpg",
+		"alamat": "Kajoran, Karangtalun 2, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "-",
+		"lat": -7.671,
+		"lng": 110.274
+	},
+	{
+		"id": "ChIJjVgzijD1ei4RbA4R-Wop5AQ",
+		"nama": "Toko kelontong Mas Petruk",
+		"kategori": "UMKM Toko Kelontong",
+		"deskripsi": "Toko yang menyediakan barang-barang kelontong dan kebutuhan sehari-hari bagi warga di dusun Jambon, Karangtalun. Buka setiap hari.",
+		"gambar": "/images/umkm/toko-mas-petruk.jpg",
+		"alamat": "Jambon, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "0857-2696-8013",
+		"lat": -7.667,
+		"lng": 110.275
+	},
+	{
+		"id": "ChIJdXVSUOX0ei4RAa0x73ZsbME",
+		"nama": "SRC FAMILY KARANGTALUN",
+		"kategori": "UMKM Toko Kelontong",
+		"deskripsi": "Toko kelontong modern yang tergabung dalam jaringan SRC, berlokasi di RT 1 RW 6 Karangtalun, menyediakan berbagai kebutuhan rumah tangga.",
+		"gambar": "/images/umkm/src-family.jpg",
+		"alamat": "RT.01/RW.06, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "0821-3811-1579",
+		"lat": -7.665,
+		"lng": 110.272
+	},
+	{
+		"id": "ChIJreeIlOb1ei4R6w-XNUN6aKs",
+		"nama": "Toko Mbak Ratna",
+		"kategori": "UMKM Toko Kelontong",
+		"deskripsi": "Toko kelontong rumahan yang melayani masyarakat di sekitar Karangtalun. Beroperasi dari pagi hingga malam hari.",
+		"gambar": "/images/umkm/toko-mbak-ratna.jpg",
+		"alamat": "Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "-",
+		"lat": -7.666,
+		"lng": 110.2715
 	}
 ];
 //#endregion
 //#region src/data/static/wisata.json
-var wisata_default = [{
-	"id": "wisata-1",
-	"nama": "Bukit Pandang Karangtalun",
-	"kategori": "Wisata Alam",
-	"deskripsi": "Spot perbukitan yang menawarkan panorama persawahan, perkampungan, dan kawasan sekitar Desa Karangtalun. Cocok untuk menikmati suasana pagi maupun sore hari.",
-	"gambar": "/images/wisata/bukit-pandang.jpg",
-	"alamat": "Dusun Jangkang, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-	"kontak": "0821-9988-7766",
-	"lat": -7.65485,
-	"lng": 110.26835
-}, {
-	"id": "wisata-2",
-	"nama": "Curug Sewatu",
-	"kategori": "Wisata Alam",
-	"deskripsi": "Air terjun alami dengan suasana yang masih asri dan dikelilingi vegetasi hijau, menjadi salah satu destinasi wisata alam yang menarik untuk dikunjungi.",
-	"gambar": "/images/wisata/curug-sewatu.jpg",
-	"alamat": "Dusun Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang",
-	"kontak": "0821-1122-3399",
-	"lat": -7.66625,
-	"lng": 110.27385
-}];
+var wisata_default = [
+	{
+		"id": "ChIJrRM7ALT1ei4RetI6tW4ZSsM",
+		"nama": "Ancol Wisata Alam",
+		"kategori": "Wisata Alam",
+		"deskripsi": "Kawasan rekreasi alam yang menyajikan panorama aliran sungai dan pepohonan rindang. Tempat ini cocok digunakan untuk bersantai bersama keluarga sambil menikmati suasana sejuk alam pedesaan.",
+		"gambar": "/images/wisata/ancol-wisata-alam.jpg",
+		"alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "-",
+		"lat": -7.66985,
+		"lng": 110.27215
+	},
+	{
+		"id": "ChIJU1jTcP31ei4R-rZulrVYDak",
+		"nama": "Bendung Karangtalun",
+		"kategori": "Wisata Alam",
+		"deskripsi": "Area bendungan sungai bersejarah yang sering dikunjungi masyarakat sebagai spot wisata lokal. Pengunjung dapat bersantai menikmati pemandangan aliran air yang luas dengan latar asri.",
+		"gambar": "/images/wisata/bendung-karangtalun.jpg",
+		"alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "-",
+		"lat": -7.66955,
+		"lng": 110.27255
+	},
+	{
+		"id": "ChIJJUOmR-70ei4Riy94kACMLes",
+		"nama": "Bendung Ancol",
+		"kategori": "Wisata Alam",
+		"deskripsi": "Infrastruktur saluran pengairan (terhubung dengan Saluran Mataram) yang sekaligus menjadi tempat rekreasi terbuka. Pengunjung dapat menikmati udara segar di sekitar area bendungan secara gratis.",
+		"gambar": "/images/wisata/bendung-ancol.jpg",
+		"alamat": "Selingan, Karangtalun, Kec. Ngluwar, Kabupaten Magelang, Jawa Tengah 56485",
+		"kontak": "-",
+		"lat": -7.66925,
+		"lng": 110.27245
+	}
+];
 //#endregion
 //#region src/data/static/fasilitas.json
 var fasilitas_default = [
@@ -3770,6 +3802,403 @@ function PetaInteraktif() {
 	});
 }
 //#endregion
+//#region src/pages/galeri/Overview.jsx
+var DUSUN_LIST = [
+	{
+		slug: "semua",
+		nama: "Semua Dusun"
+	},
+	{
+		slug: "baran",
+		nama: "Baran"
+	},
+	{
+		slug: "dangkel-kulon",
+		nama: "Dangkel Kulon"
+	},
+	{
+		slug: "dangkel-wetan",
+		nama: "Dangkel Wetan"
+	},
+	{
+		slug: "jambon",
+		nama: "Jambon"
+	},
+	{
+		slug: "jampiroso",
+		nama: "Jampiroso"
+	},
+	{
+		slug: "jangkang",
+		nama: "Jangkang"
+	},
+	{
+		slug: "jangkang-a",
+		nama: "Jangkang A"
+	},
+	{
+		slug: "jangkang-b",
+		nama: "Jangkang B"
+	},
+	{
+		slug: "joho",
+		nama: "Joho"
+	},
+	{
+		slug: "kajoran",
+		nama: "Kajoran"
+	},
+	{
+		slug: "karangtalun",
+		nama: "Karangtalun"
+	},
+	{
+		slug: "selingan",
+		nama: "Selingan"
+	}
+];
+var GALERI_DATA = [
+	{
+		id: 1,
+		title: "Kerja Bakti Bersih Desa & Gotong Royong",
+		desc: "Warga bersama-sama membersihkan saluran irigasi dan jalan lingkungan menjelang musim tanam padi.",
+		category: "kegiatan",
+		dusun: "jampiroso",
+		date: "12 Juli 2026",
+		image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 2,
+		title: "Hamparan Sawah & Bukit Dusun Karangtalun",
+		desc: "Pemandangan pagi hari di hamparan persawahan hijau dengan latar belakang perbukitan yang sejuk.",
+		category: "dusun",
+		dusun: "karangtalun",
+		date: "10 Juli 2026",
+		image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 3,
+		title: "Musyawarah Perencanaan Pembangunan Desa (Musrenbangdes)",
+		desc: "Pertemuan rutin perangkat desa, tokoh masyarakat, dan perwakilan pemuda untuk menyusun program desa.",
+		category: "kegiatan",
+		dusun: "karangtalun",
+		date: "5 Juli 2026",
+		image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 4,
+		title: "Panen Raya Padi Organik Kelompok Tani",
+		desc: "Kegiatan panen padi bersama oleh kelompok tani di wilayah Dusun Baran dengan hasil gabah berkualitas tinggi.",
+		category: "kegiatan",
+		dusun: "baran",
+		date: "28 Juni 2026",
+		image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 5,
+		title: "Jalan Setapak Asri Dusun Dangkel Kulon",
+		desc: "Suasana asri jalan pedesaan yang dikelilingi pepohonan rindang dan kebun sayur milik warga lokal.",
+		category: "dusun",
+		dusun: "dangkel-kulon",
+		date: "24 Juni 2026",
+		image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 6,
+		title: "Pelatihan Kewirausahaan & Pengolahan Hasil Tani UMKM",
+		desc: "Ibu-ibu PKK dan pelaku UMKM mengikuti pelatihan pembuatan kripik dan pengemasan produk olahan lokal.",
+		category: "kegiatan",
+		dusun: "jambon",
+		date: "20 Juni 2026",
+		image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 7,
+		title: "Posyandu Balita & Pemeriksaan Kesehatan Lansia",
+		desc: "Layanan kesehatan berkala untuk memantau tumbuh kembang balita dan kesehatan lansia di Balai Dusun.",
+		category: "kegiatan",
+		dusun: "joho",
+		date: "15 Juni 2026",
+		image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 8,
+		title: "Keindahan Matahari Terbenam di Embung Dusun Kajoran",
+		desc: "Momen senja yang menenangkan di area penampungan air dan pertanian Dusun Kajoran.",
+		category: "dusun",
+		dusun: "kajoran",
+		date: "12 Juni 2026",
+		image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 9,
+		title: "Aktivitas Budaya Seni Tradisional Karawitan",
+		desc: "Latihan rutin grup karawitan dan kesenian lokal pemuda desa untuk melestarikan warisan budaya Jawa.",
+		category: "kegiatan",
+		dusun: "jangkang",
+		date: "8 Juni 2026",
+		image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 10,
+		title: "Jembatan Penghubung & Sungai Bersih Dusun Selingan",
+		desc: "Aliran sungai jernih yang menjadi sumber irigasi utama bagi lahan pertanian di sekitarnya.",
+		category: "dusun",
+		dusun: "selingan",
+		date: "1 Juni 2026",
+		image: "https://images.unsplash.com/photo-1432462770865-65b70566d673?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 11,
+		title: "Kawasan Pemukiman Nyaman Dusun Dangkel Wetan",
+		desc: "Tata rumah tinggal warga yang tertata rapi dengan pekarangan yang ditanami tanaman obat keluarga (TOGA).",
+		category: "dusun",
+		dusun: "dangkel-wetan",
+		date: "25 Mei 2026",
+		image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80"
+	},
+	{
+		id: 12,
+		title: "Pemerataan Infrastruktur Jalan Cor Dusun Jangkang A & B",
+		desc: "Hasil pembangunan jalan rabat beton gotong royong yang memudahkan mobilitas hasil bumi warga.",
+		category: "dusun",
+		dusun: "jangkang-a",
+		date: "18 Mei 2026",
+		image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80"
+	}
+];
+function GaleriOverview() {
+	const [activeTab, setActiveTab] = useState("semua");
+	const [selectedDusun, setSelectedDusun] = useState("semua");
+	const [lightboxIndex, setLightboxIndex] = useState(null);
+	const filteredList = useMemo(() => {
+		return GALERI_DATA.filter((item) => {
+			if (activeTab === "kegiatan" && item.category !== "kegiatan") return false;
+			if (activeTab === "dusun" && item.category !== "dusun") return false;
+			if (activeTab === "dusun" && selectedDusun !== "semua" && item.dusun !== selectedDusun) return false;
+			return true;
+		});
+	}, [activeTab, selectedDusun]);
+	const handleNext = useCallback(() => {
+		if (lightboxIndex !== null) setLightboxIndex((prev) => (prev + 1) % filteredList.length);
+	}, [lightboxIndex, filteredList.length]);
+	const handlePrev = useCallback(() => {
+		if (lightboxIndex !== null) setLightboxIndex((prev) => (prev - 1 + filteredList.length) % filteredList.length);
+	}, [lightboxIndex, filteredList.length]);
+	useEffect(() => {
+		if (lightboxIndex === null) return;
+		const handleKeyDown = (e) => {
+			if (e.key === "Escape") setLightboxIndex(null);
+			if (e.key === "ArrowRight") handleNext();
+			if (e.key === "ArrowLeft") handlePrev();
+		};
+		window.addEventListener("keydown", handleKeyDown);
+		return () => window.removeEventListener("keydown", handleKeyDown);
+	}, [
+		lightboxIndex,
+		handleNext,
+		handlePrev
+	]);
+	const currentItem = lightboxIndex !== null ? filteredList[lightboxIndex] : null;
+	return /* @__PURE__ */ jsxs("div", {
+		className: "galeri-overview",
+		children: [
+			/* @__PURE__ */ jsx(SEO, {
+				title: "Galeri Desa",
+				description: "Dokumentasi foto kegiatan kemasyarakatan, pembangunan, dan potensi keindahan 12 dusun di Desa Karangtalun."
+			}),
+			/* @__PURE__ */ jsx(Header, {
+				title: "Galeri & Dokumentasi",
+				subtitle: "Potret Kehidupan, Kegiatan, dan Keindahan Alam Desa Karangtalun",
+				green: true
+			}),
+			/* @__PURE__ */ jsxs("div", {
+				className: "container galeri__content",
+				children: [/* @__PURE__ */ jsxs("div", {
+					className: "galeri__filter-section",
+					children: [/* @__PURE__ */ jsxs("div", {
+						className: "galeri__tabs",
+						role: "tablist",
+						children: [
+							/* @__PURE__ */ jsxs("button", {
+								type: "button",
+								role: "tab",
+								"aria-selected": activeTab === "semua",
+								className: `galeri__tab-btn ${activeTab === "semua" ? "galeri__tab-btn--active" : ""}`,
+								onClick: () => {
+									setActiveTab("semua");
+									setSelectedDusun("semua");
+								},
+								children: [
+									"Semua Foto (",
+									GALERI_DATA.length,
+									")"
+								]
+							}),
+							/* @__PURE__ */ jsxs("button", {
+								type: "button",
+								role: "tab",
+								"aria-selected": activeTab === "kegiatan",
+								className: `galeri__tab-btn ${activeTab === "kegiatan" ? "galeri__tab-btn--active" : ""}`,
+								onClick: () => setActiveTab("kegiatan"),
+								children: [
+									"Kegiatan Desa (",
+									GALERI_DATA.filter((i) => i.category === "kegiatan").length,
+									")"
+								]
+							}),
+							/* @__PURE__ */ jsxs("button", {
+								type: "button",
+								role: "tab",
+								"aria-selected": activeTab === "dusun",
+								className: `galeri__tab-btn ${activeTab === "dusun" ? "galeri__tab-btn--active" : ""}`,
+								onClick: () => setActiveTab("dusun"),
+								children: [
+									"Dokumentasi Dusun (",
+									GALERI_DATA.filter((i) => i.category === "dusun").length,
+									")"
+								]
+							})
+						]
+					}), activeTab === "dusun" && /* @__PURE__ */ jsxs("div", {
+						className: "galeri__dusun-select-wrapper",
+						children: [/* @__PURE__ */ jsx("span", {
+							className: "galeri__dusun-label",
+							children: "Pilih Wilayah:"
+						}), /* @__PURE__ */ jsx("select", {
+							className: "galeri__dusun-select",
+							value: selectedDusun,
+							onChange: (e) => setSelectedDusun(e.target.value),
+							children: DUSUN_LIST.map((d) => /* @__PURE__ */ jsx("option", {
+								value: d.slug,
+								children: d.nama
+							}, d.slug))
+						})]
+					})]
+				}), /* @__PURE__ */ jsx("div", {
+					className: "galeri__grid",
+					children: filteredList.length > 0 ? filteredList.map((item, index) => /* @__PURE__ */ jsxs("div", {
+						className: "galeri-card",
+						onClick: () => setLightboxIndex(index),
+						role: "button",
+						tabIndex: 0,
+						"aria-label": `Lihat detail foto ${item.title}`,
+						onKeyDown: (e) => {
+							if (e.key === "Enter" || e.key === " ") {
+								e.preventDefault();
+								setLightboxIndex(index);
+							}
+						},
+						children: [/* @__PURE__ */ jsx("img", {
+							src: item.image,
+							alt: item.title,
+							className: "galeri-card__image",
+							loading: "lazy"
+						}), /* @__PURE__ */ jsxs("div", {
+							className: "galeri-card__overlay",
+							children: [
+								/* @__PURE__ */ jsx("span", {
+									className: `galeri-card__badge ${item.category === "kegiatan" ? "galeri-card__badge--kegiatan" : "galeri-card__badge--dusun"}`,
+									children: item.category === "kegiatan" ? "Kegiatan Desa" : `Dusun ${item.dusun.toUpperCase()}`
+								}),
+								/* @__PURE__ */ jsx("h3", {
+									className: "galeri-card__title",
+									children: item.title
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "galeri-card__meta",
+									children: [/* @__PURE__ */ jsxs("span", {
+										className: "galeri-card__date",
+										children: ["📅 ", item.date]
+									}), /* @__PURE__ */ jsx("span", {
+										className: "galeri-card__zoom-icon",
+										title: "Perbesar gambar",
+										children: "🔍"
+									})]
+								})
+							]
+						})]
+					}, item.id)) : /* @__PURE__ */ jsxs("div", {
+						className: "galeri__empty",
+						children: [
+							/* @__PURE__ */ jsx("span", {
+								className: "galeri__empty-icon",
+								children: "📷"
+							}),
+							/* @__PURE__ */ jsx("h3", { children: "Belum Ada Dokumentasi" }),
+							/* @__PURE__ */ jsx("p", { children: "Foto untuk filter yang Anda pilih saat ini sedang dalam persiapan." })
+						]
+					})
+				})]
+			}),
+			currentItem && /* @__PURE__ */ jsx("div", {
+				className: "galeri-lightbox",
+				onClick: () => setLightboxIndex(null),
+				role: "dialog",
+				"aria-modal": "true",
+				"aria-label": currentItem.title,
+				children: /* @__PURE__ */ jsxs("div", {
+					className: "galeri-lightbox__container",
+					onClick: (e) => e.stopPropagation(),
+					children: [
+						/* @__PURE__ */ jsx("button", {
+							type: "button",
+							className: "galeri-lightbox__btn-close",
+							onClick: () => setLightboxIndex(null),
+							title: "Tutup (Esc)",
+							"aria-label": "Tutup modal",
+							children: "×"
+						}),
+						filteredList.length > 1 && /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx("button", {
+							type: "button",
+							className: "galeri-lightbox__nav galeri-lightbox__nav--prev",
+							onClick: handlePrev,
+							title: "Foto Sebelumnya (Panah Kiri)",
+							"aria-label": "Foto sebelumnya",
+							children: "‹"
+						}), /* @__PURE__ */ jsx("button", {
+							type: "button",
+							className: "galeri-lightbox__nav galeri-lightbox__nav--next",
+							onClick: handleNext,
+							title: "Foto Berikutnya (Panah Kanan)",
+							"aria-label": "Foto berikutnya",
+							children: "›"
+						})] }),
+						/* @__PURE__ */ jsx("div", {
+							className: "galeri-lightbox__image-wrapper",
+							children: /* @__PURE__ */ jsx("img", {
+								src: currentItem.image,
+								alt: currentItem.title,
+								className: "galeri-lightbox__image"
+							})
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "galeri-lightbox__info",
+							children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
+								className: "galeri-lightbox__title",
+								children: currentItem.title
+							}), /* @__PURE__ */ jsx("p", {
+								className: "galeri-lightbox__desc",
+								children: currentItem.desc
+							})] }), /* @__PURE__ */ jsxs("div", {
+								className: "galeri-lightbox__meta-right",
+								children: [/* @__PURE__ */ jsx("span", {
+									className: `galeri-card__badge ${currentItem.category === "kegiatan" ? "galeri-card__badge--kegiatan" : "galeri-card__badge--dusun"}`,
+									children: currentItem.category === "kegiatan" ? "Kegiatan Desa" : `Dusun ${currentItem.dusun.toUpperCase()}`
+								}), /* @__PURE__ */ jsxs("span", {
+									className: "galeri-card__date",
+									style: { color: "#cbd5e1" },
+									children: ["📅 ", currentItem.date]
+								})]
+							})]
+						})
+					]
+				})
+			})
+		]
+	});
+}
+//#endregion
 //#region src/routes.jsx
 /**
 * routes.jsx — Definisi semua route dalam format data router (PRD §3)
@@ -3830,12 +4259,16 @@ var createRoot = ViteReactSSG({ routes: [{
 			element: /* @__PURE__ */ jsx(StatistikDusun, {})
 		},
 		{
-			path: "/potensi-wisata/peta-wisata-kuliner",
-			element: /* @__PURE__ */ jsx(Placeholder, { title: "Peta Wisata & Kuliner" })
+			path: "/potensi-desa/overview",
+			element: /* @__PURE__ */ jsx(Placeholder, { title: "Potensi Desa" })
 		},
 		{
-			path: "/potensi-wisata/umkm/:slug",
+			path: "/potensi-desa/umkm/:slug",
 			element: /* @__PURE__ */ jsx(Placeholder, { title: "UMKM Dusun" })
+		},
+		{
+			path: "/galeri/overview",
+			element: /* @__PURE__ */ jsx(GaleriOverview, {})
 		},
 		{
 			path: "/galeri/kegiatan-desa",

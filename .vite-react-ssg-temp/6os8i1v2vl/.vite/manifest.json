@@ -1,0 +1,14 @@
+{
+  "src/main.jsx": {
+    "file": "main.mjs",
+    "name": "main",
+    "src": "src/main.jsx",
+    "isEntry": true,
+    "assets": [
+      "assets/family-mviolWDB.png",
+      "assets/house-a4QcdqNQ.png",
+      "assets/land-plot-7eMBf47A.png",
+      "assets/organization-chart-CqgzNKDI.png"
+    ]
+  }
+}

@@ -18,6 +18,7 @@ import StatistikDesa from './pages/pemerintahan/StatistikDesa'
 import StatistikDusun from './pages/pemerintahan/StatistikDusun'
 import FasilitasUmum from './pages/peta-lokasi/FasilitasUmum'
 import PetaInteraktif from './pages/peta-lokasi/PetaInteraktif'
+import GaleriOverview from './pages/galeri/Overview'
 
 // Placeholder sementara — ganti dengan import halaman nyata satu per satu
 function Placeholder({ title }) {
@@ -60,7 +61,7 @@ export const routes = [
       { path: '/potensi-desa/umkm/:slug', element: <Placeholder title="UMKM Dusun" /> },
 
       // Galeri
-      { path: '/galeri/overview',       element: <Placeholder title="Galeri Desa" /> },
+      { path: '/galeri/overview',       element: <GaleriOverview /> },
       { path: '/galeri/kegiatan-desa',  element: <Placeholder title="Galeri Kegiatan Desa" /> },
       { path: '/galeri/dusun/:slug',    element: <Placeholder title="Dokumentasi Dusun" /> },
 

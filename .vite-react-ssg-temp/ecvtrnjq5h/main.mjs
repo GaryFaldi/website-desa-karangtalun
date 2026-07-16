@@ -910,7 +910,7 @@ var profilDesaData = {
 		]
 	},
 	visiMisi: {
-		visi: "Terwujudnya Desa Karangtalun yang Mandiri, Sejahtera, Transparan, dan Berbudaya Berlandaskan Gotong Royong.",
+		visi: "Membangun Desa Karangtalun Kecamatan Ngluwar Magelang dalam Kebersamaan Menuju Penguatan Ekonomi Lokal Berbasis Ekonomi Kerakyatan demi Mewujudkan Masyarakat yang Mandiri, Aman, Sejahtera, Dinamis Berlandaskan Iman dan Taqwa",
 		misi: [
 			"Meningkatkan kualitas tata kelola pemerintahan desa yang bersih, transparan, dan responsif terhadap kebutuhan masyarakat.",
 			"Mendorong kemandirian ekonomi desa melalui pembinaan UMKM, optimalisasi sektor pertanian, dan pengembangan potensi wisata lokal.",
@@ -932,7 +932,7 @@ var profilDesaData = {
 	kontak: {
 		alamat: "Jl. Raya Karangtalun No. 1, Kecamatan Karangtalun, Kabupaten Magelang, Jawa Tengah",
 		telepon: "+62 812-3456-7890",
-		email: "info@karangtalun.id",
+		email: "ngluwarkarangtalun@gmail.com",
 		jamPelayanan: "Senin - Jumat, 08:00 - 15:00 WIB"
 	}
 };
