@@ -60,6 +60,17 @@
   border-color: var(--color-primary-400, #34d399);
 }
 
+.stat-card[role="button"] {
+  cursor: pointer;
+}
+
+.stat-card--selected {
+  border-color: var(--color-primary-600, #059669);
+  box-shadow: 0 0 0 2px var(--color-primary-600, #059669), 0 4px 12px rgba(5, 150, 105, 0.15);
+  transform: translateY(-2px);
+  background: var(--color-primary-50, #f0fdf4);
+}
+
 .stat-card__icon {
   font-size: 2rem;
   flex-shrink: 0;
@@ -85,11 +96,72 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Filter Tabs
+   Search & Filter Controls
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.fasilitas-filter {
-  margin-bottom: var(--spacing-xl, 2rem);
+.fasilitas-controls {
+  margin-bottom: var(--spacing-xl, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fasilitas-search-wrapper {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+.fasilitas-search__icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.fasilitas-search__input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 2.75rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.fasilitas-search__input:focus {
+  outline: none;
+  border-color: var(--color-primary-600, #059669);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.fasilitas-search__clear {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #e2e8f0;
+  color: #64748b;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.fasilitas-search__clear:hover {
+  background: #ef4444;
+  color: #ffffff;
 }
 
 .filter-tabs {
@@ -197,12 +269,71 @@
 }
 
 /* Badge di atas foto */
-.fasilitas-card__image .fasilitas-badge {
+.fasilitas-card__image .fasilitas-badge,
+.fasilitas-card__theme-banner .fasilitas-badge {
   position: absolute;
   top: var(--spacing-sm, 0.75rem);
   left: var(--spacing-sm, 0.75rem);
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Card Theme Banner (Fallback Visual saat belum ada foto survei) ─────── */
+.fasilitas-card__theme-banner {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fasilitas-card__theme-banner--teal {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+}
+
+.fasilitas-card__theme-banner--blue {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.fasilitas-card__theme-banner--green {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+}
+
+.fasilitas-card__theme-banner--amber {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+}
+
+.theme-banner__bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.theme-banner__bg-circle--1 {
+  width: 140px;
+  height: 140px;
+  top: -30px;
+  right: -20px;
+}
+
+.theme-banner__bg-circle--2 {
+  width: 90px;
+  height: 90px;
+  bottom: -20px;
+  left: 20px;
+}
+
+.theme-banner__icon {
+  font-size: 3.75rem;
+  z-index: 1;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fasilitas-card:hover .theme-banner__icon {
+  transform: scale(1.15) translateY(-4px);
 }
 
 .fasilitas-badge {
@@ -244,6 +375,17 @@
   color: var(--color-text-primary, #1e293b);
   margin: 0;
   line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fasilitas-card__desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #64748b);
+  line-height: 1.5;
+  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
