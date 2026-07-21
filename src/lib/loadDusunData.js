@@ -55,16 +55,14 @@ export function getDusunBySlug(slug) {
 }
 
 /**
- * Daftar semua slug standar 12 dusun di Desa Karangtalun
+ * Daftar semua slug standar 10 dusun di Desa Karangtalun
  * Dipakai untuk validasi atau pembuatan skeleton di UI
  */
 export const ALL_DUSUN_SLUGS = [
-  { slug: 'baran',          label: 'Baran' },
   { slug: 'dangkel-kulon',  label: 'Dangkel Kulon' },
   { slug: 'dangkel-wetan',  label: 'Dangkel Wetan' },
   { slug: 'jambon',         label: 'Jambon' },
   { slug: 'jampiroso',      label: 'Jampiroso' },
-  { slug: 'jangkang',       label: 'Jangkang' },
   { slug: 'jangkang-a',     label: 'Jangkang A' },
   { slug: 'jangkang-b',     label: 'Jangkang B' },
   { slug: 'joho',           label: 'Joho' },

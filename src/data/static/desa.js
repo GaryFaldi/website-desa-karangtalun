@@ -13,7 +13,7 @@ export const profilDesaData = {
     paragraphs: [
       "Desa Karangtalun memiliki sejarah panjang yang mengakar pada tradisi masyarakat agraris di Kabupaten Magelang. Didirikan oleh para sesepuh terdahulu yang membuka lahan hutan menjadi kawasan pemukiman dan pertanian subur, desa ini dinamakan 'Karangtalun' yang melambangkan pekarangan atau tanah subur yang luas dan produktif.",
       "Seiring berjalannya waktu, Desa Karangtalun berkembang dari sebuah pemukiman kecil menjadi pusat kemasyarakatan yang teratur. Masyarakat desa senantiasa menjunjung tinggi nilai gotong royong, kebudayaan lokal, dan keharmonisan hidup berdampingan dengan alam di lereng pegunungan.",
-      "Kini, Karangtalun bertransformasi menjadi desa administratif yang modern dengan tetap mempertahankan karakteristik budayanya. Pembangunan infrastruktur secara berkala serta pembinaan potensi warga di 12 dusun menjadi prioritas utama demi kemajuan bersama."
+      "Kini, Karangtalun bertransformasi menjadi desa administratif yang modern dengan tetap mempertahankan karakteristik budayanya. Pembangunan infrastruktur secara berkala serta pembinaan potensi warga di 10 dusun menjadi prioritas utama demi kemajuan bersama."
     ]
   },
   visiMisi: {

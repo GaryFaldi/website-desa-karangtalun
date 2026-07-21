@@ -144,7 +144,7 @@ export default function Overview() {
       <section className="dusun section" aria-label="Daftar dusun">
         <div className="container">
           <div className="section-header">
-            <span className="section-label">12 Dusun</span>
+            <span className="section-label">10 Dusun</span>
             <h2 className="section-title">Profil Wilayah Dusun</h2>
             <p className="section-desc">
               Setiap dusun memiliki cerita, potensi, dan keunikan masing-masing.
