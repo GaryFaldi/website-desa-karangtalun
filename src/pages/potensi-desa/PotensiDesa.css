@@ -1,0 +1,435 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Potensi Desa Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.potensi-desa {
+  min-height: 100vh;
+  background: var(--color-background-primary, #ffffff);
+}
+
+.potensi-desa__content {
+  padding-block: var(--spacing-section, 3rem);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Statistics Overview
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.potensi-stats {
+  margin-bottom: var(--spacing-xl, 3rem);
+}
+
+.potensi-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-md, 1rem);
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-lg, 1.5rem);
+  background: #ffffff;
+  border: 2px solid var(--color-border-light, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.stat-card--total {
+  border-color: var(--color-primary-500, #10b981);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+.stat-card__icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.stat-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-card__value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1e293b);
+  line-height: 1;
+}
+
+.stat-card__label {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #64748b);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Filter Chips
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.potensi-filter {
+  margin-bottom: var(--spacing-xl, 2rem);
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm, 0.625rem);
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.125rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-secondary, #475569);
+  background: var(--color-background-secondary, #f8fafc);
+  border: 1.5px solid var(--color-border-light, #e2e8f0);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--color-primary-400, #34d399);
+  color: var(--color-primary-700, #047857);
+}
+
+.filter-chip--active {
+  background: var(--color-primary-500, #10b981);
+  border-color: var(--color-primary-500, #10b981);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.filter-chip--active:hover {
+  color: #ffffff;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Potensi Grid
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.potensi-list {
+  margin-bottom: var(--spacing-xl, 3rem);
+}
+
+.potensi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg, 1.5rem);
+}
+
+.potensi-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.potensi-card:hover {
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+  transform: translateY(-8px);
+  border-color: var(--color-primary-400, #34d399);
+}
+
+/* ─── Card Image ────────────────────────────────────────────────────────── */
+.potensi-card__image {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: var(--color-background-secondary, #f1f5f9);
+}
+
+.potensi-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.potensi-card:hover .potensi-card__image img {
+  transform: scale(1.08);
+}
+
+.potensi-card__image .potensi-badge {
+  position: absolute;
+  top: var(--spacing-sm, 0.75rem);
+  left: var(--spacing-sm, 0.75rem);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.potensi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm, 6px);
+}
+
+.potensi-badge--pertanian {
+  background: var(--color-primary-50, #f0fdf4);
+  color: var(--color-primary-700, #047857);
+}
+
+.potensi-badge--umkm {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.potensi-badge--wisata {
+  background: var(--color-blue-50, #eff6ff);
+  color: var(--color-blue-700, #1d4ed8);
+}
+
+.potensi-badge--budaya {
+  background: #faf5ff;
+  color: #7e22ce;
+}
+
+.potensi-badge--peternakan {
+  background: #fdf6ec;
+  color: #92400e;
+}
+
+.potensi-card__body {
+  padding: var(--spacing-lg, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 0.75rem);
+  flex: 1;
+}
+
+.potensi-card__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1e293b);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.potensi-card__desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #64748b);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.potensi-card__lokasi {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #64748b);
+}
+
+.potensi-card__divider {
+  height: 1px;
+  background: var(--color-border-light, #e2e8f0);
+  margin: 0.25rem 0;
+}
+
+.potensi-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.info-item__label {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--color-text-secondary, #64748b);
+}
+
+.info-item__value {
+  font-weight: 600;
+  color: var(--color-text-primary, #1e293b);
+  text-align: right;
+}
+
+.potensi-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--spacing-sm, 0.75rem);
+  margin-top: auto;
+  border-top: 1px solid var(--color-border-light, #e2e8f0);
+}
+
+.potensi-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-primary-600, #059669);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.potensi-card:hover .potensi-card__btn {
+  color: var(--color-primary-700, #047857);
+  transform: translateX(4px);
+}
+
+/* ─── Empty State ───────────────────────────────────────────────────────── */
+.potensi-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xxl, 4rem) var(--spacing-lg, 2rem);
+  text-align: center;
+}
+
+.potensi-empty__icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md, 1rem);
+  opacity: 0.5;
+}
+
+.potensi-empty p {
+  font-size: 1rem;
+  color: var(--color-text-secondary, #64748b);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CTA Section
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.potensi-cta {
+  margin-bottom: var(--spacing-xl, 1rem);
+}
+
+.cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg, 2rem);
+  padding: var(--spacing-xl, 2.5rem);
+  background: linear-gradient(135deg, var(--color-primary-500, #10b981) 0%, var(--color-primary-700, #047857) 100%);
+  border-radius: 22px;
+  color: #ffffff;
+}
+
+.cta-card__content h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin: 0 0 var(--spacing-sm, 0.5rem) 0;
+}
+
+.cta-card__content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.92;
+  max-width: 480px;
+}
+
+.cta-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-primary-700, #047857);
+  background: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cta-card__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Responsive Design
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .potensi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .potensi-desa__content {
+    padding-block: var(--spacing-lg, 2rem);
+  }
+
+  .potensi-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .potensi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-lg, 1.75rem);
+  }
+
+  .cta-card__content p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .potensi-stats__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-card {
+    padding: var(--spacing-md, 1rem);
+  }
+
+  .stat-card__icon {
+    font-size: 1.5rem;
+  }
+
+  .stat-card__value {
+    font-size: 1.5rem;
+  }
+}

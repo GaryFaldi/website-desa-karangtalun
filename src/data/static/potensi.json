@@ -1,0 +1,134 @@
+[
+  {
+    "id": "potensi-1",
+    "nama": "Padi Organik",
+    "kategori": "Pertanian",
+    "deskripsi": "Sentra produksi padi organik berkualitas tinggi yang menjadi komoditas unggulan Desa Karangtalun.",
+    "gambar": "/images/potensi/padi-organik.jpg",
+    "lokasi": "Dusun Dangkel",
+    "kelompok": "Gapoktan Makmur",
+    "luas": "35 Ha",
+    "status": "Unggulan"
+  },
+  {
+    "id": "potensi-2",
+    "nama": "Sayuran Segar",
+    "kategori": "Pertanian",
+    "deskripsi": "Kawasan tanam sayuran segar seperti cabai, tomat, dan kubis yang dipasarkan hingga ke luar desa.",
+    "gambar": "/images/potensi/sayuran.jpg",
+    "lokasi": "Dusun Krajan",
+    "kelompok": "Kelompok Tani Subur",
+    "luas": "18 Ha",
+    "status": "Berkembang"
+  },
+  {
+    "id": "potensi-3",
+    "nama": "Budidaya Lele",
+    "kategori": "Peternakan",
+    "deskripsi": "Kolam budidaya lele dengan sistem bioflok yang dikelola warga secara swadaya dan berkelanjutan.",
+    "gambar": "/images/potensi/lele.jpg",
+    "lokasi": "Dusun Tegalrejo",
+    "kelompok": "Pokdakan Mina Lestari",
+    "luas": "12 Kolam",
+    "status": "Berkembang"
+  },
+  {
+    "id": "potensi-4",
+    "nama": "Peternakan Sapi",
+    "kategori": "Peternakan",
+    "deskripsi": "Peternakan sapi potong dan sapi perah yang menjadi sumber penghasilan tambahan bagi warga.",
+    "gambar": "/images/potensi/sapi.jpg",
+    "lokasi": "Dusun Sumberjo",
+    "kelompok": "Kelompok Ternak Barokah",
+    "luas": "40 Ekor",
+    "status": "Unggulan"
+  },
+  {
+    "id": "potensi-5",
+    "nama": "Peternakan Kambing",
+    "kategori": "Peternakan",
+    "deskripsi": "Usaha peternakan kambing etawa yang berkembang pesat sebagai penghasil susu dan bibit unggul.",
+    "gambar": "/images/potensi/kambing.jpg",
+    "lokasi": "Dusun Sumberjo",
+    "kelompok": "Kelompok Ternak Barokah",
+    "luas": "60 Ekor",
+    "status": "Berkembang"
+  },
+  {
+    "id": "potensi-6",
+    "nama": "Keripik Singkong",
+    "kategori": "UMKM",
+    "deskripsi": "Produk olahan keripik singkong dengan berbagai varian rasa khas produksi rumahan warga desa.",
+    "gambar": "/images/potensi/keripik-singkong.jpg",
+    "lokasi": "Dusun Krajan",
+    "kelompok": "UMKM Rasa Nikmat",
+    "luas": "8 Pengrajin",
+    "status": "Unggulan"
+  },
+  {
+    "id": "potensi-7",
+    "nama": "Kopi Bubuk",
+    "kategori": "UMKM",
+    "deskripsi": "Kopi bubuk hasil olahan biji kopi lokal yang diproses secara tradisional dan dikemas modern.",
+    "gambar": "/images/potensi/kopi-bubuk.jpg",
+    "lokasi": "Dusun Wonorejo",
+    "kelompok": "UMKM Kopi Karangtalun",
+    "luas": "5 Pengrajin",
+    "status": "Berkembang"
+  },
+  {
+    "id": "potensi-8",
+    "nama": "Batik Karangtalun",
+    "kategori": "Budaya",
+    "deskripsi": "Kerajinan batik tulis khas desa dengan motif yang terinspirasi dari kekayaan alam setempat.",
+    "gambar": "/images/potensi/batik.jpg",
+    "lokasi": "Dusun Krajan",
+    "kelompok": "Sanggar Batik Lestari",
+    "luas": "10 Pengrajin",
+    "status": "Unggulan"
+  },
+  {
+    "id": "potensi-9",
+    "nama": "Wisata Sawah",
+    "kategori": "Wisata",
+    "deskripsi": "Kawasan wisata hamparan sawah dengan spot foto dan jalur trekking yang menyuguhkan udara sejuk pedesaan.",
+    "gambar": "/images/potensi/wisata-sawah.jpg",
+    "lokasi": "Dusun Dangkel",
+    "kelompok": "Pokdarwis Karangtalun",
+    "luas": "6 Ha",
+    "status": "Unggulan"
+  },
+  {
+    "id": "potensi-10",
+    "nama": "Embung Desa",
+    "kategori": "Wisata",
+    "deskripsi": "Embung yang berfungsi sebagai penampung air sekaligus destinasi wisata air dan area memancing warga.",
+    "gambar": "/images/potensi/embung.jpg",
+    "lokasi": "Dusun Tegalrejo",
+    "kelompok": "Pokdarwis Karangtalun",
+    "luas": "2 Ha",
+    "status": "Berkembang"
+  },
+  {
+    "id": "potensi-11",
+    "nama": "Festival Budaya",
+    "kategori": "Budaya",
+    "deskripsi": "Festival tahunan yang menampilkan kesenian, kuliner, dan tradisi turun-temurun masyarakat desa.",
+    "gambar": "/images/potensi/festival-budaya.jpg",
+    "lokasi": "Balai Desa Karangtalun",
+    "kelompok": "Karang Taruna Karangtalun",
+    "luas": "1x Setahun",
+    "status": "Unggulan"
+  },
+  {
+    "id": "potensi-12",
+    "nama": "Sanggar Seni",
+    "kategori": "Budaya",
+    "deskripsi": "Sanggar tempat warga belajar tari tradisional, karawitan, dan seni pertunjukan khas daerah.",
+    "gambar": "/images/potensi/sanggar-seni.jpg",
+    "lokasi": "Dusun Wonorejo",
+    "kelompok": "Sanggar Seni Budaya",
+    "luas": "30 Anggota",
+    "status": "Berkembang"
+  }
+]
