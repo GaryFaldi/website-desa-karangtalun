@@ -104,14 +104,14 @@ export default function StrukturOrganisasi() {
 
           {/* Level 4: Kepala Dusun */}
           <div className="org-level org-level--4">
-            <h4 className="org-subsection__title">Kepala Dusun (12 Dusun)</h4>
+            <h4 className="org-subsection__title">Kepala Dusun ({kepalaDusun.length} Pejabat · {kepalaDusun.length < 12 ? 'Sebagian Merangkap' : ''})</h4>
             <div className="org-card-grid org-card-grid--kadus">
               {kepalaDusun.map((kadus) => (
                 <div key={kadus.id} className="org-card org-card--kadus">
                   <div className="org-card__icon">🌿</div>
                   <div className="org-card__content">
                     <h3 className="org-card__nama">{kadus.nama}</h3>
-                    <p className="org-card__jabatan">Dusun {kadus.dusun}</p>
+                    <p className="org-card__jabatan">{kadus.dusun}</p>
                   </div>
                 </div>
               ))}
@@ -125,10 +125,11 @@ export default function StrukturOrganisasi() {
           <div className="note-card">
             <span className="note-card__icon">ℹ️</span>
             <div className="note-card__content">
-              <h3>Catatan Data</h3>
+              <h3>Sumber Data</h3>
               <p>
-                Data di atas adalah struktur organisasi sementara yang akan diperbarui secara berkala. 
-                Untuk informasi lebih lanjut atau konfirmasi data terbaru, silakan hubungi Kantor Desa Karangtalun.
+                Data struktur organisasi bersumber dari papan resmi <strong>Struktur Organisasi Pemerintah Desa Karangtalun</strong>,
+                Kec. Ngluwar, Kab. Magelang. Satu kepala dusun dapat merangkap lebih dari satu wilayah dusun.
+                Untuk informasi lebih lanjut, silakan hubungi Kantor Desa Karangtalun.
               </p>
             </div>
           </div>

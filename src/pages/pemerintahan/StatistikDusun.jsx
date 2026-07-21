@@ -78,12 +78,12 @@ export default function StatistikDusun() {
     <div className="statistik-dusun">
       <SEO
         title="Statistik Kependudukan Dusun"
-        description="Data statistik kependudukan per dusun di Desa Karangtalun — perbandingan jumlah jiwa, KK, dan komposisi penduduk 12 dusun."
+        description="Data statistik kependudukan per dusun di Desa Karangtalun — perbandingan jumlah jiwa, KK, dan komposisi penduduk 10 dusun."
       />
 
       <Header
         title="Statistik Per Dusun"
-        subtitle="Perbandingan data kependudukan 12 dusun · Desa Karangtalun"
+        subtitle="Perbandingan data kependudukan 10 dusun · Desa Karangtalun"
         green
       />
 

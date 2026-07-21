@@ -85,10 +85,10 @@ function Icon({ name, className }) {
 // Ganti dengan data real dari src/data/static/desa.js saat konten tersedia
 
 const STATS = [
-  { icon: 'users-alt', value: '3.350', label: 'Jiwa',            note: 'per SID Desa 2024' },
-  { icon: 'family',      value: '1.110',  label: 'Kepala Keluarga', note: 'per SID Desa 2024' },
-  { icon: 'house', value: '12',     label: 'Dusun',           note: '' },
-  { icon: 'land-plot',    value: '—',      label: 'Luas Wilayah',    note: 'segera diperbarui' },
+  { icon: 'users-alt', value: '4.178', label: 'Jiwa',            note: 'Indeks Desa 2025' },
+  { icon: 'family',    value: '1.451', label: 'Kepala Keluarga', note: 'Indeks Desa 2025' },
+  { icon: 'house',     value: '10',    label: 'Dusun',           note: '' },
+  { icon: 'land-plot', value: '—',      label: 'Luas Wilayah',    note: 'segera diperbarui' },
 ]
 
 const LAYANAN = [
@@ -135,12 +135,10 @@ const LAYANAN = [
 ]
 
 export const DUSUN_SLUGS = [
-  { slug: 'baran',          label: 'Baran' },
   { slug: 'dangkel-kulon',  label: 'Dangkel Kulon' },
   { slug: 'dangkel-wetan',  label: 'Dangkel Wetan' },
   { slug: 'jambon',         label: 'Jambon' },
   { slug: 'jampiroso',      label: 'Jampiroso' },
-  { slug: 'jangkang',       label: 'Jangkang' },
   { slug: 'jangkang-a',     label: 'Jangkang A' },
   { slug: 'jangkang-b',     label: 'Jangkang B' },
   { slug: 'joho',           label: 'Joho' },
@@ -181,7 +179,7 @@ export default function Beranda() {
 
           <p className="hero__subtitle">
             Website resmi Desa Karangtalun yang menyajikan profil desa,
-            potensi 12 dusun, serta layanan publik secara transparan dan
+            potensi 10 dusun, serta layanan publik secara transparan dan
             mudah diakses masyarakat.
           </p>
 
@@ -221,7 +219,7 @@ export default function Beranda() {
             <h2 className="about__title">Mengenal Desa Karangtalun</h2>
             <p className="about__body">
               Desa Karangtalun merupakan salah satu desa yang terletak di
-              Kabupaten Magelang, Jawa Tengah. Desa ini terdiri dari 12 dusun
+              Kabupaten Magelang, Jawa Tengah. Desa ini terdiri dari 10 dusun
               yang masing-masing memiliki potensi dan keunikan tersendiri.
             </p>
             <p className="about__body">
@@ -276,7 +274,7 @@ export default function Beranda() {
       <section className="dusun section" aria-label="Daftar dusun">
         <div className="container">
           <div className="section-header">
-            <span className="section-label">12 Dusun</span>
+            <span className="section-label">10 Dusun</span>
             <h2 className="section-title">Profil Wilayah Dusun</h2>
             <p className="section-desc">
               Setiap dusun memiliki cerita, potensi, dan keunikan masing-masing.

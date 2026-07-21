@@ -32,7 +32,7 @@ export default function SEO({
 }) {
   // ─── Default Fallback Values ─────────────────────────────────────────────
   const DEFAULT_TITLE = 'Website Resmi Desa Karangtalun'
-  const DEFAULT_DESCRIPTION = 'Portal resmi Pemerintahan Desa Karangtalun, Kabupaten Magelang, Jawa Tengah. Informasi pelayanan publik, profil wilayah, potensi 12 dusun, dan transparansi pemerintahan desa.'
+  const DEFAULT_DESCRIPTION = 'Portal resmi Pemerintahan Desa Karangtalun, Kabupaten Magelang, Jawa Tengah. Informasi pelayanan publik, profil wilayah, potensi 10 dusun, dan transparansi pemerintahan desa.'
   const DEFAULT_IMAGE = '/assets/hero-desa.jpg'
   const SITE_NAME = 'Desa Karangtalun'
 
