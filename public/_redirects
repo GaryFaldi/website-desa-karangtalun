@@ -1,2 +1,2 @@
-# Cloudflare Pages Redirects Rules
-# Seluruh 20 halaman telah ter-render statis oleh vite-react-ssg secara otomatis.
+# Redirects untuk Cloudflare Pages SPA/SSG fallback
+/* /index.html 200
