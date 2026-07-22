@@ -19,20 +19,12 @@ export default function Dusun() {
   }, [slug])
 
   // ─── Prepare SEO Data ────────────────────────────────────────────────────
-  // Logika fallback gambar: foto UMKM pertama → foto galeri pertama → hero desa
   const getSeoImage = () => {
     if (!dusunData?.frontmatter) return '/assets/hero-desa.jpg'
-    
-    const { umkm, galeri } = dusunData.frontmatter
-    
-    if (umkm && umkm.length > 0 && umkm[0].foto) {
-      return umkm[0].foto
-    }
-    
-    if (galeri && galeri.length > 0) {
-      return galeri[0]
-    }
-    
+    const { umkm, galeri, hero_foto } = dusunData.frontmatter
+    if (hero_foto) return hero_foto
+    if (Array.isArray(umkm) && umkm.length > 0 && umkm[0].foto) return umkm[0].foto
+    if (Array.isArray(galeri) && galeri.length > 0) return galeri[0]
     return '/assets/hero-desa.jpg'
   }
 
@@ -40,20 +32,19 @@ export default function Dusun() {
     if (!dusunData) {
       return `Profil wilayah Dusun ${dusunName}, Desa Karangtalun. Halaman sedang dalam tahap pengumpulan data oleh tim kontributor KKN.`
     }
-
-    // Ambil narasi awal dari content markdown (maksimal 160 karakter)
-    const { content } = dusunData
-    const plainText = content
-      .replace(/#+\s/g, '') // Hapus heading markdown
-      .replace(/\*\*/g, '') // Hapus bold
-      .replace(/\n/g, ' ')  // Ganti newline jadi spasi
+    const { frontmatter, content } = dusunData
+    const textSource = frontmatter.sejarah?.ringkasan || content || ''
+    const plainText = textSource
+      .replace(/#+\s/g, '')
+      .replace(/\*\*/g, '')
+      .replace(/\n/g, ' ')
       .trim()
     
     const excerpt = plainText.length > 160 
       ? plainText.slice(0, 157) + '...' 
       : plainText
 
-    return excerpt || `Profil wilayah, potensi UMKM, dan kegiatan warga di Dusun ${dusunName}, Desa Karangtalun.`
+    return excerpt || `Profil wilayah, potensi pertanian, UMKM, dan kegiatan warga di Dusun ${dusunName}, Desa Karangtalun.`
   }
 
   const seoTitle = `Dusun ${dusunName}`
@@ -64,7 +55,6 @@ export default function Dusun() {
   if (!dusunData) {
     return (
       <div className="dusun-page">
-        {/* SEO Meta Tags */}
         <SEO 
           title={seoTitle}
           description={seoDescription}
@@ -101,7 +91,6 @@ export default function Dusun() {
             </div>
           </div>
 
-          {/* Navigasi Cepat ke Dusun Lain */}
           <div className="other-dusun-nav">
             <h3>Jelajahi Dusun Lainnya</h3>
             <div className="other-dusun-grid">
@@ -121,101 +110,297 @@ export default function Dusun() {
     )
   }
 
-  // ─── KONDISI 2: DATA ADA (RENDER KONTEN MARKDOWN) ──────────────────────────
+  // ─── KONDISI 2: DATA ADA (DESAIN INTERAKTIF VISUAL CARDS) ───────────────────
   const { frontmatter, content } = dusunData
 
   return (
     <div className="dusun-page">
-      {/* SEO Meta Tags */}
       <SEO 
         title={seoTitle}
         description={seoDescription}
         image={seoImage}
       />
 
-      {/* Header */}
+      {/* Header Halaman (Green Variant) */}
       <Header
         title={`Dusun ${frontmatter.nama}`}
-        subtitle={`Profil Wilayah, Potensi UMKM, dan Kegiatan Warga di Dusun ${frontmatter.nama}`}
+        subtitle={frontmatter.tagline || `Profil Wilayah, Potensi Pertanian, UMKM, dan Kegiatan Warga Dusun ${frontmatter.nama}`}
         green={true}
       />
 
       <div className="container dusun-page__content">
-        {/* Kilat Info Dusun */}
-        <div className="dusun-stats-grid">
-          <div className="dusun-stat-card">
-            <span className="dusun-stat-card__icon">👤</span>
-            <div className="dusun-stat-card__info">
-              <span className="label">Kepala Dusun</span>
-              <strong className="value">{frontmatter.kepala_dusun || '—'}</strong>
+
+        {/* ── 1. Seksi Ringkasan & Stat Cards ── */}
+        <section className="dusun-section" aria-labelledby="ringkasan-title">
+          <div className="dusun-overview-grid">
+            <div className="dusun-overview__text">
+              <span className="dusun-section__badge">Wilayah Dusun</span>
+              <h2 id="ringkasan-title" className="dusun-section__title">
+                Profil Dusun {frontmatter.nama}
+              </h2>
+              <p className="dusun-section__p">
+                Dusun <strong>{frontmatter.nama}</strong> merupakan salah satu wilayah di Desa Karangtalun dengan lingkungan pemukiman asri yang dikelilingi persawahan hijau subur dan potensi industri rumahan produktif.
+              </p>
+            </div>
+
+            <div className="dusun-overview__visual">
+              <div className="dusun-stat-card">
+                <span className="dusun-stat-card__icon">👤</span>
+                <div className="dusun-stat-card__info">
+                  <span className="label">Kepala Dusun</span>
+                  <strong className="value">{frontmatter.kepala_dusun || '—'}</strong>
+                </div>
+              </div>
+
+              <div className="dusun-stat-card">
+                <span className="dusun-stat-card__icon">👥</span>
+                <div className="dusun-stat-card__info">
+                  <span className="label">Total Penduduk</span>
+                  <strong className="value">
+                    {frontmatter.jumlah_penduduk ? `${frontmatter.jumlah_penduduk} Jiwa` : '—'}
+                  </strong>
+                </div>
+              </div>
+
+              {frontmatter.jumlah_kk && (
+                <div className="dusun-stat-card">
+                  <span className="dusun-stat-card__icon">🏠</span>
+                  <div className="dusun-stat-card__info">
+                    <span className="label">Rumah Tangga</span>
+                    <strong className="value">{frontmatter.jumlah_kk} KK</strong>
+                  </div>
+                </div>
+              )}
+
+              {frontmatter.rt_rw && (
+                <div className="dusun-stat-card">
+                  <span className="dusun-stat-card__icon">🗺️</span>
+                  <div className="dusun-stat-card__info">
+                    <span className="label">Cakupan Wilayah</span>
+                    <strong className="value">{frontmatter.rt_rw}</strong>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-          <div className="dusun-stat-card">
-            <span className="dusun-stat-card__icon">👥</span>
-            <div className="dusun-stat-card__info">
-              <span className="label">Estimasi Penduduk</span>
-              <strong className="value">
-                {frontmatter.jumlah_penduduk ? `${frontmatter.jumlah_penduduk} Jiwa` : '—'}
-              </strong>
+        </section>
+
+        <hr className="dusun__divider" />
+
+        {/* ── 2. Seksi Pilar Keunggulan Pertanian & Irigasi (Interactive Feature Grid) ── */}
+        {frontmatter.keunggulan_pertanian && Array.isArray(frontmatter.keunggulan_pertanian.fitur) && (
+          <section className="dusun-section" aria-labelledby="pertanian-title">
+            <div className="dusun-section__header-center">
+              <span className="dusun-section__badge">Keunggulan Utama</span>
+              <h2 id="pertanian-title" className="dusun-section__title">
+                {frontmatter.keunggulan_pertanian.judul}
+              </h2>
             </div>
-          </div>
-        </div>
 
-        <hr className="dusun-divider" />
-
-        {/* Konten Narasi (Markdown) */}
-        <article className="dusun-article markdown-body">
-          <ReactMarkdown>{content}</ReactMarkdown>
-        </article>
-
-        {/* Seksi UMKM & Unggulan */}
-        {frontmatter.umkm && frontmatter.umkm.length > 0 && (
-          <section className="dusun-section">
-            <div className="dusun-section__header">
-              <span className="section-badge">Potensi Lokal</span>
-              <h2>UMKM & Produk Unggulan</h2>
-            </div>
-            <div className="umkm-grid">
-              {frontmatter.umkm.map((item, idx) => (
-                <div key={idx} className="umkm-card">
-                  <div className="umkm-card__img-wrap">
-                    <img
-                      src={item.foto || '/assets/hero-desa.jpg'}
-                      alt={item.nama}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="umkm-card__body">
-                    <h3>{item.nama}</h3>
-                    <p>{item.deskripsi}</p>
-                  </div>
+            <div className="pilar-feature-grid">
+              {frontmatter.keunggulan_pertanian.fitur.map((item, idx) => (
+                <div key={idx} className="pilar-feature-card">
+                  <span className="pilar-feature-card__icon">{item.ikon}</span>
+                  <h3 className="pilar-feature-card__title">{item.judul}</h3>
+                  <p className="pilar-feature-card__desc">{item.deskripsi}</p>
                 </div>
               ))}
             </div>
           </section>
         )}
 
-        {/* Seksi Galeri */}
-        {frontmatter.galeri && frontmatter.galeri.length > 0 && (
+        {/* Fallback jika menggunakan pilar_utama sederhana */}
+        {!frontmatter.keunggulan_pertanian && frontmatter.pilar_utama && (
           <section className="dusun-section">
-            <div className="dusun-section__header">
-              <span className="section-badge">Dokumentasi</span>
-              <h2>Galeri Kegiatan Dusun</h2>
-            </div>
-            <div className="dusun-galeri-grid">
-              {frontmatter.galeri.map((foto, idx) => (
-                <div key={idx} className="dusun-galeri-item">
-                  <img src={foto} alt={`Dokumentasi ${frontmatter.nama} ${idx + 1}`} loading="lazy" />
-                </div>
-              ))}
+            <div className="pilar-box">
+              <span className="pilar-box__quote-icon">{frontmatter.pilar_utama.ikon || '🌾'}</span>
+              <h3 className="pilar-box__title">{frontmatter.pilar_utama.judul}</h3>
+              <p className="pilar-box__text">{frontmatter.pilar_utama.deskripsi}</p>
             </div>
           </section>
         )}
 
-        <hr className="dusun-divider" />
+        <hr className="dusun__divider" />
 
-        {/* Navigasi Cepat ke Dusun Lain */}
-        <div className="other-dusun-nav">
+        {/* ── 3. Seksi Sejarah & Karakter Dusun (Story Card) ── */}
+        {frontmatter.sejarah && (
+          <section className="dusun-section" aria-labelledby="sejarah-title">
+            <div className="sejarah-story-card">
+              <div className="sejarah-story-card__header">
+                <span className="dusun-section__badge">Asal-Usul & Nilai</span>
+                <h2 id="sejarah-title" className="sejarah-story-card__title">
+                  {frontmatter.sejarah.judul}
+                </h2>
+                {frontmatter.sejarah.ringkasan && (
+                  <p className="sejarah-story-card__ringkasan">
+                    {frontmatter.sejarah.ringkasan}
+                  </p>
+                )}
+              </div>
+
+              {Array.isArray(frontmatter.sejarah.poin) && frontmatter.sejarah.poin.length > 0 && (
+                <div className="sejarah-story-card__grid">
+                  {frontmatter.sejarah.poin.map((p, idx) => (
+                    <div key={idx} className="sejarah-poin-card">
+                      <span className="sejarah-poin-card__icon">{p.ikon || '📜'}</span>
+                      <div className="sejarah-poin-card__info">
+                        <h3>{p.judul}</h3>
+                        <p>{p.deskripsi}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* ── 4. Seksi Sarana & Kegiatan Kemasyarakatan (Feature Grid) ── */}
+        {Array.isArray(frontmatter.sarana_kegiatan) && frontmatter.sarana_kegiatan.length > 0 && (
+          <>
+            <hr className="dusun__divider" />
+            <section className="dusun-section" aria-labelledby="sarana-title">
+              <div className="dusun-section__header-center">
+                <span className="dusun-section__badge">Kemasyarakatan</span>
+                <h2 id="sarana-title" className="dusun-section__title">
+                  Sarana & Lembaga Dusun
+                </h2>
+              </div>
+
+              <div className="sarana-grid">
+                {frontmatter.sarana_kegiatan.map((item, idx) => (
+                  <div key={idx} className="sarana-card">
+                    <span className="sarana-card__icon">{item.ikon}</span>
+                    <div className="sarana-card__body">
+                      {item.kategori && <span className="sarana-card__tag">{item.kategori}</span>}
+                      <h3>{item.judul}</h3>
+                      <p>{item.deskripsi}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* ── 6. Fallback Artikel Markdown Biasa (jika ada file dusun lain dengan markdown murni) ── */}
+        {content && content.trim() !== '' && !frontmatter.sejarah && (
+          <>
+            <hr className="dusun__divider" />
+            <section className="dusun-section">
+              <article className="dusun-article markdown-body">
+                <ReactMarkdown>{content}</ReactMarkdown>
+              </article>
+            </section>
+          </>
+        )}
+
+        {/* ── 7. Seksi UMKM & Produk Unggulan ── */}
+        {Array.isArray(frontmatter.umkm) && frontmatter.umkm.length > 0 && (
+          <>
+            <hr className="dusun__divider" />
+            <section className="dusun-section" aria-labelledby="umkm-title">
+              <div className="dusun-section__header-center">
+                <span className="dusun-section__badge">Potensi & Usaha Warga</span>
+                <h2 id="umkm-title" className="dusun-section__title">UMKM & Industri Rumahan</h2>
+              </div>
+
+              <div className="umkm-grid">
+                {frontmatter.umkm.map((item, idx) => (
+                  <div key={idx} className="umkm-card">
+                    <div className="umkm-card__img-wrap">
+                      <img
+                        src={item.foto || '/assets/hero-desa.jpg'}
+                        alt={item.nama}
+                        loading="lazy"
+                      />
+                      {item.kategori && (
+                        <span className="umkm-card__category-badge">{item.kategori}</span>
+                      )}
+                    </div>
+                    <div className="umkm-card__body">
+                      <h3>{item.nama}</h3>
+                      <p>{item.deskripsi}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* ── 7. Seksi Fasilitas Dusun ── */}
+        {Array.isArray(frontmatter.fasilitas_dusun) && frontmatter.fasilitas_dusun.length > 0 && (
+          <>
+            <hr className="dusun__divider" />
+            <section className="dusun-section" aria-labelledby="fasilitas-title">
+              <div className="dusun-section__header-center">
+                <span className="dusun-section__badge">Sarana & Prasarana</span>
+                <h2 id="fasilitas-title" className="dusun-section__title">Fasilitas Dusun</h2>
+              </div>
+
+              <div className="fasilitas-dusun-grid">
+                {frontmatter.fasilitas_dusun.map((item, idx) => (
+                  <div key={idx} className="fasilitas-dusun-card">
+                    <div className="fasilitas-dusun-card__img-wrap">
+                      <img
+                        src={item.foto || '/assets/hero-desa.jpg'}
+                        alt={item.nama}
+                        loading="lazy"
+                      />
+                      {item.kategori && (
+                        <span className="fasilitas-dusun-card__badge">{item.kategori}</span>
+                      )}
+                    </div>
+                    <div className="fasilitas-dusun-card__body">
+                      <h3>{item.nama}</h3>
+                      {item.deskripsi && <p>{item.deskripsi}</p>}
+                      {item.maps_url && (
+                        <a
+                          href={item.maps_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="fasilitas-dusun-card__maps-btn"
+                        >
+                          📍 Buka di Google Maps →
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* ── 8. Seksi Galeri Dokumentasi ── */}
+        {Array.isArray(frontmatter.galeri) && frontmatter.galeri.length > 0 && (
+          <>
+            <hr className="dusun__divider" />
+            <section className="dusun-section" aria-labelledby="galeri-title">
+              <div className="dusun-section__header-center">
+                <span className="dusun-section__badge">Kegiatan Warga</span>
+                <h2 id="galeri-title" className="dusun-section__title">Galeri Kegiatan Dusun</h2>
+              </div>
+
+              <div className="dusun-galeri-grid">
+                {frontmatter.galeri.map((foto, idx) => (
+                  <div key={idx} className="dusun-galeri-item">
+                    <img src={foto} alt={`Dokumentasi ${frontmatter.nama} ${idx + 1}`} loading="lazy" />
+                    <div className="dusun-galeri-item__overlay">
+                      <span>🔍</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
+
+        <hr className="dusun__divider" />
+
+        {/* ── 9. Navigasi Dusun Switcher ── */}
+        <section className="other-dusun-nav" aria-label="Navigasi dusun lainnya">
           <h3>Jelajahi Dusun Lainnya di Karangtalun</h3>
           <div className="other-dusun-grid">
             {ALL_DUSUN_SLUGS.map((d) => (
@@ -228,7 +413,8 @@ export default function Dusun() {
               </Link>
             ))}
           </div>
-        </div>
+        </section>
+
       </div>
     </div>
   )

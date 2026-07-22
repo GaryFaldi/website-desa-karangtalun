@@ -1,0 +1,8 @@
+# robots.txt untuk Website Resmi Desa Karangtalun
+# Kabupaten Magelang, Jawa Tengah
+
+User-agent: *
+Allow: /
+
+# Sitemap Lokasi
+Sitemap: https://karangtalun.my.id/sitemap.xml

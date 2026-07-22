@@ -3,10 +3,8 @@ import { Helmet } from 'react-helmet-async'
 /**
  * Komponen SEO Helper untuk Website Desa Karangtalun
  * 
- * Menghasilkan meta tags untuk SEO dan social media preview (OpenGraph, Twitter Card)
- * yang ter-render secara statis di HTML saat build SSG.
- * 
- * Menggunakan react-helmet-async yang sudah terintegrasi dengan vite-react-ssg.
+ * Menghasilkan meta tags untuk SEO, social media preview (OpenGraph, Twitter Card),
+ * serta Schema.org JSON-LD Structured Data untuk Google Rich Snippet.
  * 
  * @component
  * @param {Object} props
@@ -15,13 +13,6 @@ import { Helmet } from 'react-helmet-async'
  * @param {string} [props.image] - URL gambar untuk OpenGraph preview (absolut atau relatif)
  * @param {string} [props.url] - URL canonical untuk halaman (opsional)
  * @param {string} [props.type='website'] - Tipe OpenGraph (website, article, profile, dll)
- * 
- * @example
- * <SEO 
- *   title="Beranda" 
- *   description="Portal resmi Desa Karangtalun"
- *   image="/assets/hero-desa.jpg"
- * />
  */
 export default function SEO({
   title,
@@ -31,6 +22,7 @@ export default function SEO({
   type = 'website',
 }) {
   // ─── Default Fallback Values ─────────────────────────────────────────────
+  const BASE_URL = import.meta.env.VITE_SITE_URL || 'https://karangtalun.my.id'
   const DEFAULT_TITLE = 'Website Resmi Desa Karangtalun'
   const DEFAULT_DESCRIPTION = 'Portal resmi Pemerintahan Desa Karangtalun, Kabupaten Magelang, Jawa Tengah. Informasi pelayanan publik, profil wilayah, potensi 10 dusun, dan transparansi pemerintahan desa.'
   const DEFAULT_IMAGE = '/assets/hero-desa.jpg'
@@ -43,13 +35,40 @@ export default function SEO({
 
   const pageDescription = description || DEFAULT_DESCRIPTION
   
-  // Pastikan image URL absolut untuk OpenGraph (jika relatif, tambahkan domain di production)
+  // Pastikan image URL absolut untuk OpenGraph
   const pageImage = image || DEFAULT_IMAGE
   const absoluteImage = pageImage.startsWith('http') 
     ? pageImage 
-    : `${import.meta.env.VITE_SITE_URL || ''}${pageImage}`
+    : `${BASE_URL}${pageImage.startsWith('/') ? '' : '/'}${pageImage}`
 
-  const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : '')
+  const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : BASE_URL)
+
+  // ─── Schema.org Structured Data (JSON-LD) ────────────────────────────────
+  const schemaOrgJSONLD = {
+    '@context': 'https://schema.org',
+    '@type': 'GovernmentOrganization',
+    name: 'Pemerintahan Desa Karangtalun',
+    alternateName: 'Desa Karangtalun',
+    url: BASE_URL,
+    logo: `${BASE_URL}/favicon.svg`,
+    image: absoluteImage,
+    description: pageDescription,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Jl. Ngluwar-Tamanagung, Karangtalun',
+      addressLocality: 'Ngluwar',
+      addressRegion: 'Kabupaten Magelang',
+      postalCode: '56485',
+      addressCountry: 'ID',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: -7.6517,
+      longitude: 110.2718,
+    },
+    telePhone: '+628123456789',
+    email: 'pemdes@karangtalun.my.id',
+  }
 
   return (
     <Helmet>
@@ -71,8 +90,13 @@ export default function SEO({
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={absoluteImage} />
 
-      {/* ── Canonical URL (opsional) ── */}
+      {/* ── Canonical URL ── */}
       {pageUrl && <link rel="canonical" href={pageUrl} />}
+
+      {/* ── Schema.org JSON-LD Structured Data ── */}
+      <script type="application/ld+json">
+        {JSON.stringify(schemaOrgJSONLD)}
+      </script>
     </Helmet>
   )
 }

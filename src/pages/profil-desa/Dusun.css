@@ -1,4 +1,4 @@
-/* Dusun.css */
+/* Dusun.css — Diselaraskan dengan gaya Overview.css */
 
 .dusun-page__content,
 .dusun-page__skeleton-wrap {
@@ -9,11 +9,350 @@
   gap: var(--spacing-xxl);
 }
 
-.dusun-divider {
+.dusun__divider {
   border: 0;
   height: 1px;
   background-color: var(--color-border);
-  margin: var(--spacing-sm) 0;
+  margin: var(--spacing-md) 0;
+}
+
+/* ── Section Utilities ────────────────────────────────────────────────────── */
+.dusun-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.dusun-section__badge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+  margin-bottom: var(--spacing-xs);
+}
+
+.dusun-section__title {
+  font-size: var(--text-xxl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  line-height: 1.25;
+}
+
+.dusun-section__p {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.dusun-section__header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ── Seksi Overview Grid (Ringkasan & Stats Baris Kanan) ──────────────────── */
+.dusun-overview-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.dusun-overview__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.dusun-overview__visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+/* ── Stat Cards Grid (Visual Card Style) ─────────────────────────────────── */
+.dusun-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.dusun-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.dusun-stat-card__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  background-color: var(--color-primary-light);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  color: var(--color-primary-dark);
+  flex-shrink: 0;
+}
+
+.dusun-stat-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dusun-stat-card__info .label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-semibold);
+}
+
+.dusun-stat-card__info .value {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+/* ── 2. PILAR KEUNGGULAN FEATURE GRID (PERTANIAN & IRIGASI) ──────────────── */
+.pilar-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.pilar-feature-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.pilar-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.pilar-feature-card__icon {
+  font-size: 2.25rem;
+  line-height: 1;
+  background-color: var(--color-primary-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+.pilar-feature-card__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.pilar-feature-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── 3. SEJARAH STORY CARD ───────────────────────────────────────────────── */
+.sejarah-story-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.sejarah-story-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.sejarah-story-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.sejarah-story-card__ringkasan {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.sejarah-story-card__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.sejarah-poin-card {
+  display: flex;
+  gap: var(--spacing-md);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+.sejarah-poin-card__icon {
+  font-size: 1.75rem;
+  line-height: 1;
+  background-color: var(--color-surface);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.sejarah-poin-card__info h3 {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 4px 0;
+}
+
+.sejarah-poin-card__info p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── 4. SARANA & KELOMPOK DUSUN GRID ─────────────────────────────────────── */
+.sarana-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.sarana-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.sarana-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.sarana-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+  background-color: var(--color-primary-light);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.sarana-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sarana-card__tag {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sarana-card__body h3 {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.sarana-card__body p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── 5. TRADISI BANNER BOX ───────────────────────────────────────────────── */
+.tradisi-banner-box {
+  background-color: var(--color-primary-light);
+  border-left: 6px solid var(--color-primary-dark);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.tradisi-banner-box__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.tradisi-banner-box__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.tradisi-banner-box__desc {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.tradisi-banner-box__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.tradisi-pill {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 /* ── SKELETON / UNDER CONSTRUCTION ────────────────────────────────────────── */
@@ -87,55 +426,9 @@
   justify-content: center;
 }
 
-/* ── STATS KEPALA DUSUN & PENDUDUK ────────────────────────────────────────── */
-.dusun-stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-lg);
-}
-
-.dusun-stat-card {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-lg);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-left: 6px solid var(--color-primary-dark);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg) var(--spacing-xl);
-  box-shadow: var(--shadow-sm);
-}
-
-.dusun-stat-card__icon {
-  font-size: 2.5rem;
-  line-height: 1;
-  background-color: var(--color-primary-light);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-full);
-}
-
-.dusun-stat-card__info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.dusun-stat-card__info .label {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: var(--font-semibold);
-}
-
-.dusun-stat-card__info .value {
-  font-size: var(--text-xl);
-  color: var(--color-text-primary);
-}
-
-/* ── MARKDOWN BODY STYLING ────────────────────────────────────────────────── */
+/* ── MARKDOWN ARTICLE STYLING (FALLBACK) ──────────────────────────────────── */
 .dusun-article {
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
   width: 100%;
   color: var(--color-text-secondary);
@@ -153,64 +446,114 @@
   padding-bottom: var(--spacing-xs);
 }
 
-.dusun-article h3 {
-  font-size: var(--text-lg);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-sm);
-}
-
 .dusun-article p {
   margin-bottom: var(--spacing-md);
 }
 
-.dusun-article ol,
-.dusun-article ul {
-  padding-left: var(--spacing-xl);
-  margin-bottom: var(--spacing-md);
+/* ── FASILITAS DUSUN GRID & CARDS ────────────────────────────────────────── */
+.fasilitas-dusun-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
 }
 
-.dusun-article li {
-  margin-bottom: var(--spacing-xs);
-}
-
-.dusun-article strong {
-  color: var(--color-text-primary);
-}
-
-/* ── UMKM GRID ────────────────────────────────────────────────────────────── */
-.dusun-section {
+.fasilitas-dusun-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.dusun-section__header {
-  text-align: center;
+.fasilitas-dusun-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
-.section-badge {
-  display: inline-block;
+.fasilitas-dusun-card__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: var(--color-background);
+}
+
+.fasilitas-dusun-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.fasilitas-dusun-card:hover .fasilitas-dusun-card__img-wrap img {
+  transform: scale(1.06);
+}
+
+.fasilitas-dusun-card__badge {
+  position: absolute;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fasilitas-dusun-card__body {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex-grow: 1;
+}
+
+.fasilitas-dusun-card__body h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.fasilitas-dusun-card__body p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.fasilitas-dusun-card__maps-btn {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: var(--text-xs);
   font-weight: var(--font-bold);
   color: var(--color-primary-dark);
   background-color: var(--color-primary-light);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  text-transform: uppercase;
-  margin-bottom: var(--spacing-xs);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  width: fit-content;
 }
 
-.dusun-section__header h2 {
-  font-size: var(--text-xxl);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
+.fasilitas-dusun-card__maps-btn:hover {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
 }
 
+/* ── UMKM GRID STYLING ────────────────────────────────────────────────────── */
 .umkm-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--spacing-xl);
 }
 
@@ -231,8 +574,9 @@
 }
 
 .umkm-card__img-wrap {
+  position: relative;
   width: 100%;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
   background-color: var(--color-background);
 }
@@ -241,6 +585,26 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.umkm-card:hover .umkm-card__img-wrap img {
+  transform: scale(1.06);
+}
+
+.umkm-card__category-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .umkm-card__body {
@@ -254,15 +618,17 @@
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
   color: var(--color-text-primary);
+  margin: 0;
 }
 
 .umkm-card__body p {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   line-height: 1.6;
+  margin: 0;
 }
 
-/* ── GALERI GRID ──────────────────────────────────────────────────────────── */
+/* ── GALERI GRID STYLING ──────────────────────────────────────────────────── */
 .dusun-galeri-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -270,34 +636,64 @@
 }
 
 .dusun-galeri-item {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   height: 200px;
   box-shadow: var(--shadow-sm);
+  cursor: pointer;
 }
 
 .dusun-galeri-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
-.dusun-galeri-item img:hover {
-  transform: scale(1.05);
+.dusun-galeri-item:hover img {
+  transform: scale(1.06);
 }
 
-/* ── NAVIGASI LAINNYA ─────────────────────────────────────────────────────── */
+.dusun-galeri-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.dusun-galeri-item:hover .dusun-galeri-item__overlay {
+  opacity: 1;
+}
+
+.dusun-galeri-item__overlay span {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* ── NAVIGASI SWITCHER 10 DUSUN ────────────────────────────────────────────── */
 .other-dusun-nav {
-  background-color: var(--color-background);
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   text-align: center;
+  box-shadow: var(--shadow-sm);
 }
 
 .other-dusun-nav h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   font-weight: var(--font-bold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-lg);
@@ -312,7 +708,7 @@
 
 .other-dusun-pill {
   padding: 8px 16px;
-  background-color: var(--color-surface);
+  background-color: var(--color-background);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   font-size: var(--text-sm);
@@ -326,36 +722,36 @@
   border-color: var(--color-primary-dark);
   color: var(--color-primary-dark);
   transform: translateY(-2px);
+  background-color: var(--color-primary-light);
 }
 
 .other-dusun-pill--active {
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
-.other-dusun-pill--active:hover {
-  color: #ffffff;
-  background-color: var(--color-primary);
-}
+/* ── RESPONSIVE STYLING ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .dusun-overview-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
 
-/* ── Responsive Styling ──────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .dusun-stats-grid {
+  .pilar-feature-grid,
+  .sarana-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sejarah-story-card__grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .skeleton-card {
-    padding: var(--spacing-xl) var(--spacing-md);
-  }
-
-  .skeleton-card__actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .skeleton-card__actions .btn {
-    width: 100%;
-    text-align: center;
+@media (max-width: 640px) {
+  .pilar-feature-grid,
+  .sarana-grid,
+  .dusun-overview__visual {
+    grid-template-columns: 1fr;
   }
 }

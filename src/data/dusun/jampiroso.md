@@ -1,28 +1,109 @@
 ---
 nama: "Jampiroso"
 slug: "jampiroso"
-kepala_dusun: "Bapak Sutrisno (Data Sementara)"
-jumlah_penduduk: 420
-umkm:
-  - nama: "Keripik Singkong Renyah Jampiroso"
-    deskripsi: "Produksi olahan singkong lokal dengan bumbu alami rahasia turun-temurun."
-    foto: "/assets/hero-desa.jpg"
-  - nama: "Kerajinan Anyaman Bambu"
-    deskripsi: "Kerajinan tangan berupa besek, tampah, dan kursi bambu berkualitas tinggi."
-    foto: "/assets/hero-desa.jpg"
+tagline: "Sentra Pertanian Padi, Saluran Irigasi Subur, dan Fasilitas Pedesaan Dusun Jampiroso"
+kepala_dusun: "Tatri Mulyani"
+jumlah_penduduk: 412
+jumlah_kk: 136
+rt_rw: "4 RT / 1 RW"
+
+sejarah:
+  judul: "Asal-Usul & Karakter Kemasyarakatan"
+  ringkasan: "Dusun Jampiroso berakar dari tradisi masyarakat agraris pedesaan Jawa yang mengelola tanah pertanian subur secara turun-temurun di Desa Karangtalun, Kabupaten Magelang."
+  poin:
+    - judul: "Semangat Gotong Royong"
+      deskripsi: "Budaya sambatan dan kerja bakti senantiasa hidup dalam setiap pembangunan fasilitas serta kegiatan sosial warga."
+      ikon: "🤝"
+    - judul: "Harmoni Alam & Sumber Air"
+      deskripsi: "Pengelolaan air persawahan yang bijaksana menciptakan lingkungan pedesaan yang sejuk, damai, dan produktif."
+      ikon: "🌱"
+
+keunggulan_pertanian:
+  judul: "Pertanian & Pengairan Irigasi Subur"
+  sub: "Fokus Utama Keunggulan Dusun"
+  fitur:
+    - ikon: "💧"
+      judul: "Irigasi Pedesaan Teratur"
+      deskripsi: "Pasokan air mengalir lancar mengaliri seluruh lahan persawahan warga sepanjang tahun tanpa kendala."
+    - ikon: "🌾"
+      judul: "Lumbung Panen Padi"
+      deskripsi: "Produktivitas gabah berkualitas didukung oleh pengolahan tanah yang teratur dan kekompakan Poktan."
+    - ikon: "🏞️"
+      judul: "Persawahan Asri & Sejuk"
+      deskripsi: "Bentangan sawah hijau yang memberikan kenyamanan lingkungan dan daya tarik keasrian pedesaan."
+
+sarana_kegiatan:
+  - ikon: "👨‍🌾"
+    judul: "Kelompok Tani (Poktan)"
+    deskripsi: "Wadah rembuk petani dalam pengaturan jadwal tanam, distribusi pupuk organik, dan pemeliharaan saluran air."
+    kategori: "Pertanian"
+  - ikon: "🩺"
+    judul: "Posyandu & Ibu PKK"
+    deskripsi: "Layanan berkala kesehatan ibu, balita, lansia serta program peningkatan keterampilan ekonomi keluarga."
+    kategori: "Kesehatan & Pemberdayaan"
+  - ikon: "🕌"
+    judul: "Sarana Ibadah & Keagamaan"
+    deskripsi: "Kegiatan pengajian rutin dan ibadah warga yang berpusat di masjid serta musholla Dusun Jampiroso."
+    kategori: "Sosial-Keagamaan"
+
+fasilitas_dusun:
+  - nama: "Masjid Baitus Salim"
+    kategori: "Tempat Ibadah"
+    foto: "/assets/jampiroso/Masjid Baitus Salam.jpeg"
+    maps_url: "https://maps.app.goo.gl/QyBv8vHsuqRkm4zM6"
+    deskripsi: "Masjid utama tempat ibadah dan pusat kegiatan keagamaan warga Dusun Jampiroso."
+  - nama: "Pos Ronda Jampiroso"
+    kategori: "Pos Keamanan"
+    foto: "/assets/jampiroso/Pos Ronda.jpeg"
+    maps_url: "https://www.google.com/maps?q=-7.652471542358398,110.2713851928711&z=17&hl=id"
+    deskripsi: "Pos keamanan lingkungan aktif tempat ronda malam dan silaturahmi warga."
+  - nama: "Pendopo Dusun"
+    kategori: "Balai Pertemuan"
+    foto: "/assets/jampiroso/Pendopo.jpeg"
+    maps_url: "https://www.google.com/maps?q=-7.652224063873291,110.27200317382812&z=17&hl=id"
+    deskripsi: "Pendopo pertemuan warga untuk musyawarah dusun dan kegiatan seni kebudayaan."
+  - nama: "Mushola Jampiroso RT 02"
+    kategori: "Tempat Ibadah"
+    foto: "/assets/jampiroso/Mushola Jampiroso RT2.jpeg"
+    maps_url: "https://www.google.com/maps?q=-7.652930736541748,110.27283477783203&z=17&hl=id"
+    deskripsi: "Mushola warga RT 02 untuk sholat berjamaah dan pengajian rutin anak-anak."
+  - nama: "SDN Karangtalun 1"
+    kategori: "Pendidikan"
+    foto: "/assets/jampiroso/SDN Karangtalun 1.jpeg"
+    maps_url: "https://maps.app.goo.gl/Z5QQ5oW4rrsGVACCA"
+    deskripsi: "Sekolah Dasar Negeri pusat pendidikan dasar anak-anak Desa Karangtalun."
+  - nama: "Kelompok Bermain Dahlia"
+    kategori: "Pendidikan PAUD"
+    foto: "/assets/jampiroso/Kelompok Bermain Dahlia.jpeg"
+    maps_url: "https://maps.app.goo.gl/gYevWU7sikvpp4A29"
+    deskripsi: "Lembaga pendidikan anak usia dini (PAUD) untuk tumbuh kembang anak-anak dusun."
+  - nama: "Mushola An Nur"
+    kategori: "Tempat Ibadah"
+    foto: "/assets/jampiroso/Mushola An Nur.jpeg"
+    maps_url: "https://maps.app.goo.gl/WugNKBjM1JpfZ28A8"
+    deskripsi: "Mushola tempat ibadah dan sarana kegiatan sosial-keagamaan lingkungan."
+  - nama: "Pos Ronda RT 04"
+    kategori: "Pos Keamanan"
+    foto: "/assets/jampiroso/Pos Ronda RT04.jpeg"
+    maps_url: "https://www.google.com/maps?q=-7.649893283843994,110.27387237548828&z=17&hl=id"
+    deskripsi: "Pos ronda keamanan lingkungan warga RT 04 Dusun Jampiroso."
+
 galeri:
-  - "/assets/hero-desa.jpg"
-  - "/assets/hero-desa.jpg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-02 at 17.34.58.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-03 at 19.31.29.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-04 at 14.41.05.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-04 at 18.34.03.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-04 at 18.34.10.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-04 at 23.04.47.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-06 at 21.28.56.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-07 at 05.41.47.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-07 at 19.45.25.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-08 at 11.17.30.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-14 at 09.23.28 (1).jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-18 at 22.10.05.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-18 at 22.10.41.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-21 at 22.05.15.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-21 at 22.05.25.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-21 at 22.08.10.jpeg"
+  - "/assets/jampiroso/Kegiatan/WhatsApp Image 2026-07-21 at 22.08.12.jpeg"
 ---
-
-## Sejarah & Gambaran Umum
-
-Dusun **Jampiroso** merupakan salah satu dusun yang aktif dan produktif di Desa Karangtalun. Terletak di area yang dikelilingi persawahan subur dan kebun tanaman keras, masyarakat Jampiroso sangat bergantung pada sektor pertanian dan industri kerajinan rumahan (UMKM).
-
-Suasana di dusun ini terkenal sejuk, asri, dan warganya sangat menjunjung tinggi kebersamaan. Setiap kegiatan desa maupun dusun selalu dikerjakan melalui budaya *gotong royong* atau sambatan.
-
-## Potensi & Keunggulan Dusun
-
-1. **Sentra UMKM Olahan Pangan**: Jampiroso terkenal dengan hasil ketela pohon dan olahan makanan ringannya yang telah dipasarkan hingga ke luar desa.
-2. **Kelompok Tani Aktif**: Adanya pembinaan rutin bagi para petani lokal dalam mengelola irigasi dan pupuk organik demi menjaga kualitas panen sawah.
-3. **Tradisi Seni & Budaya**: Warga Jampiroso secara berkala mengadakan pentas kesenian tradisional desa sebagai wadah kreativitas pemuda-pemudi dusun.

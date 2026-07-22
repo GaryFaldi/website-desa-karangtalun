@@ -1,34 +1,70 @@
-import matter from 'gray-matter'
+import jsYaml from 'js-yaml'
 
 /**
  * loadDusunData.js
  * Helper untuk membaca dan memproses semua file markdown di src/data/dusun/
- * Menggunakan fitur import.meta.glob dari Vite (PRD §6.3).
+ * Menggunakan fitur import.meta.glob dari Vite.
  */
 
 // Baca semua file .md di folder dusun secara eager dan ambil konten raw-nya
-const mdFiles = import.meta.glob('/src/data/dusun/*.md', {
+const mdFiles = import.meta.glob('../data/dusun/*.md', {
   query: '?raw',
   import: 'default',
   eager: true,
 })
 
 /**
- * Mendapatkan semua data dusun yang valid (mengabaikan file yang diawali underscore seperti _template.md)
+ * Parser frontmatter berbasis js-yaml murni (100% aman di browser & Node.js)
+ */
+function parseFrontmatter(rawContent) {
+  if (!rawContent || typeof rawContent !== 'string') {
+    return { data: {}, content: '' }
+  }
+
+  const lines = rawContent.split('\n')
+  if (lines[0].trim() !== '---') {
+    return { data: {}, content: rawContent }
+  }
+
+  let endIdx = -1
+  for (let i = 1; i < lines.length; i++) {
+    if (lines[i].trim() === '---') {
+      endIdx = i
+      break
+    }
+  }
+
+  if (endIdx === -1) {
+    return { data: {}, content: rawContent }
+  }
+
+  const yamlStr = lines.slice(1, endIdx).join('\n')
+  const bodyContent = lines.slice(endIdx + 1).join('\n')
+
+  try {
+    const data = jsYaml.load(yamlStr) || {}
+    return { data, content: bodyContent }
+  } catch (err) {
+    console.error('[loadDusunData] Gagal memparsing YAML frontmatter:', err)
+    return { data: {}, content: bodyContent }
+  }
+}
+
+/**
+ * Mendapatkan semua data dusun yang valid
  * @returns {Array<{ slug: string, frontmatter: Object, content: string }>}
  */
 export function getAllDusun() {
   const dusunList = []
 
   for (const [path, rawContent] of Object.entries(mdFiles)) {
-    // Abaikan template atau file hidden
     const fileName = path.split('/').pop()
     if (fileName.startsWith('_')) continue
 
     try {
-      const { data: frontmatter, content } = matter(rawContent)
-      
-      // Gunakan slug dari frontmatter, atau fallback dari nama file
+      const parsed = parseFrontmatter(rawContent)
+      const frontmatter = parsed.data || {}
+      const content = parsed.content || ''
       const slug = frontmatter.slug || fileName.replace(/\.md$/, '')
 
       dusunList.push({
@@ -37,7 +73,7 @@ export function getAllDusun() {
         content,
       })
     } catch (err) {
-      console.error(`[loadDusunData] Gagal memparsing file: ${path}`, err)
+      console.error(`[loadDusunData] Gagal memproses file: ${path}`, err)
     }
   }
 
@@ -47,7 +83,7 @@ export function getAllDusun() {
 /**
  * Mendapatkan data satu dusun berdasarkan slug
  * @param {string} slug 
- * @returns {Object|null} { slug, frontmatter, content } atau null jika belum dibuat
+ * @returns {Object|null}
  */
 export function getDusunBySlug(slug) {
   const allDusun = getAllDusun()
@@ -56,7 +92,6 @@ export function getDusunBySlug(slug) {
 
 /**
  * Daftar semua slug standar 10 dusun di Desa Karangtalun
- * Dipakai untuk validasi atau pembuatan skeleton di UI
  */
 export const ALL_DUSUN_SLUGS = [
   { slug: 'dangkel-kulon',  label: 'Dangkel Kulon' },

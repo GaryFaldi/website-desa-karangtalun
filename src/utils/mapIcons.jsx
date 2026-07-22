@@ -1,5 +1,4 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import L from "leaflet";
 import { Store, Camera, Building2 } from "lucide-react";
 
 /**
@@ -17,9 +16,15 @@ const CATEGORY_CONFIG = {
  * Menggunakan divIcon (bukan L.icon gambar) agar ringan dan mudah diberi style CSS.
  *
  * @param {"umkm" | "wisata" | "fasilitas"} category
- * @returns {L.DivIcon}
+ * @returns {L.DivIcon|null}
  */
 export function createCategoryIcon(category) {
+  if (typeof window === "undefined") return null;
+
+  // Import Leaflet secara dinamis di browser saja
+  const L = window.L || (typeof require !== "undefined" ? require("leaflet") : null);
+  if (!L) return null;
+
   const config = CATEGORY_CONFIG[category] ?? CATEGORY_CONFIG.fasilitas;
   const { Icon, color } = config;
 
