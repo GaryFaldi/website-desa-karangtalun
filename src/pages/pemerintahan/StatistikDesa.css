@@ -74,15 +74,7 @@
   transform: translateY(-3px);
 }
 
-/* ── Accent Card (Total Jiwa) ────────────────────────────────────────────── */
-.stat-card--accent {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  border-color: var(--color-primary-dark);
-  color: var(--color-white);
-}
-.stat-card--accent .stat-card__value,
-.stat-card--accent .stat-card__label,
-.stat-card--accent .stat-card__sub { color: var(--color-white); }
+
 
 /* ── Card Elemen ─────────────────────────────────────────────────────────── */
 .stat-card__icon {

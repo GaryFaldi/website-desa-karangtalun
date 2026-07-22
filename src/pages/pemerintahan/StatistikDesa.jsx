@@ -94,7 +94,7 @@ export default function StatistikDesa() {
 
           {/* Baris 1 — data utama */}
           <div className="stat-cards-grid stat-cards-grid--main">
-            <StatCard icon="👥" value={totalJiwa}  label="Total Jiwa"       accent />
+            <StatCard icon="👥" value={totalJiwa}  label="Total Jiwa"       sub="jiwa" />
             <StatCard icon="👨" value={lakiLaki}   label="Laki-Laki"        sub="jiwa" />
             <StatCard icon="👩" value={perempuan}  label="Perempuan"        sub="jiwa" />
           </div>

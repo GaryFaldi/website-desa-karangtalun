@@ -3,19 +3,41 @@ nama: "Nama Dusun"
 slug: "nama-dusun"
 kepala_dusun: "Nama Lengkap Kepala Dusun"
 jumlah_penduduk: 0
+jumlah_kk: 0
+rt_rw: "0 RT / 0 RW"
 umkm:
-  - nama: "Nama UMKM"
-    deskripsi: "Deskripsi singkat usaha ini"
-    foto: "/assets/dusun/nama-dusun/umkm-1.jpg"
+  - nama: "Nama Produk UMKM / Olahan"
+    deskripsi: "Deskripsi singkat mengenai produk usaha atau potensi lokal ini."
+    foto: "/assets/1.jpg.jpeg"
 galeri:
-  - "/assets/dusun/nama-dusun/kegiatan-1.jpg"
-  - "/assets/dusun/nama-dusun/kegiatan-2.jpg"
+  - "/assets/2.jpg.jpeg"
+  - "/assets/3.jpg.jpeg"
 ---
 
-## Sejarah Dusun
+## 🌾 Sejarah & Gambaran Umum
 
-Tulis narasi sejarah dusun di sini. Bisa sepanjang yang diinginkan, format Markdown biasa.
+Tuliskan narasi sejarah dan gambaran umum Dusun di sini. Berapa luas wilayahnya, seperti apa kondisi geografisnya, serta karakter kemasyarakatannya.
 
-## Potensi & Keunikan
+---
 
-Tulis potensi, keunikan, atau hal menarik dari dusun ini.
+## 💡 Potensi & Keunggulan Wilayah
+
+1. **Sektor Utama (Pertanian / Usaha Rumahan)**  
+   Penjelasan mengenai sektor mata pencaharian utama warga.
+
+2. **Kelompok Warga & Kegiatan Rutin**  
+   Aktivitas kelompok tani, pkk, posyandu, atau pemuda karang taruna.
+
+---
+
+## 🏛️ Fasilitas & Sarana Prasarana
+
+* **Sarana Ibadah**: Tempat ibadah di lingkungan dusun.
+* **Sarana Aksesibilitas**: Jalan rabat beton, penerangan jalan, dll.
+* **Fasilitas Umum**: Pos ronda, balai pertemuan, dll.
+
+---
+
+## 🎭 Kesenian, Tradisi & Budaya Lokal
+
+Penjelasan mengenai tradisi adat desa, merti dusun, kesenian karawitan/tari, atau kegiatan keagamaan rutin.

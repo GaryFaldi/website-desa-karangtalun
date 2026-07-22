@@ -1,7 +1,6 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, useEffect, lazy, Suspense } from "react";
 import { MapPin } from "lucide-react";
 
-import InteractiveMap from "../../components/map/InteractiveMap.jsx";
 import LayerControl from "../../components/map/LayerControl.jsx";
 import MapLegend from "../../components/map/MapLegend.jsx";
 import SearchBox from "../../components/map/SearchBox.jsx";
@@ -16,6 +15,38 @@ import wisataData from "../../data/static/wisata.json";
 import fasilitasData from "../../data/static/fasilitas.json";
 
 import "../../styles/PetaInteraktif.css";
+
+// Lazy load InteractiveMap HANYA jika berjalan di browser (window !== undefined)
+// Ini mencegah Node.js meng-import leaflet/react-leaflet saat SSG build.
+const LazyInteractiveMap = typeof window !== 'undefined'
+  ? lazy(() => import("../../components/map/InteractiveMap.jsx"))
+  : null;
+
+function ClientOnlyMap(props) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient || !LazyInteractiveMap) {
+    return (
+      <div className="interactive-map map-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', background: '#f1f5f9', color: '#64748b', fontWeight: 600 }}>
+        <span>🗺️ Memuat Peta Interaktif...</span>
+      </div>
+    );
+  }
+
+  return (
+    <Suspense fallback={
+      <div className="interactive-map map-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', background: '#f1f5f9', color: '#64748b', fontWeight: 600 }}>
+        <span>🗺️ Memuat Peta Interaktif...</span>
+      </div>
+    }>
+      <LazyInteractiveMap {...props} />
+    </Suspense>
+  );
+}
 
 const searchIndex = buildSearchIndex({
   umkm: umkmData,
@@ -61,7 +92,7 @@ export default function PetaInteraktif() {
       </header>
 
       <div className="map-shell" ref={shellRef} data-fullscreen={isLegendCollapsedHint}>
-        <InteractiveMap mapRef={mapRef} layers={layers} onBoundsReady={handleBoundsReady} />
+        <ClientOnlyMap mapRef={mapRef} layers={layers} onBoundsReady={handleBoundsReady} />
 
         <div className="map-shell__overlay map-shell__overlay--top-left">
           <SearchBox items={searchIndex} onSelectLocation={handleSelectLocation} />
